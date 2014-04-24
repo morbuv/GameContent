@@ -1,0 +1,94 @@
+
+onLoadName = "T1 MCC";
+onLoadMission = "Dynamic mission creator";
+loadScreen = "\mcc_sandbox_mod\data\tier1_logo.paa";
+
+author="Tier1Ops";
+overviewPicture = "\mcc_sandbox_mod\data\tier1_logo.paa";
+overviewText = "Tier1Ops Mission Template based on MCC 4";
+
+respawn = "BASE";
+respawndelay = 1;
+RespawnDialog = 0;
+disabledAI = 1;
+saving = 0;
+
+// Allow Headless client to connect automatically
+joinUnassigned = 0;
+
+
+// BTC Revive stuff.
+#include "=BTC=_revive\=BTC=_respawn.h"
+
+// Vehicle Hud
+#include "VehicleHud\vh_dialog.hpp"
+
+class Header
+{
+	gameType = COOP; //game type
+	minPlayers = 1; //min # of players the mission supports
+	maxPlayers = 69; //max # of players the mission supports
+	//playerCountMultipleOf = 1; //OFP:Elite option.
+};
+
+class Params
+{
+	class paramZero	
+	{
+		title = "Would you like to enable TPWCAS_A3 AI Suppression?";
+		values[] = {0,1};
+		texts[] = {"Off","On (Default)"};
+		default = 1;
+		code = "tpwcas_enable = %1";
+	};
+	
+	class paramOne
+	{
+		title = "Which TPWCAS_A3 AI Suppression Mode would you like to enable?";
+		values[] = {2,3};
+		texts[] = {"AI and Players (Default)","AI only"};
+		default = 2;
+		code = "tpwcas_mode = %1";
+	};
+
+	class paramTwo
+	{
+		title = "How many lives should the players get?";
+		values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20};
+		texts[] = {"Infinite (Default)", "1 (No respawn)", "2", "3", "4", "5", "6", "7", "8", "9", "10", "15", "20"};
+		default = 0;
+		code = "BTC_availableLives = %1";
+	};
+	
+	class paramThree
+	{
+		title = "Would you like to enable auto garbage collection process?";
+		values[] = {1, 0};
+		texts[] = {"Yes (Default)", "No"};
+		default = 1;
+		code = "T1_garbageCollection = %1";
+	};
+	
+	class paramFour
+	{
+		title = "Which Revive system should be used?";
+		values[] = {1, 0};
+		texts[] = {"BTC-Revive (Default)", "FAR-Revive"};
+		default = 1;
+		code = "T1_Revive = %1";
+	};
+	
+	class GuerFriendly
+	{
+		title = $STR_DISP_INTEL_EDIT_GUERILLA;
+		values[] = {-1,1,0,2};
+		texts[] = {
+			$STR_DISP_INTEL_NONE_FRIENDLY,
+			$STR_DISP_INTEL_WEST_FRIENDLY,
+			$STR_DISP_INTEL_EAST_FRIENDLY,
+			$STR_DISP_INTEL_BOTH_FRIENDLY
+		};
+		default = -1;
+		function = "BIS_fnc_paramGuerFriendly";
+	};
+};
