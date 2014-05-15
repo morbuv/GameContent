@@ -113,14 +113,9 @@ tpwcas_fnc_run_for_it =
 				{
 					diag_log format ["Civilian Unit [%1] reached cover [%2]: [%3] m - [%6] seconds", _unit, _cover, _dist, _tooFar, _tooLong, _elapsedTime];
 				};
-				//drop["\a3\data_f\cl_basic", "", "Billboard", 1, 20, _coverPosition, [0, 0, 0], 0, 1.274, 0.5, 0, [5],[[1, 0, 0, 0.5]], [0, 1], 0, 0, "", "", ""]; //Red Smoke
-				//_smokeString = format ["drop['\a3\data_f\cl_basic', '', 'Billboard', 1, 20, %1, [0, 0, 0], 0, 1.274, 0.5, 0, [5],[[0, 0, 1, 0.5]], [0, 1], 0, 0, '', '', '']", _coverPosition]; //Blue Smoke
-				//[-2, {call compile _this}, _smokeString] call CBA_fnc_globalExecute;
-				//["['blue', _coverPosition]","tpwcas_fnc_debug_smoke",true,false] spawn BIS_fnc_MP;				
-				//if !(isDedicated) then {
-				//	['blue', _coverPosition] spawn tpwcas_fnc_debug_smoke;
-				//};		
+		
 				[['blue', _coverPosition],"tpwcas_fnc_debug_smoke",true,false] spawn BIS_fnc_MP;
+
 				if (hasInterface) then {
 					['blue', _coverPosition] spawn tpwcas_fnc_debug_smoke;
 				};
@@ -153,14 +148,9 @@ tpwcas_fnc_run_for_it =
 		{
 			diag_log format ["Civilian Unit [%1] reached cover [%2]: [%3] m - [%6] seconds", _unit, _cover, _dist, _tooFar, _tooLong, _elapsedTime];
 		};
-		//drop["\a3\data_f\cl_basic", "", "Billboard", 1, 20, _coverPosition, [0, 0, 0], 0, 1.274, 0.5, 0, [5],[[1, 0, 0, 0.5]], [0, 1], 0, 0, "", "", ""]; //Red Smoke
-		//_smokeString = format ["drop['\a3\data_f\cl_basic', '', 'Billboard', 1, 20, %1, [0, 0, 0], 0, 1.274, 0.5, 0, [5],[[0, 1, 0, 0.5]], [0, 1], 0, 0, '', '', '']", _coverPosition]; //Green Smoke
-		//[-2, {call compile _this}, _smokeString] call CBA_fnc_globalExecute;
-		//	["['green', _coverPosition]","tpwcas_fnc_debug_smoke",true,false] spawn BIS_fnc_MP;
-		//if !(isDedicated) then {
-		//	['green', _coverPosition] spawn tpwcas_fnc_debug_smoke;
-		//};
+
 		[['green', _coverPosition],"tpwcas_fnc_debug_smoke",true,false] spawn BIS_fnc_MP;
+
 		if (hasInterface) then {
 			['green', _coverPosition] spawn tpwcas_fnc_debug_smoke;
 		};

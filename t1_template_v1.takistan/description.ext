@@ -1,10 +1,12 @@
 
 onLoadName = "T1 MCC";
 onLoadMission = "Dynamic mission creator";
-loadScreen = "\mcc_sandbox_mod\data\tier1_logo.paa";
+//loadScreen = "\mcc_sandbox_mod\data\tier1_logo.paa";
+loadScreen = "data\tier1_logo.paa";
 
 author="Tier1Ops";
-overviewPicture = "\mcc_sandbox_mod\data\tier1_logo.paa";
+//overviewPicture = "\mcc_sandbox_mod\data\tier1_logo.paa";
+overviewPicture = "data\tier1_logo.paa";
 overviewText = "Tier1Ops Mission Template based on MCC 4";
 
 respawn = "BASE";
@@ -16,12 +18,15 @@ saving = 0;
 // Allow Headless client to connect automatically
 joinUnassigned = 0;
 
-
 // BTC Revive stuff.
 #include "=BTC=_revive\=BTC=_respawn.h"
 
 // Vehicle Hud
 #include "VehicleHud\vh_dialog.hpp"
+
+//MCC
+#include "mccLite_definesMission.hpp"
+
 
 class Header
 {
@@ -72,9 +77,9 @@ class Params
 	class paramFour
 	{
 		title = "Which Revive system should be used?";
-		values[] = {1, 0};
-		texts[] = {"BTC-Revive (Default)", "FAR-Revive"};
-		default = 1;
+		values[] = {0, 1, 2};
+		texts[] = {"BTC-Revive (Default)", "FAR-Revive", "None"};
+		default = 0;
 		code = "T1_Revive = %1";
 	};
 	

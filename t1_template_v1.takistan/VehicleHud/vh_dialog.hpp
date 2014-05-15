@@ -109,8 +109,8 @@ class HW_RscStructuredText {
 		size = "2.25";
 	};
 };
-
-class RscTitles {
+/*
+class HW_RscTitles {
 	class infomessage {
 		idd = 101;
 		movingEnable=0;
@@ -173,3 +173,4 @@ class RscTitles {
 		};
 	};
 };
+*/

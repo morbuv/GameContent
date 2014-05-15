@@ -10,7 +10,8 @@ class Mission
 		"t1_units_desert",
 		"A3_Missions_F_Curator",
 		"A3_Modules_F_Curator_Curator",
-		"A3_Data_F_Curator_Virtual"
+		"A3_Data_F_Curator_Virtual",
+		"A3_Characters_F_OPFOR"
 	};
 	addOnsAuto[]=
 	{
@@ -23,15 +24,18 @@ class Mission
 	randomSeed=8149453;
 	class Intel
 	{
-		briefingName="Tier1 Mission v1";
-		overviewText="Dynamic mission creator";
-		startWeather=0.1;
+		briefingName="Tier1 Mission Template v1";
+		overviewText="Tier 1 Mission Template v1 (15-05-14)";
+		resistanceWest=0;
+		startWeather=0;
 		startWind=0.1;
 		startWaves=0.1;
-		forecastWeather=0.1;
+		forecastWeather=0;
 		forecastWind=0.1;
 		forecastWaves=0.1;
-		year=2020;
+		wavesForced=1;
+		windForced=1;
+		year=2015;
 		hour=15;
 		minute=0;
 		startFogDecay=0;
@@ -58,6 +62,7 @@ class Mission
 					leader=1;
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_B_HITPL_lead";
 					init="Grp_B_HITPL = group this; Grp_B_HITPL setGroupId [""Hitman Platoon Lead""];";
 					description="Hitman Platoon Leader";
 				};
@@ -71,6 +76,7 @@ class Mission
 					vehicle="T1_Squad_Medic_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_HITPL_Medic";
 					init="Grp_B_HITPL = group this; Grp_B_HITPL setGroupId [""Hitman Platoon Lead""];";
 					description="Hitman Platoon Medic";
 				};
@@ -85,6 +91,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_B_HITPL_Radio";
 					init="Grp_B_HITPL = group this; Grp_B_HITPL setGroupId [""Hitman Platoon Lead""];";
 					description="Hitman Platoon Lead Radioman";
 				};
@@ -99,6 +106,7 @@ class Mission
 					player="PLAY CDG";
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_B_HITPL_PS";
 					init="Grp_B_HITPL = group this; Grp_B_HITPL setGroupId [""Hitman Platoon Lead""];";
 					description="Hitman Platoon Lead Sgt.";
 				};
@@ -122,6 +130,7 @@ class Mission
 					leader=1;
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_B_SQ1_SQL";
 					init="Grp_B_ASL = group this; Grp_B_ASL setGroupId [""Alpha Squad Lead""];";
 					description="Alpha Squad Leader";
 				};
@@ -135,6 +144,7 @@ class Mission
 					vehicle="T1_Squad_Medic_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ1_Medic";
 					init="Grp_B_ASL = group this; Grp_B_ASL setGroupId [""Alpha Squad Lead""];";
 					description="Alpha Squad Medic";
 				};
@@ -149,6 +159,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_B_SQ1_Radio";
 					init="Grp_B_ASL = group this; Grp_B_ASL setGroupId [""Alpha Squad Lead""];";
 					description="Alpha Squad Radioman";
 				};
@@ -163,6 +174,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CAPTAIN";
 					skill=0.60000002;
+					text="Unit_B_SQ1_SQS";
 					init="Grp_B_ASL = group this; Grp_B_ASL setGroupId [""Alpha Squad Lead""];";
 					description="Alpha Squad Leader Sgt.";
 				};
@@ -186,6 +198,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_B_SQ1_FT1_L";
 					init="Grp_B_A1 = group this; Grp_B_A1 setGroupId [""Alpha 1""];";
 					description="Alpha 1 Fireteam Leader";
 				};
@@ -199,6 +212,7 @@ class Mission
 					vehicle="T1_Squad_AR_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ1_FT1_AR";
 					init="Grp_B_A1 = group this; Grp_B_A1 setGroupId [""Alpha 1""];";
 					description="Alpha 1 Automatic Rifleman";
 				};
@@ -212,6 +226,7 @@ class Mission
 					vehicle="T1_Squad_AAR_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ1_FT1_AAR";
 					init="Grp_B_A1 = group this; Grp_B_A1 setGroupId [""Alpha 1""];";
 					description="Alpha 1 Assistant Automatic Rifleman";
 				};
@@ -225,6 +240,7 @@ class Mission
 					vehicle="T1_Squad_AT_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ1_FT1_AT";
 					init="Grp_B_A1 = group this; Grp_B_A1 setGroupId [""Alpha 1""];";
 					description="Alpha 1 Rifleman (AT)";
 				};
@@ -248,6 +264,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_B_SQ1_FT2_L";
 					init="Grp_B_A2 = group this; Grp_B_A2 setGroupId [""Alpha 2""];";
 					description="Alpha 2 Fireteam Leader";
 				};
@@ -261,6 +278,7 @@ class Mission
 					vehicle="T1_Squad_AR_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ1_FT2_AR";
 					init="Grp_B_A2 = group this; Grp_B_A2 setGroupId [""Alpha 2""];";
 					description="Alpha 2 Automatic Rifleman";
 				};
@@ -274,6 +292,7 @@ class Mission
 					vehicle="T1_Squad_AAR_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ1_FT2_AAR";
 					init="Grp_B_A2 = group this; Grp_B_A2 setGroupId [""Alpha 2""];";
 					description="Alpha 2 Assistant Automatic Rifleman";
 				};
@@ -287,6 +306,7 @@ class Mission
 					vehicle="T1_Squad_AT_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ1_FT2_AT";
 					init="Grp_B_A2 = group this; Grp_B_A2 setGroupId [""Alpha 2""];";
 					description="Alpha 2 Rifleman (AT)";
 				};
@@ -310,6 +330,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_B_SQ1_FT3_L";
 					init="Grp_B_A3 = group this; Grp_B_A3 setGroupId [""Alpha 3""];";
 					description="Alpha 3 Fireteam Leader";
 				};
@@ -323,6 +344,7 @@ class Mission
 					vehicle="T1_Squad_AR_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ1_FT3_AR";
 					init="Grp_B_A3 = group this; Grp_B_A3 setGroupId [""Alpha 3""];";
 					description="Alpha 3 Automatic Rifleman";
 				};
@@ -336,6 +358,7 @@ class Mission
 					vehicle="T1_Squad_AAR_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ1_FT3_AAR";
 					init="Grp_B_A3 = group this; Grp_B_A3 setGroupId [""Alpha 3""];";
 					description="Alpha 3 Assistant Automatic Rifleman";
 				};
@@ -349,6 +372,7 @@ class Mission
 					vehicle="T1_Squad_AT_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ1_FT3_AT";
 					init="Grp_B_A3 = group this; Grp_B_A3 setGroupId [""Alpha 3""];";
 					description="Alpha 3 Rifleman (AT)";
 				};
@@ -372,6 +396,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_B_SQ1_F_L";
 					init="Grp_B_AF = group this; Grp_B_AF setGroupId [""Alpha Fox""];";
 					description="Alpha Fox Commander";
 				};
@@ -386,6 +411,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_B_SQ1_F_G";
 					init="Grp_B_AF = group this; Grp_B_AF setGroupId [""Alpha Fox""];";
 					description="Alpha Fox Gunner";
 				};
@@ -399,6 +425,7 @@ class Mission
 					vehicle="T1_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ1_F_D";
 					init="Grp_B_AF = group this; Grp_B_AF setGroupId [""Alpha Fox""];";
 					description="Alpha Fox Driver";
 				};
@@ -422,6 +449,7 @@ class Mission
 					leader=1;
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_B_SQ2_SQL";
 					init="Grp_B_BSL = group this; Grp_B_BSL setGroupId [""Bravo Squad Lead""];";
 					description="Bravo Squad Leader";
 				};
@@ -435,6 +463,7 @@ class Mission
 					vehicle="T1_Squad_Medic_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ2_Medic";
 					init="Grp_B_BSL = group this; Grp_B_BSL setGroupId [""Bravo Squad Lead""];";
 					description="Bravo Squad Medic";
 				};
@@ -449,6 +478,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_B_SQ2_Radio";
 					init="Grp_B_BSL = group this; Grp_B_BSL setGroupId [""Bravo Squad Lead""];";
 					description="Bravo Squad Radioman";
 				};
@@ -463,6 +493,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CAPTAIN";
 					skill=0.60000002;
+					text="Unit_B_SQ2_SQS";
 					init="Grp_B_BSL = group this; Grp_B_BSL setGroupId [""Bravo Squad Lead""];";
 					description="Bravo Squad Leader Sgt.";
 				};
@@ -486,6 +517,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_B_SQ2_FT1_L";
 					init="Grp_B_B1 = group this; Grp_B_B1 setGroupId [""Bravo 1""];";
 					description="Bravo 1 Fireteam Leader";
 				};
@@ -499,6 +531,7 @@ class Mission
 					vehicle="T1_Squad_AR_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ2_FT1_AR";
 					init="Grp_B_B1 = group this; Grp_B_B1 setGroupId [""Bravo 1""];";
 					description="Bravo 1 Automatic Rifleman";
 				};
@@ -512,6 +545,7 @@ class Mission
 					vehicle="T1_Squad_AAR_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ2_FT1_AAR";
 					init="Grp_B_B1 = group this; Grp_B_B1 setGroupId [""Bravo 1""];";
 					description="Bravo 1 Assistant Automatic Rifleman";
 				};
@@ -525,6 +559,7 @@ class Mission
 					vehicle="T1_Squad_AT_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ2_FT1_AT";
 					init="Grp_B_B1 = group this; Grp_B_B1 setGroupId [""Bravo 1""];";
 					description="Bravo 1 Rifleman (AT)";
 				};
@@ -548,6 +583,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_B_SQ2_FT2_L";
 					init="Grp_B_B2 = group this; Grp_B_B2 setGroupId [""Bravo 2""];";
 					description="Bravo 2 Fireteam Leader";
 				};
@@ -561,6 +597,7 @@ class Mission
 					vehicle="T1_Squad_AR_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ2_FT2_AR";
 					init="Grp_B_B2 = group this; Grp_B_B2 setGroupId [""Bravo 2""];";
 					description="Bravo 2 Automatic Rifleman";
 				};
@@ -574,6 +611,7 @@ class Mission
 					vehicle="T1_Squad_AAR_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ2_FT2_AAR";
 					init="Grp_B_B2 = group this; Grp_B_B2 setGroupId [""Bravo 2""];";
 					description="Bravo 2 Assistant Automatic Rifleman";
 				};
@@ -587,6 +625,7 @@ class Mission
 					vehicle="T1_Squad_AT_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ2_FT2_AT";
 					init="Grp_B_B2 = group this; Grp_B_B2 setGroupId [""Bravo 2""];";
 					description="Bravo 2 Rifleman (AT)";
 				};
@@ -610,6 +649,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_B_SQ2_FT3_L";
 					init="Grp_B_B3 = group this; Grp_B_B3 setGroupId [""Bravo 3""];";
 					description="Bravo 3 Fireteam Leader";
 				};
@@ -623,6 +663,7 @@ class Mission
 					vehicle="T1_Squad_AR_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ2_FT3_AR";
 					init="Grp_B_B3 = group this; Grp_B_B3 setGroupId [""Bravo 3""];";
 					description="Bravo 3 Automatic Rifleman";
 				};
@@ -636,6 +677,7 @@ class Mission
 					vehicle="T1_Squad_AAR_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ2_FT3_AAR";
 					init="Grp_B_B3 = group this; Grp_B_B3 setGroupId [""Bravo 3""];";
 					description="Bravo 3 Assistant Automatic Rifleman";
 				};
@@ -649,6 +691,7 @@ class Mission
 					vehicle="T1_Squad_AT_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ2_FT3_AT";
 					init="Grp_B_B3 = group this; Grp_B_B3 setGroupId [""Bravo 3""];";
 					description="Bravo 3 Rifleman (AT)";
 				};
@@ -672,6 +715,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_B_SQ2_F_L";
 					init="Grp_B_BF = group this; Grp_B_BF setGroupId [""Bravo Fox""];";
 					description="Bravo Fox Commander";
 				};
@@ -686,6 +730,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_B_SQ2_F_G";
 					init="Grp_B_BF = group this; Grp_B_BF setGroupId [""Bravo Fox""];";
 					description="Bravo Fox Gunner";
 				};
@@ -699,6 +744,7 @@ class Mission
 					vehicle="T1_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ2_F_D";
 					init="Grp_B_BF = group this; Grp_B_BF setGroupId [""Bravo Fox""];";
 					description="Bravo Fox Driver";
 				};
@@ -722,6 +768,7 @@ class Mission
 					leader=1;
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_B_SQ3_SQL";
 					init="Grp_B_CSL = group this; Grp_B_CSL setGroupId [""Charlie Squad Lead""];";
 					description="Charlie Squad Leader";
 				};
@@ -735,6 +782,7 @@ class Mission
 					vehicle="T1_Squad_Medic_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ3_Medic";
 					init="Grp_B_CSL = group this; Grp_B_CSL setGroupId [""Charlie Squad Lead""];";
 					description="Charlie Squad Medic";
 				};
@@ -749,6 +797,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_B_SQ3_Radio";
 					init="Grp_B_CSL = group this; Grp_B_CSL setGroupId [""Charlie Squad Lead""];";
 					description="Charlie Squad Radioman";
 				};
@@ -763,6 +812,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CAPTAIN";
 					skill=0.60000002;
+					text="Unit_B_SQ3_SQS";
 					init="Grp_B_CSL = group this; Grp_B_CSL setGroupId [""Charlie Squad Lead""];";
 					description="Charlie Squad Leader Sgt.";
 				};
@@ -786,6 +836,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_B_SQ3_FT1_L";
 					init="Grp_B_C1 = group this; Grp_B_C1 setGroupId [""Charlie 1""];";
 					description="Charlie 1 Fireteam Leader";
 				};
@@ -799,6 +850,7 @@ class Mission
 					vehicle="T1_Squad_AR_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ3_FT1_AR";
 					init="Grp_B_C1 = group this; Grp_B_C1 setGroupId [""Charlie 1""];";
 					description="Charlie 1 Automatic Rifleman";
 				};
@@ -812,6 +864,7 @@ class Mission
 					vehicle="T1_Squad_AAR_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ3_FT1_AAR";
 					init="Grp_B_C1 = group this; Grp_B_C1 setGroupId [""Charlie 1""];";
 					description="Charlie 1 Assistant Automatic Rifleman";
 				};
@@ -825,6 +878,7 @@ class Mission
 					vehicle="T1_Squad_AT_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ3_FT1_AT";
 					init="Grp_B_C1 = group this; Grp_B_C1 setGroupId [""Charlie 1""];";
 					description="Charlie 1 Rifleman (AT)";
 				};
@@ -848,6 +902,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_B_SQ3_FT2_L";
 					init="Grp_B_C2 = group this; Grp_B_C2 setGroupId [""Charlie 2""];";
 					description="Charlie 2 Fireteam Leader";
 				};
@@ -861,6 +916,7 @@ class Mission
 					vehicle="T1_Squad_AR_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ3_FT2_AR";
 					init="Grp_B_C2 = group this; Grp_B_C2 setGroupId [""Charlie 2""];";
 					description="Charlie 2 Automatic Rifleman";
 				};
@@ -874,6 +930,7 @@ class Mission
 					vehicle="T1_Squad_AAR_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ3_FT2_AAR";
 					init="Grp_B_C2 = group this; Grp_B_C2 setGroupId [""Charlie 2""];";
 					description="Charlie 2 Assistant Automatic Rifleman";
 				};
@@ -887,6 +944,7 @@ class Mission
 					vehicle="T1_Squad_AT_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ3_FT2_AT";
 					init="Grp_B_C2 = group this; Grp_B_C2 setGroupId [""Charlie 2""];";
 					description="Charlie 2 Rifleman (AT)";
 				};
@@ -910,6 +968,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_B_SQ3_FT3_L";
 					init="Grp_B_C3 = group this; Grp_B_C3 setGroupId [""Charlie 3""];";
 					description="Charlie 3 Fireteam Leader";
 				};
@@ -923,6 +982,7 @@ class Mission
 					vehicle="T1_Squad_AR_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ3_FT3_AR";
 					init="Grp_B_C3 = group this; Grp_B_C3 setGroupId [""Charlie 3""];";
 					description="Charlie 3 Automatic Rifleman";
 				};
@@ -936,6 +996,7 @@ class Mission
 					vehicle="T1_Squad_AAR_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ3_FT3_AAR";
 					init="Grp_B_C3 = group this; Grp_B_C3 setGroupId [""Charlie 3""];";
 					description="Charlie 3 Assistant Automatic Rifleman";
 				};
@@ -949,6 +1010,7 @@ class Mission
 					vehicle="T1_Squad_AT_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ3_FT3_AT";
 					init="Grp_B_C3 = group this; Grp_B_C3 setGroupId [""Charlie 3""];";
 					description="Charlie 3 Rifleman (AT)";
 				};
@@ -972,6 +1034,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_B_SQ3_F_C";
 					init="Grp_B_CF = group this; Grp_B_CF setGroupId [""Charlie Fox""];";
 					description="Charlie Fox Commander";
 				};
@@ -986,6 +1049,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_B_SQ3_F_G";
 					init="Grp_B_CF = group this; Grp_B_CF setGroupId [""Charlie Fox""];";
 					description="Charlie Fox Gunner";
 				};
@@ -999,6 +1063,7 @@ class Mission
 					vehicle="T1_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SQ3_F_D";
 					init="Grp_B_CF = group this; Grp_B_CF setGroupId [""Charlie Fox""];";
 					description="Charlie Fox Driver";
 				};
@@ -1022,6 +1087,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_B_SF1_L";
 					init="Grp_B_Shadow1 = group this; Grp_B_Shadow1 setGroupId [""Shadow 1""];";
 					description="Shadow 1 Leader";
 				};
@@ -1035,6 +1101,7 @@ class Mission
 					vehicle="T1_SF_AR_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SF1_AR";
 					init="Grp_B_Shadow1 = group this; Grp_B_Shadow1 setGroupId [""Shadow 1""];";
 					description="Shadow 1 Heavy gunner";
 				};
@@ -1048,6 +1115,7 @@ class Mission
 					vehicle="T1_SF_AT_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SF1_Radio";
 					init="Grp_B_Shadow1 = group this; Grp_B_Shadow1 setGroupId [""Shadow 1""];";
 					description="Shadow 1 Radioman (AT)";
 				};
@@ -1061,6 +1129,7 @@ class Mission
 					vehicle="T1_SF_Marksman_SOS_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SF1_Mark";
 					init="Grp_B_Shadow1 = group this; Grp_B_Shadow1 setGroupId [""Shadow 1""];";
 					description="Shadow 1 Marksman";
 				};
@@ -1074,6 +1143,7 @@ class Mission
 					vehicle="T1_SF_Explosive_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SF1_Sab";
 					init="Grp_B_Shadow1 = group this; Grp_B_Shadow1 setGroupId [""Shadow 1""];";
 					description="Shadow 1 Saboteur";
 				};
@@ -1087,6 +1157,7 @@ class Mission
 					vehicle="T1_SF_Medic_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SF1_Medic";
 					init="Grp_B_Shadow1 = group this; Grp_B_Shadow1 setGroupId [""Shadow 1""];";
 					description="Shadow 1 Medic";
 				};
@@ -1110,6 +1181,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_B_SF2_L";
 					init="Grp_B_Shadow2 = group this; Grp_B_Shadow2 setGroupId [""Shadow 2""];";
 					description="Shadow 2 Leader";
 				};
@@ -1123,6 +1195,7 @@ class Mission
 					vehicle="T1_SF_AR_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SF2_AR";
 					init="Grp_B_Shadow2 = group this; Grp_B_Shadow2 setGroupId [""Shadow 2""];";
 					description="Shadow 2 Heavy gunner";
 				};
@@ -1136,6 +1209,7 @@ class Mission
 					vehicle="T1_SF_AT_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SF2_Radio";
 					init="Grp_B_Shadow2 = group this; Grp_B_Shadow2 setGroupId [""Shadow 2""];";
 					description="Shadow 2 Radioman (AT)";
 				};
@@ -1149,6 +1223,7 @@ class Mission
 					vehicle="T1_SF_Marksman_SOS_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SF2_Mark";
 					init="Grp_B_Shadow2 = group this; Grp_B_Shadow2 setGroupId [""Shadow 2""];";
 					description="Shadow 2 Marksman";
 				};
@@ -1162,6 +1237,7 @@ class Mission
 					vehicle="T1_SF_Explosive_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SF2_Sab";
 					init="Grp_B_Shadow2 = group this; Grp_B_Shadow2 setGroupId [""Shadow 2""];";
 					description="Shadow 2 Saboteur";
 				};
@@ -1175,6 +1251,7 @@ class Mission
 					vehicle="T1_SF_Medic_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SF2_Medic";
 					init="Grp_B_Shadow2 = group this; Grp_B_Shadow2 setGroupId [""Shadow 2""];";
 					description="Shadow 2 Medic";
 				};
@@ -1198,6 +1275,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_B_AIR1_P";
 					init="Grp_B_Reaper1 = group this; Grp_B_Reaper1 setGroupId [""Reaper 1""];";
 					description="Reaper 1-1";
 				};
@@ -1211,6 +1289,7 @@ class Mission
 					vehicle="T1_Pilot_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_AIR1_CP";
 					init="Grp_B_Reaper1 = group this; Grp_B_Reaper1 setGroupId [""Reaper 1""];";
 					description="Reaper 1-2";
 				};
@@ -1234,6 +1313,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_B_AIR2_P";
 					init="Grp_B_Reaper2 = group this; Grp_B_Reaper2 setGroupId [""Reaper 2""];";
 					description="Reaper 2-1";
 				};
@@ -1247,6 +1327,7 @@ class Mission
 					vehicle="T1_Pilot_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_AIR2_CP";
 					init="Grp_B_Reaper2 = group this; Grp_B_Reaper2 setGroupId [""Reaper 2""];";
 					description="Reaper 2-2";
 				};
@@ -1270,6 +1351,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_B_S1_Spotter";
 					init="Grp_B_Sierra1 = group this; Grp_B_Sierra1 setGroupId [""Sierra 1""];";
 					description="Sierra 1 Spotter";
 				};
@@ -1283,6 +1365,7 @@ class Mission
 					vehicle="T1_Sniper_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_S1_Sniper";
 					init="Grp_B_Sierra1 = group this; Grp_B_Sierra1 setGroupId [""Sierra 1""];";
 					description="Sierra 1 Sniper";
 				};
@@ -1306,6 +1389,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_B_S2_Spotter";
 					init="Grp_B_Sierra2 = group this; Grp_B_Sierra2 setGroupId [""Sierra 2""];";
 					description="Sierra 2 Spotter";
 				};
@@ -1319,6 +1403,7 @@ class Mission
 					vehicle="T1_Sniper_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_S2_Sniper";
 					init="Grp_B_Sierra2 = group this; Grp_B_Sierra2 setGroupId [""Sierra 2""];";
 					description="Sierra 2 Sniper";
 				};
@@ -1342,6 +1427,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_B_R1_L";
 					init="Grp_B_ReconTeam1 = group this; Grp_B_ReconTeam1 setGroupId [""Recon Team 1""];";
 					description="Recon Team 1 Leader";
 				};
@@ -1356,6 +1442,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_B_R1_S";
 					init="Grp_B_ReconTeam1 = group this; Grp_B_ReconTeam1 setGroupId [""Recon Team 1""];";
 					description="Recon Team 1 Scout";
 				};
@@ -1379,6 +1466,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_B_R2_L";
 					init="Grp_B_ReconTeam2 = group this; Grp_B_ReconTeam2 setGroupId [""Recon Team 2""];";
 					description="Recon Team 2 Leader";
 				};
@@ -1393,6 +1481,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_B_R2_S";
 					init="Grp_B_ReconTeam2 = group this; Grp_B_ReconTeam2 setGroupId [""Recon Team 2""];";
 					description="Recon Team 2 Scout";
 				};
@@ -1416,6 +1505,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_B_R3_L";
 					init="Grp_B_ReconTeam3 = group this; Grp_B_ReconTeam3 setGroupId [""Recon Team 3""];";
 					description="Recon Team 3 Leader";
 				};
@@ -1430,6 +1520,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_B_R3_S";
 					init="Grp_B_ReconTeam3 = group this; Grp_B_ReconTeam3 setGroupId [""Recon Team 3""];";
 					description="Recon Team 3 Scout";
 				};
@@ -1453,6 +1544,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_B_R4_L";
 					init="Grp_B_ReconTeam4 = group this; Grp_B_ReconTeam4 setGroupId [""Recon Team 4""];";
 					description="Recon Team 4 Leader";
 				};
@@ -1467,6 +1559,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_B_R4_S";
 					init="Grp_B_ReconTeam4 = group this; Grp_B_ReconTeam4 setGroupId [""Recon Team 4""];";
 					description="Recon Team 4 Scout";
 				};
@@ -1490,6 +1583,7 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_B_MG1_G";
 					init="Grp_B_MediumMG1 = group this; Grp_B_MediumMG1 setGroupId [""Medium MG 1""];";
 					description="Medium MG 1 Gunner";
 				};
@@ -1503,6 +1597,7 @@ class Mission
 					vehicle="T1_Specialist_AMG_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_MG1_A";
 					init="Grp_B_MediumMG1 = group this; Grp_B_MediumMG1 setGroupId [""Medium MG 1""];";
 					description="Medium MG 1 Assistant";
 				};
@@ -1526,6 +1621,7 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_B_MG2_G";
 					init="Grp_B_MediumMG2 = group this; Grp_B_MediumMG2 setGroupId [""Medium MG 2""];";
 					description="Medium MG 2 Gunner";
 				};
@@ -1539,6 +1635,7 @@ class Mission
 					vehicle="T1_Specialist_AMG_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_MG2_A";
 					init="Grp_B_MediumMG2 = group this; Grp_B_MediumMG2 setGroupId [""Medium MG 2""];";
 					description="Medium MG 2 Assistant";
 				};
@@ -1562,6 +1659,7 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_B_AA1_G";
 					init="Grp_B_HeavyAA1 = group this; Grp_B_HeavyAA1 setGroupId [""Heavy AA 1""];";
 					description="Heavy Anti Air 1 Gunner";
 				};
@@ -1575,6 +1673,7 @@ class Mission
 					vehicle="T1_Specialist_AAA_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_AA1_A";
 					init="Grp_B_HeavyAA1 = group this; Grp_B_HeavyAA1 setGroupId [""Heavy AA 1""];";
 					description="Heavy Anti Air 1 Assistant";
 				};
@@ -1598,6 +1697,7 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_B_AA2_G";
 					init="Grp_B_HeavyAA2 = group this; Grp_B_HeavyAA2 setGroupId [""Heavy AA 2""];";
 					description="Heavy Anti Air 2 Gunner";
 				};
@@ -1611,6 +1711,7 @@ class Mission
 					vehicle="T1_Specialist_AAA_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_AA2_A";
 					init="Grp_B_HeavyAA2 = group this; Grp_B_HeavyAA2 setGroupId [""Heavy AA 2""];";
 					description="Heavy Anti Air 2 Assistant";
 				};
@@ -1634,6 +1735,7 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_B_AT1_G";
 					init="Grp_B_HeavyAT1 = group this; Grp_B_HeavyAT1 setGroupId [""Heavy AT 1""];";
 					description="Heavy Anti Tank 1 Gunner";
 				};
@@ -1647,6 +1749,7 @@ class Mission
 					vehicle="T1_Specialist_AAT_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_AT1_A";
 					init="Grp_B_HeavyAT1 = group this; Grp_B_HeavyAT1 setGroupId [""Heavy AT 1""];";
 					description="Heavy Anti Tank 1 Assistant";
 				};
@@ -1670,6 +1773,7 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_B_AT2_G";
 					init="Grp_B_HeavyAT2 = group this; Grp_B_HeavyAT2 setGroupId [""Heavy AT 2""];";
 					description="Heavy Anti Tank 2 Gunner";
 				};
@@ -1683,6 +1787,7 @@ class Mission
 					vehicle="T1_Specialist_AAT_Standard_Desert_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_AT2_A";
 					init="Grp_B_HeavyAT2 = group this; Grp_B_HeavyAT2 setGroupId [""Heavy AT 2""];";
 					description="Heavy Anti Tank 2 Assistant";
 				};
@@ -1706,6 +1811,7 @@ class Mission
 					leader=1;
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_I_HITPL_lead";
 					init="Grp_I_HITPL = group this; Grp_I_HITPL setGroupId [""Hitman Platoon Lead""];";
 					description="Hitman Platoon Leader";
 				};
@@ -1719,6 +1825,7 @@ class Mission
 					vehicle="T1_Indep_Squad_Medic_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_HITPL_Medic";
 					init="Grp_I_HITPL = group this; Grp_I_HITPL setGroupId [""Hitman Platoon Lead""];";
 					description="Hitman Platoon Medic";
 				};
@@ -1733,6 +1840,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_I_HITPL_Radio";
 					init="Grp_I_HITPL = group this; Grp_I_HITPL setGroupId [""Hitman Platoon Lead""];";
 					description="Hitman Platoon Lead Radioman";
 				};
@@ -1747,6 +1855,7 @@ class Mission
 					player="PLAY CDG";
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_I_HITPL_PS";
 					init="Grp_I_HITPL = group this; Grp_I_HITPL setGroupId [""Hitman Platoon Lead""];";
 					description="Hitman Platoon Lead Sgt.";
 				};
@@ -1770,6 +1879,7 @@ class Mission
 					leader=1;
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_I_SQ1_SQL";
 					init="Grp_I_ASL = group this; Grp_I_ASL setGroupId [""Alpha Squad Lead""];";
 					description="Alpha Squad Leader";
 				};
@@ -1783,6 +1893,7 @@ class Mission
 					vehicle="T1_Indep_Squad_Medic_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ1_Medic";
 					init="Grp_I_ASL = group this; Grp_I_ASL setGroupId [""Alpha Squad Lead""];";
 					description="Alpha Squad Medic";
 				};
@@ -1797,6 +1908,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_I_SQ1_Radio";
 					init="Grp_I_ASL = group this; Grp_I_ASL setGroupId [""Alpha Squad Lead""];";
 					description="Alpha Squad Radioman";
 				};
@@ -1811,6 +1923,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CAPTAIN";
 					skill=0.60000002;
+					text="Unit_I_SQ1_SQS";
 					init="Grp_I_ASL = group this; Grp_I_ASL setGroupId [""Alpha Squad Lead""];";
 					description="Alpha Squad Leader Sgt.";
 				};
@@ -1834,6 +1947,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_I_SQ1_FT1_L";
 					init="Grp_I_A1 = group this; Grp_I_A1 setGroupId [""Alpha 1""];";
 					description="Alpha 1 Fireteam Leader";
 				};
@@ -1847,6 +1961,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ1_FT1_AR";
 					init="Grp_I_A1 = group this; Grp_I_A1 setGroupId [""Alpha 1""];";
 					description="Alpha 1 Automatic Rifleman";
 				};
@@ -1860,6 +1975,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ1_FT1_AAR";
 					init="Grp_I_A1 = group this; Grp_I_A1 setGroupId [""Alpha 1""];";
 					description="Alpha 1 Assistant Automatic Rifleman";
 				};
@@ -1873,6 +1989,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ1_FT1_AT";
 					init="Grp_I_A1 = group this; Grp_I_A1 setGroupId [""Alpha 1""];";
 					description="Alpha 1 Rifleman (AT)";
 				};
@@ -1896,6 +2013,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_I_SQ1_FT2_L";
 					init="Grp_I_A2 = group this; Grp_I_A2 setGroupId [""Alpha 2""];";
 					description="Alpha 2 Fireteam Leader";
 				};
@@ -1909,6 +2027,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ1_FT2_AR";
 					init="Grp_I_A2 = group this; Grp_I_A2 setGroupId [""Alpha 2""];";
 					description="Alpha 2 Automatic Rifleman";
 				};
@@ -1922,6 +2041,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ1_FT2_AAR";
 					init="Grp_I_A2 = group this; Grp_I_A2 setGroupId [""Alpha 2""];";
 					description="Alpha 2 Assistant Automatic Rifleman";
 				};
@@ -1935,6 +2055,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ1_FT2_AT";
 					init="Grp_I_A2 = group this; Grp_I_A2 setGroupId [""Alpha 2""];";
 					description="Alpha 2 Rifleman (AT)";
 				};
@@ -1958,6 +2079,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_I_SQ1_FT3_L";
 					init="Grp_I_A3 = group this; Grp_I_A3 setGroupId [""Alpha 3""];";
 					description="Alpha 3 Fireteam Leader";
 				};
@@ -1971,6 +2093,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ1_FT3_AR";
 					init="Grp_I_A3 = group this; Grp_I_A3 setGroupId [""Alpha 3""];";
 					description="Alpha 3 Automatic Rifleman";
 				};
@@ -1984,6 +2107,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ1_FT3_AAR";
 					init="Grp_I_A3 = group this; Grp_I_A3 setGroupId [""Alpha 3""];";
 					description="Alpha 3 Assistant Automatic Rifleman";
 				};
@@ -1997,6 +2121,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ1_FT3_AT";
 					init="Grp_I_A3 = group this; Grp_I_A3 setGroupId [""Alpha 3""];";
 					description="Alpha 3 Rifleman (AT)";
 				};
@@ -2020,6 +2145,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_I_SQ1_F_L";
 					init="Grp_I_AF = group this; Grp_I_AF setGroupId [""Alpha Fox""];";
 					description="Alpha Fox Commander";
 				};
@@ -2034,6 +2160,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_I_SQ1_F_G";
 					init="Grp_I_AF = group this; Grp_I_AF setGroupId [""Alpha Fox""];";
 					description="Alpha Fox Gunner";
 				};
@@ -2047,6 +2174,7 @@ class Mission
 					vehicle="T1_Indep_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ1_F_D";
 					init="Grp_I_AF = group this; Grp_I_AF setGroupId [""Alpha Fox""];";
 					description="Alpha Fox Driver";
 				};
@@ -2070,6 +2198,7 @@ class Mission
 					leader=1;
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_I_SQ2_SQL";
 					init="Grp_I_BSL = group this; Grp_I_BSL setGroupId [""Bravo Squad Lead""];";
 					description="Bravo Squad Leader";
 				};
@@ -2083,6 +2212,7 @@ class Mission
 					vehicle="T1_Indep_Squad_Medic_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ2_Medic";
 					init="Grp_I_BSL = group this; Grp_I_BSL setGroupId [""Bravo Squad Lead""];";
 					description="Bravo Squad Medic";
 				};
@@ -2097,6 +2227,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_I_SQ2_Radio";
 					init="Grp_I_BSL = group this; Grp_I_BSL setGroupId [""Bravo Squad Lead""];";
 					description="Bravo Squad Radioman";
 				};
@@ -2111,6 +2242,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CAPTAIN";
 					skill=0.60000002;
+					text="Unit_I_SQ2_SQS";
 					init="Grp_I_BSL = group this; Grp_I_BSL setGroupId [""Bravo Squad Lead""];";
 					description="Bravo Squad Leader Sgt.";
 				};
@@ -2134,6 +2266,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_I_SQ2_FT1_L";
 					init="Grp_I_B1 = group this; Grp_I_B1 setGroupId [""Bravo 1""];";
 					description="Bravo 1 Fireteam Leader";
 				};
@@ -2147,6 +2280,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ2_FT1_AR";
 					init="Grp_I_B1 = group this; Grp_I_B1 setGroupId [""Bravo 1""];";
 					description="Bravo 1 Automatic Rifleman";
 				};
@@ -2160,6 +2294,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ2_FT1_AAR";
 					init="Grp_I_B1 = group this; Grp_I_B1 setGroupId [""Bravo 1""];";
 					description="Bravo 1 Assistant Automatic Rifleman";
 				};
@@ -2173,6 +2308,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ2_FT1_AT";
 					init="Grp_I_B1 = group this; Grp_I_B1 setGroupId [""Bravo 1""];";
 					description="Bravo 1 Rifleman (AT)";
 				};
@@ -2196,6 +2332,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_I_SQ2_FT2_L";
 					init="Grp_I_B2 = group this; Grp_I_B2 setGroupId [""Bravo 2""];";
 					description="Bravo 2 Fireteam Leader";
 				};
@@ -2209,6 +2346,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ2_FT2_AR";
 					init="Grp_I_B2 = group this; Grp_I_B2 setGroupId [""Bravo 2""];";
 					description="Bravo 2 Automatic Rifleman";
 				};
@@ -2222,6 +2360,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ2_FT2_AAR";
 					init="Grp_I_B2 = group this; Grp_I_B2 setGroupId [""Bravo 2""];";
 					description="Bravo 2 Assistant Automatic Rifleman";
 				};
@@ -2235,6 +2374,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ2_FT2_AT";
 					init="Grp_I_B2 = group this; Grp_I_B2 setGroupId [""Bravo 2""];";
 					description="Bravo 2 Rifleman (AT)";
 				};
@@ -2258,6 +2398,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_I_SQ2_FT3_L";
 					init="Grp_I_B3 = group this; Grp_I_B3 setGroupId [""Bravo 3""];";
 					description="Bravo 3 Fireteam Leader";
 				};
@@ -2271,6 +2412,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ2_FT3_AR";
 					init="Grp_I_B3 = group this; Grp_I_B3 setGroupId [""Bravo 3""];";
 					description="Bravo 3 Automatic Rifleman";
 				};
@@ -2284,6 +2426,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ2_FT3_AAR";
 					init="Grp_I_B3 = group this; Grp_I_B3 setGroupId [""Bravo 3""];";
 					description="Bravo 3 Assistant Automatic Rifleman";
 				};
@@ -2297,6 +2440,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ2_FT3_AT";
 					init="Grp_I_B3 = group this; Grp_I_B3 setGroupId [""Bravo 3""];";
 					description="Bravo 3 Rifleman (AT)";
 				};
@@ -2320,6 +2464,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_I_SQ2_F_L";
 					init="Grp_I_BF = group this; Grp_I_BF setGroupId [""Bravo Fox""];";
 					description="Bravo Fox Commander";
 				};
@@ -2334,6 +2479,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_I_SQ2_F_G";
 					init="Grp_I_BF = group this; Grp_I_BF setGroupId [""Bravo Fox""];";
 					description="Bravo Fox Gunner";
 				};
@@ -2347,6 +2493,7 @@ class Mission
 					vehicle="T1_Indep_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ2_F_D";
 					init="Grp_I_BF = group this; Grp_I_BF setGroupId [""Bravo Fox""];";
 					description="Bravo Fox Driver";
 				};
@@ -2370,6 +2517,7 @@ class Mission
 					leader=1;
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_I_SQ3_SQL";
 					init="Grp_I_CSL = group this; Grp_I_CSL setGroupId [""Charlie Squad Lead""];";
 					description="Charlie Squad Leader";
 				};
@@ -2383,6 +2531,7 @@ class Mission
 					vehicle="T1_Indep_Squad_Medic_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ3_Medic";
 					init="Grp_I_CSL = group this; Grp_I_CSL setGroupId [""Charlie Squad Lead""];";
 					description="Charlie Squad Medic";
 				};
@@ -2397,6 +2546,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_I_SQ3_Radio";
 					init="Grp_I_CSL = group this; Grp_I_CSL setGroupId [""Charlie Squad Lead""];";
 					description="Charlie Squad Radioman";
 				};
@@ -2411,6 +2561,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CAPTAIN";
 					skill=0.60000002;
+					text="Unit_I_SQ3_SQS";
 					init="Grp_I_CSL = group this; Grp_I_CSL setGroupId [""Charlie Squad Lead""];";
 					description="Charlie Squad Leader Sgt.";
 				};
@@ -2434,6 +2585,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_I_SQ3_FT1_L";
 					init="Grp_I_C1 = group this; Grp_I_C1 setGroupId [""Charlie 1""];";
 					description="Charlie 1 Fireteam Leader";
 				};
@@ -2447,6 +2599,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ3_FT1_AR";
 					init="Grp_I_C1 = group this; Grp_I_C1 setGroupId [""Charlie 1""];";
 					description="Charlie 1 Automatic Rifleman";
 				};
@@ -2460,6 +2613,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ3_FT1_AAR";
 					init="Grp_I_C1 = group this; Grp_I_C1 setGroupId [""Charlie 1""];";
 					description="Charlie 1 Assistant Automatic Rifleman";
 				};
@@ -2473,6 +2627,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ3_FT1_AT";
 					init="Grp_I_C1 = group this; Grp_I_C1 setGroupId [""Charlie 1""];";
 					description="Charlie 1 Rifleman (AT)";
 				};
@@ -2496,6 +2651,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_I_SQ3_FT2_L";
 					init="Grp_I_C2 = group this; Grp_I_C2 setGroupId [""Charlie 2""];";
 					description="Charlie 2 Fireteam Leader";
 				};
@@ -2509,6 +2665,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ3_FT2_AR";
 					init="Grp_I_C2 = group this; Grp_I_C2 setGroupId [""Charlie 2""];";
 					description="Charlie 2 Automatic Rifleman";
 				};
@@ -2522,6 +2679,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ3_FT2_AAR";
 					init="Grp_I_C2 = group this; Grp_I_C2 setGroupId [""Charlie 2""];";
 					description="Charlie 2 Assistant Automatic Rifleman";
 				};
@@ -2535,6 +2693,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ3_FT2_AT";
 					init="Grp_I_C2 = group this; Grp_I_C2 setGroupId [""Charlie 2""];";
 					description="Charlie 2 Rifleman (AT)";
 				};
@@ -2558,6 +2717,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_I_SQ3_FT3_L";
 					init="Grp_I_C3 = group this; Grp_I_C3 setGroupId [""Charlie 3""];";
 					description="Charlie 3 Fireteam Leader";
 				};
@@ -2571,6 +2731,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ3_FT3_AR";
 					init="Grp_I_C3 = group this; Grp_I_C3 setGroupId [""Charlie 3""];";
 					description="Charlie 3 Automatic Rifleman";
 				};
@@ -2584,6 +2745,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ3_FT3_AAR";
 					init="Grp_I_C3 = group this; Grp_I_C3 setGroupId [""Charlie 3""];";
 					description="Charlie 3 Assistant Automatic Rifleman";
 				};
@@ -2597,6 +2759,7 @@ class Mission
 					vehicle="T1_Indep_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ3_FT3_AT";
 					init="Grp_I_C3 = group this; Grp_I_C3 setGroupId [""Charlie 3""];";
 					description="Charlie 3 Rifleman (AT)";
 				};
@@ -2620,6 +2783,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_I_SQ3_F_C";
 					init="Grp_I_CF = group this; Grp_I_CF setGroupId [""Charlie Fox""];";
 					description="Charlie Fox Commander";
 				};
@@ -2634,6 +2798,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_I_SQ3_F_G";
 					init="Grp_I_CF = group this; Grp_I_CF setGroupId [""Charlie Fox""];";
 					description="Charlie Fox Gunner";
 				};
@@ -2647,6 +2812,7 @@ class Mission
 					vehicle="T1_Indep_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SQ3_F_D";
 					init="Grp_I_CF = group this; Grp_I_CF setGroupId [""Charlie Fox""];";
 					description="Charlie Fox Driver";
 				};
@@ -2670,6 +2836,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_I_SF1_L";
 					init="Grp_I_Shadow1 = group this; Grp_I_Shadow1 setGroupId [""Shadow 1""];";
 					description="Shadow 1 Leader";
 				};
@@ -2683,6 +2850,7 @@ class Mission
 					vehicle="T1_Indep_SF_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SF1_AR";
 					init="Grp_I_Shadow1 = group this; Grp_I_Shadow1 setGroupId [""Shadow 1""];";
 					description="Shadow 1 Heavy gunner";
 				};
@@ -2696,6 +2864,7 @@ class Mission
 					vehicle="T1_Indep_SF_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SF1_Radio";
 					init="Grp_I_Shadow1 = group this; Grp_I_Shadow1 setGroupId [""Shadow 1""];";
 					description="Shadow 1 Radioman (AT)";
 				};
@@ -2709,6 +2878,7 @@ class Mission
 					vehicle="T1_Indep_SF_Marksman_DMS_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SF1_Mark";
 					init="Grp_I_Shadow1 = group this; Grp_I_Shadow1 setGroupId [""Shadow 1""];";
 					description="Shadow 1 Marksman";
 				};
@@ -2722,6 +2892,7 @@ class Mission
 					vehicle="T1_Indep_SF_Explosive_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SF1_Sab";
 					init="Grp_I_Shadow1 = group this; Grp_I_Shadow1 setGroupId [""Shadow 1""];";
 					description="Shadow 1 Saboteur";
 				};
@@ -2735,6 +2906,7 @@ class Mission
 					vehicle="T1_Indep_SF_Medic_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SF1_Medic";
 					init="Grp_I_Shadow1 = group this; Grp_I_Shadow1 setGroupId [""Shadow 1""];";
 					description="Shadow 1 Medic";
 				};
@@ -2758,6 +2930,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_I_SF2_L";
 					init="Grp_I_Shadow2 = group this; Grp_I_Shadow2 setGroupId [""Shadow 2""];";
 					description="Shadow 2 Leader";
 				};
@@ -2771,6 +2944,7 @@ class Mission
 					vehicle="T1_Indep_SF_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SF2_AR";
 					init="Grp_I_Shadow2 = group this; Grp_I_Shadow2 setGroupId [""Shadow 2""];";
 					description="Shadow 2 Heavy gunner";
 				};
@@ -2784,6 +2958,7 @@ class Mission
 					vehicle="T1_Indep_SF_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SF2_Radio";
 					init="Grp_I_Shadow2 = group this; Grp_I_Shadow2 setGroupId [""Shadow 2""];";
 					description="Shadow 2 Radioman (AT)";
 				};
@@ -2797,6 +2972,7 @@ class Mission
 					vehicle="T1_Indep_SF_Marksman_DMS_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SF2_Mark";
 					init="Grp_I_Shadow2 = group this; Grp_I_Shadow2 setGroupId [""Shadow 2""];";
 					description="Shadow 2 Marksman";
 				};
@@ -2810,6 +2986,7 @@ class Mission
 					vehicle="T1_Indep_SF_Explosive_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SF2_Sab";
 					init="Grp_I_Shadow2 = group this; Grp_I_Shadow2 setGroupId [""Shadow 2""];";
 					description="Shadow 2 Saboteur";
 				};
@@ -2823,6 +3000,7 @@ class Mission
 					vehicle="T1_Indep_SF_Medic_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SF2_Medic";
 					init="Grp_I_Shadow2 = group this; Grp_I_Shadow2 setGroupId [""Shadow 2""];";
 					description="Shadow 2 Medic";
 				};
@@ -2846,6 +3024,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_I_AIR1_P";
 					init="Grp_I_Reaper1 = group this; Grp_I_Reaper1 setGroupId [""Reaper 1""];";
 					description="Reaper 1-1";
 				};
@@ -2859,6 +3038,7 @@ class Mission
 					vehicle="T1_Indep_Pilot_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_AIR1_CP";
 					init="Grp_I_Reaper1 = group this; Grp_I_Reaper1 setGroupId [""Reaper 1""];";
 					description="Reaper 1-2";
 				};
@@ -2882,6 +3062,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_I_AIR2_P";
 					init="Grp_I_Reaper2 = group this; Grp_I_Reaper2 setGroupId [""Reaper 2""];";
 					description="Reaper 2-1";
 				};
@@ -2895,6 +3076,7 @@ class Mission
 					vehicle="T1_Indep_Pilot_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_AIR2_CP";
 					init="Grp_I_Reaper2 = group this; Grp_I_Reaper2 setGroupId [""Reaper 2""];";
 					description="Reaper 2-2";
 				};
@@ -2918,6 +3100,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_I_S1_Spotter";
 					init="Grp_I_Sierra1 = group this; Grp_I_Sierra1 setGroupId [""Sierra 1""];";
 					description="Sierra 1 Spotter";
 				};
@@ -2931,6 +3114,7 @@ class Mission
 					vehicle="T1_Indep_Sniper_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_S1_Sniper";
 					init="Grp_I_Sierra1 = group this; Grp_I_Sierra1 setGroupId [""Sierra 1""];";
 					description="Sierra 1 Sniper";
 				};
@@ -2954,6 +3138,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_I_S2_Spotter";
 					init="Grp_I_Sierra2 = group this; Grp_I_Sierra2 setGroupId [""Sierra 2""];";
 					description="Sierra 2 Spotter";
 				};
@@ -2967,6 +3152,7 @@ class Mission
 					vehicle="T1_Indep_Sniper_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_S2_Sniper";
 					init="Grp_I_Sierra2 = group this; Grp_I_Sierra2 setGroupId [""Sierra 2""];";
 					description="Sierra 2 Sniper";
 				};
@@ -2990,6 +3176,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_I_R1_L";
 					init="Grp_I_ReconTeam1 = group this; Grp_I_ReconTeam1 setGroupId [""Recon Team 1""];";
 					description="Recon Team 1 Leader";
 				};
@@ -3004,6 +3191,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_I_R1_S";
 					init="Grp_I_ReconTeam1 = group this; Grp_I_ReconTeam1 setGroupId [""Recon Team 1""];";
 					description="Recon Team 1 Scout";
 				};
@@ -3027,6 +3215,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_I_R2_L";
 					init="Grp_I_ReconTeam2 = group this; Grp_I_ReconTeam2 setGroupId [""Recon Team 2""];";
 					description="Recon Team 2 Leader";
 				};
@@ -3041,6 +3230,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_I_R2_S";
 					init="Grp_I_ReconTeam2 = group this; Grp_I_ReconTeam2 setGroupId [""Recon Team 2""];";
 					description="Recon Team 2 Scout";
 				};
@@ -3064,6 +3254,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_I_R3_L";
 					init="Grp_I_ReconTeam3 = group this; Grp_I_ReconTeam3 setGroupId [""Recon Team 3""];";
 					description="Recon Team 3 Leader";
 				};
@@ -3078,6 +3269,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_I_R3_S";
 					init="Grp_I_ReconTeam3 = group this; Grp_I_ReconTeam3 setGroupId [""Recon Team 3""];";
 					description="Recon Team 3 Scout";
 				};
@@ -3101,6 +3293,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
+					text="Unit_I_R4_L";
 					init="Grp_I_ReconTeam4 = group this; Grp_I_ReconTeam4 setGroupId [""Recon Team 4""];";
 					description="Recon Team 4 Leader";
 				};
@@ -3115,6 +3308,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_I_R4_S";
 					init="Grp_I_ReconTeam4 = group this; Grp_I_ReconTeam4 setGroupId [""Recon Team 4""];";
 					description="Recon Team 4 Scout";
 				};
@@ -3138,6 +3332,7 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_I_MG1_G";
 					init="Grp_I_MediumMG1 = group this; Grp_I_MediumMG1 setGroupId [""Medium MG 1""];";
 					description="Medium MG 1 Gunner";
 				};
@@ -3151,6 +3346,7 @@ class Mission
 					vehicle="T1_Indep_Specialist_AMG_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_MG1_A";
 					init="Grp_I_MediumMG1 = group this; Grp_I_MediumMG1 setGroupId [""Medium MG 1""];";
 					description="Medium MG 1 Assistant";
 				};
@@ -3174,6 +3370,7 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_I_MG2_G";
 					init="Grp_I_MediumMG2 = group this; Grp_I_MediumMG2 setGroupId [""Medium MG 2""];";
 					description="Medium MG 2 Gunner";
 				};
@@ -3187,6 +3384,7 @@ class Mission
 					vehicle="T1_Indep_Specialist_AMG_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_MG2_A";
 					init="Grp_I_MediumMG2 = group this; Grp_I_MediumMG2 setGroupId [""Medium MG 2""];";
 					description="Medium MG 2 Assistant";
 				};
@@ -3210,6 +3408,7 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_I_AA1_G";
 					init="Grp_I_HeavyAA1 = group this; Grp_I_HeavyAA1 setGroupId [""Heavy AA 1""];";
 					description="Heavy Anti Air 1 Gunner";
 				};
@@ -3223,6 +3422,7 @@ class Mission
 					vehicle="T1_Indep_Specialist_AAA_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_AA1_A";
 					init="Grp_I_HeavyAA1 = group this; Grp_I_HeavyAA1 setGroupId [""Heavy AA 1""];";
 					description="Heavy Anti Air 1 Assistant";
 				};
@@ -3246,6 +3446,7 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_I_AA2_G";
 					init="Grp_I_HeavyAA2 = group this; Grp_I_HeavyAA2 setGroupId [""Heavy AA 2""];";
 					description="Heavy Anti Air 2 Gunner";
 				};
@@ -3259,6 +3460,7 @@ class Mission
 					vehicle="T1_Indep_Specialist_AAA_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_AA2_A";
 					init="Grp_I_HeavyAA2 = group this; Grp_I_HeavyAA2 setGroupId [""Heavy AA 2""];";
 					description="Heavy Anti Air 2 Assistant";
 				};
@@ -3282,6 +3484,7 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_I_AT1_G";
 					init="Grp_I_HeavyAT1 = group this; Grp_I_HeavyAT1 setGroupId [""Heavy AT 1""];";
 					description="Heavy Anti Tank 1 Gunner";
 				};
@@ -3295,6 +3498,7 @@ class Mission
 					vehicle="T1_Indep_Specialist_AAT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_AT1_A";
 					init="Grp_I_HeavyAT1 = group this; Grp_I_HeavyAT1 setGroupId [""Heavy AT 1""];";
 					description="Heavy Anti Tank 1 Assistant";
 				};
@@ -3318,6 +3522,7 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
+					text="Unit_I_AT2_G";
 					init="Grp_I_HeavyAT2 = group this; Grp_I_HeavyAT2 setGroupId [""Heavy AT 2""];";
 					description="Heavy Anti Tank 2 Gunner";
 				};
@@ -3331,6 +3536,7 @@ class Mission
 					vehicle="T1_Indep_Specialist_AAT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_AT2_A";
 					init="Grp_I_HeavyAT2 = group this; Grp_I_HeavyAT2 setGroupId [""Heavy AT 2""];";
 					description="Heavy Anti Tank 2 Assistant";
 				};
@@ -3344,7 +3550,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={0,0,0};
+					position[]={6923.6782,120.01808,8865.3838};
 					id=202;
 					side="CIV";
 					vehicle="C_man_polo_1_F_afro";
@@ -3376,6 +3582,7 @@ class Mission
 					leader=1;
 					rank="COLONEL";
 					skill=0.60000002;
+					text="Unit_B_SEN_CL";
 					init="Grp_B_SENCL = group this; Grp_B_SENCL setGroupId [""Sentinel Company Lead""];";
 					description="Sentinel Company Leader";
 				};
@@ -3389,6 +3596,7 @@ class Mission
 					player="PLAY CDG";
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_B_SEN_G";
 					init="Grp_B_SENCL = group this; Grp_B_SENCL setGroupId [""Sentinel Company Lead""];";
 					description="Sentinel Gunner";
 				};
@@ -3401,6 +3609,7 @@ class Mission
 					vehicle="T1_Squad_Medic_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_SEN_D";
 					init="Grp_B_SENCL = group this; Grp_B_SENCL setGroupId [""Sentinel Company Lead""];";
 					description="Sentinel Driver/Medic";
 				};
@@ -3423,6 +3632,7 @@ class Mission
 					leader=1;
 					rank="COLONEL";
 					skill=0.60000002;
+					text="Unit_B_H1_L";
 					init="Grp_B_H1 = group this; Grp_B_H1 setGroupId [""Hammer 1""]; this addItem ""ACRE_PRC152"";";
 					description="Hammer 1 Platoon Leader";
 				};
@@ -3436,6 +3646,7 @@ class Mission
 					player="PLAY CDG";
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_B_H1_G";
 					init="Grp_B_H1 = group this; Grp_B_H1 setGroupId [""Hammer 1""];";
 					description="Hammer 1 Gunner";
 				};
@@ -3448,6 +3659,7 @@ class Mission
 					vehicle="T1_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_H1_D";
 					init="Grp_B_H1 = group this; Grp_B_H1 setGroupId [""Hammer 1""];";
 					description="Hammer 1 Driver";
 				};
@@ -3470,6 +3682,7 @@ class Mission
 					leader=1;
 					rank="COLONEL";
 					skill=0.60000002;
+					text="Unit_B_H2_L";
 					init="Grp_B_H2 = group this; Grp_B_H2 setGroupId [""Hammer 2""]; this addItem ""ACRE_PRC152"";";
 					description="Hammer 2 Commander";
 				};
@@ -3483,6 +3696,7 @@ class Mission
 					player="PLAY CDG";
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_B_H2_G";
 					init="Grp_B_H2 = group this; Grp_B_H2 setGroupId [""Hammer 2""];";
 					description="Hammer 2 Gunner";
 				};
@@ -3495,6 +3709,7 @@ class Mission
 					vehicle="T1_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_H2_D";
 					init="Grp_B_H2 = group this; Grp_B_H2 setGroupId [""Hammer 2""];";
 					description="Hammer 2 Driver";
 				};
@@ -3517,6 +3732,7 @@ class Mission
 					leader=1;
 					rank="COLONEL";
 					skill=0.60000002;
+					text="Unit_B_H3_L";
 					init="Grp_B_H3 = group this; Grp_B_H3 setGroupId [""Hammer 3""]; this addItem ""ACRE_PRC152"";";
 					description="Hammer 3 Commander";
 				};
@@ -3530,6 +3746,7 @@ class Mission
 					player="PLAY CDG";
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_B_H3_G";
 					init="Grp_B_H3 = group this; Grp_B_H3 setGroupId [""Hammer 3""];";
 					description="Hammer 3 Gunner";
 				};
@@ -3542,6 +3759,7 @@ class Mission
 					vehicle="T1_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_H3_D";
 					init="Grp_B_H3 = group this; Grp_B_H3 setGroupId [""Hammer 3""];";
 					description="Hammer 3 Driver";
 				};
@@ -3564,6 +3782,7 @@ class Mission
 					leader=1;
 					rank="COLONEL";
 					skill=0.60000002;
+					text="Unit_B_H4_L";
 					init="Grp_B_H4 = group this; Grp_B_H4 setGroupId [""Hammer 4""]; this addItem ""ACRE_PRC152"";";
 					description="Hammer 4 Commander";
 				};
@@ -3577,6 +3796,7 @@ class Mission
 					player="PLAY CDG";
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_B_H4_G";
 					init="Grp_B_H4 = group this; Grp_B_H4 setGroupId [""Hammer 4""];";
 					description="Hammer 4 Gunner";
 				};
@@ -3589,6 +3809,7 @@ class Mission
 					vehicle="T1_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_H4_D";
 					init="Grp_B_H4 = group this; Grp_B_H4 setGroupId [""Hammer 4""];";
 					description="Hammer 4 Driver";
 				};
@@ -3611,6 +3832,7 @@ class Mission
 					leader=1;
 					rank="COLONEL";
 					skill=0.60000002;
+					text="Unit_B_I1_L";
 					init="Grp_B_I1 = group this; Grp_B_I1 setGroupId [""Impact 1""]; this addItem ""ACRE_PRC152"";";
 					description="Impact 1 Platoon Leader";
 				};
@@ -3624,6 +3846,7 @@ class Mission
 					player="PLAY CDG";
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_B_I1_G";
 					init="Grp_B_I1 = group this; Grp_B_I1 setGroupId [""Impact 1""];";
 					description="Impact 1 Gunner";
 				};
@@ -3636,6 +3859,7 @@ class Mission
 					vehicle="T1_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_I1_D";
 					init="Grp_B_I1 = group this; Grp_B_I1 setGroupId [""Impact 1""];";
 					description="Impact 1 Driver";
 				};
@@ -3658,6 +3882,7 @@ class Mission
 					leader=1;
 					rank="COLONEL";
 					skill=0.60000002;
+					text="Unit_B_I2_L";
 					init="Grp_B_I2 = group this; Grp_B_I2 setGroupId [""Impact 2""]; this addItem ""ACRE_PRC152"";";
 					description="Impact 2 Commander";
 				};
@@ -3671,6 +3896,7 @@ class Mission
 					player="PLAY CDG";
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_B_I2_G";
 					init="Grp_B_I2 = group this; Grp_B_I2 setGroupId [""Impact 2""];";
 					description="Impact 2 Gunner";
 				};
@@ -3683,6 +3909,7 @@ class Mission
 					vehicle="T1_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_I2_D";
 					init="Grp_B_I2 = group this; Grp_B_I2 setGroupId [""Impact 2""];";
 					description="Impact 2 Driver";
 				};
@@ -3705,6 +3932,7 @@ class Mission
 					leader=1;
 					rank="COLONEL";
 					skill=0.60000002;
+					text="Unit_B_I3_L";
 					init="Grp_B_I3 = group this; Grp_B_I3 setGroupId [""Impact 3""]; this addItem ""ACRE_PRC152"";";
 					description="Impact 3 Commander";
 				};
@@ -3718,6 +3946,7 @@ class Mission
 					player="PLAY CDG";
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_B_I3_G";
 					init="Grp_B_I3 = group this; Grp_B_I3 setGroupId [""Impact 3""];";
 					description="Impact 3 Gunner";
 				};
@@ -3730,6 +3959,7 @@ class Mission
 					vehicle="T1_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_I3_D";
 					init="Grp_B_I3 = group this; Grp_B_I3 setGroupId [""Impact 3""];";
 					description="Impact 3 Driver";
 				};
@@ -3752,6 +3982,7 @@ class Mission
 					leader=1;
 					rank="COLONEL";
 					skill=0.60000002;
+					text="Unit_B_I4_L";
 					init="Grp_B_I4 = group this; Grp_B_I4 setGroupId [""Impact 4""]; this addItem ""ACRE_PRC152"";";
 					description="Impact 4 Commander";
 				};
@@ -3765,6 +3996,7 @@ class Mission
 					player="PLAY CDG";
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_B_I4_G";
 					init="Grp_B_I4 = group this; Grp_B_I4 setGroupId [""Impact 4""];";
 					description="Impact 4 Gunner";
 				};
@@ -3777,6 +4009,7 @@ class Mission
 					vehicle="T1_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_B_I4_D";
 					init="Grp_B_I4 = group this; Grp_B_I4 setGroupId [""Impact 4""];";
 					description="Impact 4 Driver";
 				};
@@ -3800,6 +4033,7 @@ class Mission
 					leader=1;
 					rank="COLONEL";
 					skill=0.60000002;
+					text="Unit_I_SEN_CL";
 					init="Grp_I_SENCL = group this; Grp_I_SENCL setGroupId [""Sentinel Company Lead""];";
 					description="Sentinel Company Leader";
 				};
@@ -3814,6 +4048,7 @@ class Mission
 					player="PLAY CDG";
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_I_SEN_G";
 					init="Grp_I_SENCL = group this; Grp_I_SENCL setGroupId [""Sentinel Company Lead""];";
 					description="Sentinel Gunner";
 				};
@@ -3827,6 +4062,7 @@ class Mission
 					vehicle="T1_Indep_Squad_Medic_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_SEN_D";
 					init="Grp_I_SENCL = group this; Grp_I_SENCL setGroupId [""Sentinel Company Lead""];";
 					description="Sentinel Driver/Medic";
 				};
@@ -3845,12 +4081,13 @@ class Mission
 					special="NONE";
 					id=233;
 					side="GUER";
-					vehicle="T1_Indep_Crewman_Standard_F";
+					vehicle="T1_Indep_Crewman_FTL_Standard_F";
 					player="PLAY CDG";
 					leader=1;
 					rank="COLONEL";
 					skill=0.60000002;
-					init="Grp_I_H1 = group this; Grp_I_H1 setGroupId [""Hammer 1""]; this addItem ""ACRE_PRC152"";";
+					text="Unit_I_H1_L";
+					init="Grp_I_H1 = group this; Grp_I_H1 setGroupId [""Hammer 1""];";
 					description="Hammer 1 Platoon Leader";
 				};
 				class Item1
@@ -3863,6 +4100,7 @@ class Mission
 					vehicle="T1_Indep_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_H1_G";
 					init="Grp_I_H1 = group this; Grp_I_H1 setGroupId [""Hammer 1""];";
 					description="Hammer 1 Driver";
 				};
@@ -3877,6 +4115,7 @@ class Mission
 					player="PLAY CDG";
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_I_H1_D";
 					init="Grp_I_H1 = group this; Grp_I_H1 setGroupId [""Hammer 1""];";
 					description="Hammer 1 Gunner";
 				};
@@ -3895,12 +4134,13 @@ class Mission
 					special="NONE";
 					id=236;
 					side="GUER";
-					vehicle="T1_Indep_Crewman_Standard_F";
+					vehicle="T1_Indep_Crewman_FTL_Standard_F";
 					player="PLAY CDG";
 					leader=1;
 					rank="COLONEL";
 					skill=0.60000002;
-					init="Grp_I_H2 = group this; Grp_I_H2 setGroupId [""Hammer 2""]; this addItem ""ACRE_PRC152"";";
+					text="Unit_I_H2_G";
+					init="Grp_I_H2 = group this; Grp_I_H2 setGroupId [""Hammer 2""];";
 					description="Hammer 2 Commander";
 				};
 				class Item1
@@ -3913,6 +4153,7 @@ class Mission
 					vehicle="T1_Indep_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_H2_G";
 					init="Grp_I_H2 = group this; Grp_I_H2 setGroupId [""Hammer 2""];";
 					description="Hammer 2 Driver";
 				};
@@ -3927,6 +4168,7 @@ class Mission
 					player="PLAY CDG";
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_I_H2_D";
 					init="Grp_I_H2 = group this; Grp_I_H2 setGroupId [""Hammer 2""];";
 					description="Hammer 2 Gunner";
 				};
@@ -3945,12 +4187,13 @@ class Mission
 					special="NONE";
 					id=239;
 					side="GUER";
-					vehicle="T1_Indep_Crewman_Standard_F";
+					vehicle="T1_Indep_Crewman_FTL_Standard_F";
 					player="PLAY CDG";
 					leader=1;
 					rank="COLONEL";
 					skill=0.60000002;
-					init="Grp_I_H3 = group this; Grp_I_H3 setGroupId [""Hammer 3""]; this addItem ""ACRE_PRC152"";";
+					text="Unit_I_H3_L";
+					init="Grp_I_H3 = group this; Grp_I_H3 setGroupId [""Hammer 3""];";
 					description="Hammer 3 Commander";
 				};
 				class Item1
@@ -3963,6 +4206,7 @@ class Mission
 					vehicle="T1_Indep_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_H3_G";
 					init="Grp_I_H3 = group this; Grp_I_H3 setGroupId [""Hammer 3""];";
 					description="Hammer 3 Driver";
 				};
@@ -3977,6 +4221,7 @@ class Mission
 					player="PLAY CDG";
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_I_H3_D";
 					init="Grp_I_H3 = group this; Grp_I_H3 setGroupId [""Hammer 3""];";
 					description="Hammer 3 Gunner";
 				};
@@ -3995,12 +4240,13 @@ class Mission
 					special="NONE";
 					id=242;
 					side="GUER";
-					vehicle="T1_Indep_Crewman_Standard_F";
+					vehicle="T1_Indep_Crewman_FTL_Standard_F";
 					player="PLAY CDG";
 					leader=1;
 					rank="COLONEL";
 					skill=0.60000002;
-					init="Grp_I_H4 = group this; Grp_I_H4 setGroupId [""Hammer 4""]; this addItem ""ACRE_PRC152"";";
+					text="Unit_I_H4_L";
+					init="Grp_I_H4 = group this; Grp_I_H4 setGroupId [""Hammer 4""];";
 					description="Hammer 4 Commander";
 				};
 				class Item1
@@ -4013,6 +4259,7 @@ class Mission
 					vehicle="T1_Indep_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_H4_G";
 					init="Grp_I_H4 = group this; Grp_I_H4 setGroupId [""Hammer 4""];";
 					description="Hammer 4 Driver";
 				};
@@ -4027,6 +4274,7 @@ class Mission
 					player="PLAY CDG";
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_I_H4_D";
 					init="Grp_I_H4 = group this; Grp_I_H4 setGroupId [""Hammer 4""];";
 					description="Hammer 4 Gunner";
 				};
@@ -4045,12 +4293,13 @@ class Mission
 					special="NONE";
 					id=245;
 					side="GUER";
-					vehicle="T1_Indep_Crewman_Standard_F";
+					vehicle="T1_Indep_Crewman_FTL_Standard_F";
 					player="PLAY CDG";
 					leader=1;
 					rank="COLONEL";
 					skill=0.60000002;
-					init="Grp_I_I1 = group this; Grp_I_I1 setGroupId [""Impact 1""]; this addItem ""ACRE_PRC152"";";
+					text="Unit_I_I1_L";
+					init="Grp_I_I1 = group this; Grp_I_I1 setGroupId [""Impact 1""];";
 					description="Impact 1 Platoon Leader";
 				};
 				class Item1
@@ -4063,6 +4312,7 @@ class Mission
 					vehicle="T1_Indep_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_I1_G";
 					init="Grp_I_I1 = group this; Grp_I_I1 setGroupId [""Impact 1""];";
 					description="Impact 1 Driver";
 				};
@@ -4077,6 +4327,7 @@ class Mission
 					player="PLAY CDG";
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_I_I1_D";
 					init="Grp_I_I1 = group this; Grp_I_I1 setGroupId [""Impact 1""];";
 					description="Impact 1 Gunner";
 				};
@@ -4095,12 +4346,13 @@ class Mission
 					special="NONE";
 					id=248;
 					side="GUER";
-					vehicle="T1_Indep_Crewman_Standard_F";
+					vehicle="T1_Indep_Crewman_FTL_Standard_F";
 					player="PLAY CDG";
 					leader=1;
 					rank="COLONEL";
 					skill=0.60000002;
-					init="Grp_I_I2 = group this; Grp_I_I2 setGroupId [""Impact 2""]; this addItem ""ACRE_PRC152"";";
+					text="Unit_I_I2_L";
+					init="Grp_I_I2 = group this; Grp_I_I2 setGroupId [""Impact 2""];";
 					description="Impact 2 Commander";
 				};
 				class Item1
@@ -4113,6 +4365,7 @@ class Mission
 					vehicle="T1_Indep_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_I2_G";
 					init="Grp_I_I2 = group this; Grp_I_I2 setGroupId [""Impact 2""];";
 					description="Impact 2 Driver";
 				};
@@ -4127,6 +4380,7 @@ class Mission
 					player="PLAY CDG";
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_I_I2_D";
 					init="Grp_I_I2 = group this; Grp_I_I2 setGroupId [""Impact 2""];";
 					description="Impact 2 Gunner";
 				};
@@ -4145,12 +4399,13 @@ class Mission
 					special="NONE";
 					id=251;
 					side="GUER";
-					vehicle="T1_Indep_Crewman_Standard_F";
+					vehicle="T1_Indep_Crewman_FTL_Standard_F";
 					player="PLAY CDG";
 					leader=1;
 					rank="COLONEL";
 					skill=0.60000002;
-					init="Grp_I_I3 = group this; Grp_I_I3 setGroupId [""Impact 3""]; this addItem ""ACRE_PRC152"";";
+					text="Unit_I_I3_L";
+					init="Grp_I_I3 = group this; Grp_I_I3 setGroupId [""Impact 3""];";
 					description="Impact 3 Commander";
 				};
 				class Item1
@@ -4163,6 +4418,7 @@ class Mission
 					vehicle="T1_Indep_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_I3_G";
 					init="Grp_I_I3 = group this; Grp_I_I3 setGroupId [""Impact 3""];";
 					description="Impact 3 Driver";
 				};
@@ -4177,6 +4433,7 @@ class Mission
 					player="PLAY CDG";
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_I_I3_D";
 					init="Grp_I_I3 = group this; Grp_I_I3 setGroupId [""Impact 3""];";
 					description="Impact 3 Gunner";
 				};
@@ -4195,12 +4452,13 @@ class Mission
 					special="NONE";
 					id=254;
 					side="GUER";
-					vehicle="T1_Indep_Crewman_Standard_F";
+					vehicle="T1_Indep_Crewman_FTL_Standard_F";
 					player="PLAY CDG";
 					leader=1;
 					rank="COLONEL";
 					skill=0.60000002;
-					init="Grp_I_I4 = group this; Grp_I_I4 setGroupId [""Impact 4""]; this addItem ""ACRE_PRC152"";";
+					text="Unit_I_I4_L";
+					init="Grp_I_I4 = group this; Grp_I_I4 setGroupId [""Impact 4""];";
 					description="Impact 4 Commander";
 				};
 				class Item1
@@ -4213,6 +4471,7 @@ class Mission
 					vehicle="T1_Indep_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
+					text="Unit_I_I4_G";
 					init="Grp_I_I4 = group this; Grp_I_I4 setGroupId [""Impact 4""];";
 					description="Impact 4 Driver";
 				};
@@ -4227,6 +4486,7 @@ class Mission
 					player="PLAY CDG";
 					rank="MAJOR";
 					skill=0.60000002;
+					text="Unit_I_I4_D";
 					init="Grp_I_I4 = group this; Grp_I_I4 setGroupId [""Impact 4""];";
 					description="Impact 4 Gunner";
 				};
@@ -4258,19 +4518,19 @@ class Intro
 	class Intel
 	{
 		timeOfChanges=1800.0002;
-		startWeather=0.40000001;
+		startWeather=0;
 		startWind=0.1;
 		startWaves=0.1;
-		forecastWeather=0.40000001;
+		forecastWeather=0;
 		forecastWind=0.1;
 		forecastWaves=0.1;
-		forecastLightnings=0.1;
-		year=2009;
-		day=28;
-		hour=16;
-		minute=20;
-		startFogDecay=0.0049999999;
-		forecastFogDecay=0.0049999999;
+		wavesForced=1;
+		windForced=1;
+		year=2015;
+		hour=14;
+		minute=0;
+		startFogDecay=0;
+		forecastFogDecay=0;
 	};
 };
 class OutroWin
@@ -4279,19 +4539,19 @@ class OutroWin
 	class Intel
 	{
 		timeOfChanges=1800.0002;
-		startWeather=0.40000001;
+		startWeather=0;
 		startWind=0.1;
 		startWaves=0.1;
-		forecastWeather=0.40000001;
+		forecastWeather=0;
 		forecastWind=0.1;
 		forecastWaves=0.1;
-		forecastLightnings=0.1;
-		year=2009;
-		day=28;
-		hour=16;
-		minute=20;
-		startFogDecay=0.0049999999;
-		forecastFogDecay=0.0049999999;
+		wavesForced=1;
+		windForced=1;
+		year=2015;
+		hour=17;
+		minute=0;
+		startFogDecay=0;
+		forecastFogDecay=0;
 	};
 };
 class OutroLoose
@@ -4300,18 +4560,18 @@ class OutroLoose
 	class Intel
 	{
 		timeOfChanges=1800.0002;
-		startWeather=0.40000001;
+		startWeather=0;
 		startWind=0.1;
 		startWaves=0.1;
-		forecastWeather=0.40000001;
+		forecastWeather=0;
 		forecastWind=0.1;
 		forecastWaves=0.1;
-		forecastLightnings=0.1;
-		year=2009;
-		day=28;
-		hour=16;
-		minute=20;
-		startFogDecay=0.0049999999;
-		forecastFogDecay=0.0049999999;
+		wavesForced=1;
+		windForced=1;
+		year=2015;
+		hour=17;
+		minute=0;
+		startFogDecay=0;
+		forecastFogDecay=0;
 	};
 };

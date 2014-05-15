@@ -4,15 +4,13 @@ class Mission
 	addOns[]=
 	{
 		"A3_Characters_F_BLUFOR",
-		"A3_Structures_F_Mil_Fortification",
-		"A3_Structures_F_Mil_Helipads",
-		"A3_Structures_F_Walls",
+		"A3_Characters_F_OPFOR",
 		"a3_characters_f_beta",
-		"A3_Signs_F",
+		"a3_characters_f_gamma",
+		"A3_Characters_F_INDEP",
+		"A3_Characters_F_Civil",
 		"a3_map_altis",
 		"t1_units",
-		"a3_characters_f_gamma",
-		"A3_Characters_F_Civil",
 		"t1_indep_units"
 	};
 	addOnsAuto[]=
@@ -26,27 +24,26 @@ class Mission
 	randomSeed=8544039;
 	class Intel
 	{
-		briefingName="Tier1 Mission v1";
-		overviewText="dynamic mission creator";
+		briefingName="Tier1 Mission Template v1";
+		overviewText="Tier 1 Mission Template v1 (15-05-14)";
 		resistanceWest=0;
 		startWeather=0;
-		startWind=0;
+		startWind=0.1;
+		startWaves=0.1;
 		forecastWeather=0;
 		forecastWind=0;
 		forecastWaves=0;
 		wavesForced=1;
 		windForced=1;
 		year=2035;
-		month=8;
-		day=7;
 		hour=14;
 		minute=0;
-		startFogDecay=0.0049333;
-		forecastFogDecay=0.0049333;
+		startFogDecay=0;
+		forecastFogDecay=0;
 	};
 	class Groups
 	{
-		items=69;
+		items=87;
 		class Item0
 		{
 			side="WEST";
@@ -55,7 +52,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14307.968,17.703478,16073.391};
+					position[]={14352.775,17.759113,16112.609};
 					azimut=142.23514;
 					special="NONE";
 					id=0;
@@ -65,12 +62,13 @@ class Mission
 					leader=1;
 					rank="MAJOR";
 					skill=0.60000002;
-					init="Grp_PL = group this; Grp_PL setGroupId [""Platoon Lead""];";
-					description="Platoon Leader";
+					text="Unit_B_HITPL_lead";
+					init="Grp_B_HITPL = group this; Grp_B_HITPL setGroupId [""Hitman Platoon Lead""];";
+					description="Hitman Platoon Leader";
 				};
 				class Item1
 				{
-					position[]={14303.918,17.625044,16069.433};
+					position[]={14348.726,17.683058,16108.651};
 					azimut=142.23514;
 					special="NONE";
 					id=1;
@@ -78,12 +76,13 @@ class Mission
 					vehicle="T1_Squad_Medic_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_PL = group this; Grp_PL setGroupId [""Platoon Lead""];";
-					description="Platoon Medic";
+					text="Unit_B_HITPL_Medic";
+					init="Grp_B_HITPL = group this; Grp_B_HITPL setGroupId [""Hitman Platoon Lead""];";
+					description="Hitman Platoon Medic";
 				};
 				class Item2
 				{
-					position[]={14303.205,17.737141,16078.498};
+					position[]={14348.013,17.889605,16117.717};
 					azimut=24.771015;
 					special="NONE";
 					id=2;
@@ -92,12 +91,13 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_PL = group this; Grp_PL setGroupId [""Platoon Lead""];";
-					description="Platoon Lead Radioman";
+					text="Unit_B_HITPL_Radio";
+					init="Grp_B_HITPL = group this; Grp_B_HITPL setGroupId [""Hitman Platoon Lead""];";
+					description="Hitman Platoon Lead Radioman";
 				};
 				class Item3
 				{
-					position[]={14299.181,17.663363,16073.991};
+					position[]={14343.988,17.708002,16113.21};
 					azimut=24.771015;
 					special="NONE";
 					id=3;
@@ -106,8 +106,9 @@ class Mission
 					player="PLAY CDG";
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_PL = group this; Grp_PL setGroupId [""Platoon Lead""];";
-					description="Platoon Lead Sgt.";
+					text="Unit_B_HITPL_PS";
+					init="Grp_B_HITPL = group this; Grp_B_HITPL setGroupId [""Hitman Platoon Lead""];";
+					description="Hitman Platoon Lead Sgt.";
 				};
 			};
 		};
@@ -119,7 +120,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14337.322,17.566933,16102.242};
+					position[]={14382.13,17.702394,16141.461};
 					azimut=142.23514;
 					special="NONE";
 					id=4;
@@ -129,12 +130,13 @@ class Mission
 					leader=1;
 					rank="MAJOR";
 					skill=0.60000002;
-					init="Grp_ASL = group this; Grp_ASL setGroupId [""Alpha Squad Lead""];";
+					text="Unit_B_SQ1_SQL";
+					init="Grp_B_ASL = group this; Grp_B_ASL setGroupId [""Alpha Squad Lead""];";
 					description="Alpha Squad Leader";
 				};
 				class Item1
 				{
-					position[]={14333.201,17.673466,16098.659};
+					position[]={14378.009,17.771729,16137.878};
 					azimut=142.23514;
 					special="NONE";
 					id=5;
@@ -142,12 +144,13 @@ class Mission
 					vehicle="T1_Squad_Medic_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_ASL = group this; Grp_ASL setGroupId [""Alpha Squad Lead""];";
+					text="Unit_B_SQ1_Medic";
+					init="Grp_B_ASL = group this; Grp_B_ASL setGroupId [""Alpha Squad Lead""];";
 					description="Alpha Squad Medic";
 				};
 				class Item2
 				{
-					position[]={14331.479,17.623171,16108.301};
+					position[]={14376.286,17.681215,16147.52};
 					azimut=24.771;
 					special="NONE";
 					id=6;
@@ -156,12 +159,13 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_ASL = group this; Grp_ASL setGroupId [""Alpha Squad Lead""];";
+					text="Unit_B_SQ1_Radio";
+					init="Grp_B_ASL = group this; Grp_B_ASL setGroupId [""Alpha Squad Lead""];";
 					description="Alpha Squad Radioman";
 				};
 				class Item3
 				{
-					position[]={14327.513,17.537142,16099.096};
+					position[]={14372.32,17.87418,16138.314};
 					azimut=127.30772;
 					special="NONE";
 					id=7;
@@ -170,7 +174,8 @@ class Mission
 					player="PLAY CDG";
 					rank="CAPTAIN";
 					skill=0.60000002;
-					init="Grp_ASL = group this; Grp_ASL setGroupId [""Alpha Squad Lead""];";
+					text="Unit_B_SQ1_SQS";
+					init="Grp_B_ASL = group this; Grp_B_ASL setGroupId [""Alpha Squad Lead""];";
 					description="Alpha Squad Leader Sgt.";
 				};
 			};
@@ -183,7 +188,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14342.33,17.571659,16097.717};
+					position[]={14387.138,17.781267,16136.936};
 					azimut=-57.536015;
 					special="NONE";
 					id=8;
@@ -193,12 +198,13 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_A1 = group this; Grp_A1 setGroupId [""Alpha 1""];";
+					text="Unit_B_SQ1_FT1_L";
+					init="Grp_B_A1 = group this; Grp_B_A1 setGroupId [""Alpha 1""];";
 					description="Alpha 1 Fireteam Leader";
 				};
 				class Item1
 				{
-					position[]={14345.804,17.588711,16094.531};
+					position[]={14390.611,17.844988,16133.75};
 					azimut=-57.536015;
 					special="NONE";
 					id=9;
@@ -206,12 +212,13 @@ class Mission
 					vehicle="T1_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_A1 = group this; Grp_A1 setGroupId [""Alpha 1""];";
+					text="Unit_B_SQ1_FT1_AR";
+					init="Grp_B_A1 = group this; Grp_B_A1 setGroupId [""Alpha 1""];";
 					description="Alpha 1 Automatic Rifleman";
 				};
 				class Item2
 				{
-					position[]={14349.011,17.653292,16091.327};
+					position[]={14393.818,17.868242,16130.546};
 					azimut=-57.536015;
 					special="NONE";
 					id=10;
@@ -219,12 +226,13 @@ class Mission
 					vehicle="T1_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_A1 = group this; Grp_A1 setGroupId [""Alpha 1""];";
+					text="Unit_B_SQ1_FT1_AAR";
+					init="Grp_B_A1 = group this; Grp_B_A1 setGroupId [""Alpha 1""];";
 					description="Alpha 1 Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
-					position[]={14352.878,17.767616,16087.368};
+					position[]={14397.686,17.863085,16126.587};
 					azimut=-57.536015;
 					special="NONE";
 					id=11;
@@ -232,7 +240,8 @@ class Mission
 					vehicle="T1_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_A1 = group this; Grp_A1 setGroupId [""Alpha 1""];";
+					text="Unit_B_SQ1_FT1_AT";
+					init="Grp_B_A1 = group this; Grp_B_A1 setGroupId [""Alpha 1""];";
 					description="Alpha 1 Rifleman (AT)";
 				};
 			};
@@ -245,7 +254,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14338.17,17.681412,16093.357};
+					position[]={14382.978,17.871159,16132.576};
 					azimut=-57.536015;
 					special="NONE";
 					id=12;
@@ -255,12 +264,13 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_A2 = group this; Grp_A2 setGroupId [""Alpha 2""];";
+					text="Unit_B_SQ1_FT2_L";
+					init="Grp_B_A2 = group this; Grp_B_A2 setGroupId [""Alpha 2""];";
 					description="Alpha 2 Fireteam Leader";
 				};
 				class Item1
 				{
-					position[]={14341.696,17.702873,16090.114};
+					position[]={14386.504,17.856707,16129.333};
 					azimut=-57.536015;
 					special="NONE";
 					id=13;
@@ -268,12 +278,13 @@ class Mission
 					vehicle="T1_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_A2 = group this; Grp_A2 setGroupId [""Alpha 2""];";
+					text="Unit_B_SQ1_FT2_AR";
+					init="Grp_B_A2 = group this; Grp_B_A2 setGroupId [""Alpha 2""];";
 					description="Alpha 2 Automatic Rifleman";
 				};
 				class Item2
 				{
-					position[]={14344.979,17.746639,16086.876};
+					position[]={14389.786,17.857059,16126.095};
 					azimut=-57.536015;
 					special="NONE";
 					id=14;
@@ -281,12 +292,13 @@ class Mission
 					vehicle="T1_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_A2 = group this; Grp_A2 setGroupId [""Alpha 2""];";
+					text="Unit_B_SQ1_FT2_AAR";
+					init="Grp_B_A2 = group this; Grp_B_A2 setGroupId [""Alpha 2""];";
 					description="Alpha 2 Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
-					position[]={14348.759,17.817772,16083.307};
+					position[]={14393.566,17.868578,16122.525};
 					azimut=-57.536015;
 					special="NONE";
 					id=15;
@@ -294,7 +306,8 @@ class Mission
 					vehicle="T1_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_A2 = group this; Grp_A2 setGroupId [""Alpha 2""];";
+					text="Unit_B_SQ1_FT2_AT";
+					init="Grp_B_A2 = group this; Grp_B_A2 setGroupId [""Alpha 2""];";
 					description="Alpha 2 Rifleman (AT)";
 				};
 			};
@@ -307,7 +320,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14333.77,17.705496,16089.258};
+					position[]={14378.577,17.830673,16128.477};
 					azimut=-57.536015;
 					special="NONE";
 					id=16;
@@ -317,12 +330,13 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_A3 = group this; Grp_A3 setGroupId [""Alpha 3""];";
+					text="Unit_B_SQ1_FT3_L";
+					init="Grp_B_A3 = group this; Grp_B_A3 setGroupId [""Alpha 3""];";
 					description="Alpha 3 Fireteam Leader";
 				};
 				class Item1
 				{
-					position[]={14337.655,17.758984,16085.876};
+					position[]={14382.463,17.801126,16125.095};
 					azimut=-57.536015;
 					special="NONE";
 					id=17;
@@ -330,12 +344,13 @@ class Mission
 					vehicle="T1_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_A3 = group this; Grp_A3 setGroupId [""Alpha 3""];";
+					text="Unit_B_SQ1_FT3_AR";
+					init="Grp_B_A3 = group this; Grp_B_A3 setGroupId [""Alpha 3""];";
 					description="Alpha 3 Automatic Rifleman";
 				};
 				class Item2
 				{
-					position[]={14341.456,17.842199,16082.618};
+					position[]={14386.264,17.815054,16121.837};
 					azimut=-57.536015;
 					special="NONE";
 					id=18;
@@ -343,12 +358,13 @@ class Mission
 					vehicle="T1_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_A3 = group this; Grp_A3 setGroupId [""Alpha 3""];";
+					text="Unit_B_SQ1_FT3_AAR";
+					init="Grp_B_A3 = group this; Grp_B_A3 setGroupId [""Alpha 3""];";
 					description="Alpha 3 Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
-					position[]={14344.95,17.894384,16079.259};
+					position[]={14389.758,17.84337,16118.478};
 					azimut=-57.536015;
 					special="NONE";
 					id=19;
@@ -356,7 +372,8 @@ class Mission
 					vehicle="T1_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_A3 = group this; Grp_A3 setGroupId [""Alpha 3""];";
+					text="Unit_B_SQ1_FT3_AT";
+					init="Grp_B_A3 = group this; Grp_B_A3 setGroupId [""Alpha 3""];";
 					description="Alpha 3 Rifleman (AT)";
 				};
 			};
@@ -369,7 +386,7 @@ class Mission
 				items=3;
 				class Item0
 				{
-					position[]={14296.695,17.644363,16063.933};
+					position[]={14341.503,17.520142,16103.151};
 					azimut=147.77713;
 					special="NONE";
 					id=20;
@@ -379,12 +396,13 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_AF = group this; Grp_AF setGroupId [""Alpha Fox""];";
+					text="Unit_B_SQ1_F_L";
+					init="Grp_B_AF = group this; Grp_B_AF setGroupId [""Alpha Fox""];";
 					description="Alpha Fox Commander";
 				};
 				class Item1
 				{
-					position[]={14299.859,17.62529,16066.745};
+					position[]={14344.667,17.556593,16105.964};
 					azimut=147.77713;
 					special="NONE";
 					id=21;
@@ -393,12 +411,13 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_AF = group this; Grp_AF setGroupId [""Alpha Fox""];";
+					text="Unit_B_SQ1_F_G";
+					init="Grp_B_AF = group this; Grp_B_AF setGroupId [""Alpha Fox""];";
 					description="Alpha Fox Gunner";
 				};
 				class Item2
 				{
-					position[]={14296.251,17.62006,16070.04};
+					position[]={14341.059,17.642403,16109.259};
 					azimut=147.77713;
 					special="NONE";
 					id=22;
@@ -406,7 +425,8 @@ class Mission
 					vehicle="T1_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_AF = group this; Grp_AF setGroupId [""Alpha Fox""];";
+					text="Unit_B_SQ1_F_D";
+					init="Grp_B_AF = group this; Grp_B_AF setGroupId [""Alpha Fox""];";
 					description="Alpha Fox Driver";
 				};
 			};
@@ -419,7 +439,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14324.058,17.421835,16089.251};
+					position[]={14368.865,17.833151,16128.47};
 					azimut=142.23514;
 					special="NONE";
 					id=23;
@@ -429,12 +449,13 @@ class Mission
 					leader=1;
 					rank="MAJOR";
 					skill=0.60000002;
-					init="Grp_BSL = group this; Grp_BSL setGroupId [""Bravo Squad Lead""];";
+					text="Unit_B_SQ2_SQL";
+					init="Grp_B_BSL = group this; Grp_B_BSL setGroupId [""Bravo Squad Lead""];";
 					description="Bravo Squad Leader";
 				};
 				class Item1
 				{
-					position[]={14320.122,17.430449,16085.444};
+					position[]={14364.93,17.85038,16124.663};
 					azimut=142.23514;
 					special="NONE";
 					id=24;
@@ -442,12 +463,13 @@ class Mission
 					vehicle="T1_Squad_Medic_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_BSL = group this; Grp_BSL setGroupId [""Bravo Squad Lead""];";
+					text="Unit_B_SQ2_Medic";
+					init="Grp_B_BSL = group this; Grp_B_BSL setGroupId [""Bravo Squad Lead""];";
 					description="Bravo Squad Medic";
 				};
 				class Item2
 				{
-					position[]={14328.463,17.50514,16093.76};
+					position[]={14373.271,17.880638,16132.979};
 					azimut=24.771015;
 					special="NONE";
 					id=25;
@@ -456,12 +478,13 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_BSL = group this; Grp_BSL setGroupId [""Bravo Squad Lead""];";
+					text="Unit_B_SQ2_Radio";
+					init="Grp_B_BSL = group this; Grp_B_BSL setGroupId [""Bravo Squad Lead""];";
 					description="Bravo Squad Radioman";
 				};
 				class Item3
 				{
-					position[]={14318.609,17.366308,16090.557};
+					position[]={14363.417,17.875359,16129.775};
 					azimut=134.89713;
 					special="NONE";
 					id=26;
@@ -470,7 +493,8 @@ class Mission
 					player="PLAY CDG";
 					rank="CAPTAIN";
 					skill=0.60000002;
-					init="Grp_BSL = group this; Grp_BSL setGroupId [""Bravo Squad Lead""];";
+					text="Unit_B_SQ2_SQS";
+					init="Grp_B_BSL = group this; Grp_B_BSL setGroupId [""Bravo Squad Lead""];";
 					description="Bravo Squad Leader Sgt.";
 				};
 			};
@@ -483,7 +507,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14329.374,17.619059,16084.729};
+					position[]={14374.182,17.784424,16123.947};
 					azimut=-57.536015;
 					special="NONE";
 					id=27;
@@ -493,12 +517,13 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_B1 = group this; Grp_B1 setGroupId [""Bravo 1""];";
+					text="Unit_B_SQ2_FT1_L";
+					init="Grp_B_B1 = group this; Grp_B_B1 setGroupId [""Bravo 1""];";
 					description="Bravo 1 Fireteam Leader";
 				};
 				class Item1
 				{
-					position[]={14333.038,17.771379,16081.437};
+					position[]={14377.846,17.780462,16120.655};
 					azimut=-57.536015;
 					special="NONE";
 					id=28;
@@ -506,12 +531,13 @@ class Mission
 					vehicle="T1_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_B1 = group this; Grp_B1 setGroupId [""Bravo 1""];";
+					text="Unit_B_SQ2_FT1_AR";
+					init="Grp_B_B1 = group this; Grp_B_B1 setGroupId [""Bravo 1""];";
 					description="Bravo 1 Automatic Rifleman";
 				};
 				class Item2
 				{
-					position[]={14336.74,17.847851,16078.42};
+					position[]={14381.548,17.785398,16117.639};
 					azimut=-57.536015;
 					special="NONE";
 					id=29;
@@ -519,12 +545,13 @@ class Mission
 					vehicle="T1_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_B1 = group this; Grp_B1 setGroupId [""Bravo 1""];";
+					text="Unit_B_SQ2_FT1_AAR";
+					init="Grp_B_B1 = group this; Grp_B_B1 setGroupId [""Bravo 1""];";
 					description="Bravo 1 Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
-					position[]={14340.312,17.9,16075.232};
+					position[]={14385.119,17.799089,16114.451};
 					azimut=-57.536015;
 					special="NONE";
 					id=30;
@@ -532,7 +559,8 @@ class Mission
 					vehicle="T1_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_B1 = group this; Grp_B1 setGroupId [""Bravo 1""];";
+					text="Unit_B_SQ2_FT1_AT";
+					init="Grp_B_B1 = group this; Grp_B_B1 setGroupId [""Bravo 1""];";
 					description="Bravo 1 Rifleman (AT)";
 				};
 			};
@@ -545,7 +573,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14325.716,17.668512,16080.901};
+					position[]={14370.523,17.783495,16120.12};
 					azimut=-57.536015;
 					special="NONE";
 					id=31;
@@ -555,12 +583,13 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_B2 = group this; Grp_B2 setGroupId [""Bravo 2""];";
+					text="Unit_B_SQ2_FT2_L";
+					init="Grp_B_B2 = group this; Grp_B_B2 setGroupId [""Bravo 2""];";
 					description="Bravo 2 Fireteam Leader";
 				};
 				class Item1
 				{
-					position[]={14329.563,17.788523,16077.475};
+					position[]={14374.371,17.781075,16116.693};
 					azimut=-57.536015;
 					special="NONE";
 					id=32;
@@ -568,12 +597,13 @@ class Mission
 					vehicle="T1_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_B2 = group this; Grp_B2 setGroupId [""Bravo 2""];";
+					text="Unit_B_SQ2_FT2_AR";
+					init="Grp_B_B2 = group this; Grp_B_B2 setGroupId [""Bravo 2""];";
 					description="Bravo 2 Automatic Rifleman";
 				};
 				class Item2
 				{
-					position[]={14333.021,17.872267,16074.637};
+					position[]={14377.829,17.785738,16113.855};
 					azimut=-57.536015;
 					special="NONE";
 					id=33;
@@ -581,12 +611,13 @@ class Mission
 					vehicle="T1_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_B2 = group this; Grp_B2 setGroupId [""Bravo 2""];";
+					text="Unit_B_SQ2_FT2_AAR";
+					init="Grp_B_B2 = group this; Grp_B_B2 setGroupId [""Bravo 2""];";
 					description="Bravo 2 Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
-					position[]={14336.792,17.905901,16071.279};
+					position[]={14381.6,17.800272,16110.498};
 					azimut=-57.536015;
 					special="NONE";
 					id=34;
@@ -594,7 +625,8 @@ class Mission
 					vehicle="T1_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_B2 = group this; Grp_B2 setGroupId [""Bravo 2""];";
+					text="Unit_B_SQ2_FT2_AT";
+					init="Grp_B_B2 = group this; Grp_B_B2 setGroupId [""Bravo 2""];";
 					description="Bravo 2 Rifleman (AT)";
 				};
 			};
@@ -607,7 +639,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14321.271,17.738165,16076.483};
+					position[]={14366.079,17.837059,16115.702};
 					azimut=-57.536015;
 					special="NONE";
 					id=35;
@@ -617,12 +649,13 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_B3 = group this; Grp_B3 setGroupId [""Bravo 3""];";
+					text="Unit_B_SQ2_FT3_L";
+					init="Grp_B_B3 = group this; Grp_B_B3 setGroupId [""Bravo 3""];";
 					description="Bravo 3 Fireteam Leader";
 				};
 				class Item1
 				{
-					position[]={14325.243,17.898338,16073.194};
+					position[]={14370.051,17.793495,16112.413};
 					azimut=-57.536015;
 					special="NONE";
 					id=36;
@@ -630,12 +663,13 @@ class Mission
 					vehicle="T1_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_B3 = group this; Grp_B3 setGroupId [""Bravo 3""];";
+					text="Unit_B_SQ2_FT3_AR";
+					init="Grp_B_B3 = group this; Grp_B_B3 setGroupId [""Bravo 3""];";
 					description="Bravo 3 Automatic Rifleman";
 				};
 				class Item2
 				{
-					position[]={14328.508,17.918362,16070.219};
+					position[]={14373.315,17.801575,16109.438};
 					azimut=-57.536015;
 					special="NONE";
 					id=37;
@@ -643,12 +677,13 @@ class Mission
 					vehicle="T1_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_B3 = group this; Grp_B3 setGroupId [""Bravo 3""];";
+					text="Unit_B_SQ2_FT3_AAR";
+					init="Grp_B_B3 = group this; Grp_B_B3 setGroupId [""Bravo 3""];";
 					description="Bravo 3 Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
-					position[]={14332.079,17.917768,16067.095};
+					position[]={14376.887,17.830133,16106.313};
 					azimut=-57.536015;
 					special="NONE";
 					id=38;
@@ -656,7 +691,8 @@ class Mission
 					vehicle="T1_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_B3 = group this; Grp_B3 setGroupId [""Bravo 3""];";
+					text="Unit_B_SQ2_FT3_AT";
+					init="Grp_B_B3 = group this; Grp_B_B3 setGroupId [""Bravo 3""];";
 					description="Bravo 3 Rifleman (AT)";
 				};
 			};
@@ -669,7 +705,7 @@ class Mission
 				items=3;
 				class Item0
 				{
-					position[]={14305.403,17.874849,16055.476};
+					position[]={14350.211,17.572126,16094.694};
 					azimut=147.77713;
 					special="NONE";
 					id=39;
@@ -679,12 +715,13 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_BF = group this; Grp_BF setGroupId [""Bravo Fox""];";
+					text="Unit_B_SQ2_F_L";
+					init="Grp_B_BF = group this; Grp_B_BF setGroupId [""Bravo Fox""];";
 					description="Bravo Fox Commander";
 				};
 				class Item1
 				{
-					position[]={14308.573,17.890991,16058.281};
+					position[]={14353.381,17.546259,16097.5};
 					azimut=147.77713;
 					special="NONE";
 					id=40;
@@ -693,12 +730,13 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_BF = group this; Grp_BF setGroupId [""Bravo Fox""];";
+					text="Unit_B_SQ2_F_G";
+					init="Grp_B_BF = group this; Grp_B_BF setGroupId [""Bravo Fox""];";
 					description="Bravo Fox Gunner";
 				};
 				class Item2
 				{
-					position[]={14304.959,17.755136,16061.584};
+					position[]={14349.767,17.493259,16100.803};
 					azimut=147.77713;
 					special="NONE";
 					id=41;
@@ -706,7 +744,8 @@ class Mission
 					vehicle="T1_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_BF = group this; Grp_BF setGroupId [""Bravo Fox""];";
+					text="Unit_B_SQ2_F_D";
+					init="Grp_B_BF = group this; Grp_B_BF setGroupId [""Bravo Fox""];";
 					description="Bravo Fox Driver";
 				};
 			};
@@ -719,7 +758,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14315.752,17.600002,16080.982};
+					position[]={14360.56,17.882586,16120.201};
 					azimut=142.23514;
 					special="NONE";
 					id=42;
@@ -729,12 +768,13 @@ class Mission
 					leader=1;
 					rank="MAJOR";
 					skill=0.60000002;
-					init="Grp_CSL = group this; Grp_CSL setGroupId [""Charlie Squad Lead""];";
+					text="Unit_B_SQ3_SQL";
+					init="Grp_B_CSL = group this; Grp_B_CSL setGroupId [""Charlie Squad Lead""];";
 					description="Charlie Squad Leader";
 				};
 				class Item1
 				{
-					position[]={14312.124,17.724051,16077.879};
+					position[]={14356.932,17.874119,16117.098};
 					azimut=142.23514;
 					special="NONE";
 					id=43;
@@ -742,12 +782,13 @@ class Mission
 					vehicle="T1_Squad_Medic_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_CSL = group this; Grp_CSL setGroupId [""Charlie Squad Lead""];";
+					text="Unit_B_SQ3_Medic";
+					init="Grp_B_CSL = group this; Grp_B_CSL setGroupId [""Charlie Squad Lead""];";
 					description="Charlie Squad Medic";
 				};
 				class Item2
 				{
-					position[]={14309.44,17.709429,16086.357};
+					position[]={14354.248,17.891769,16125.576};
 					azimut=142.23514;
 					special="NONE";
 					id=44;
@@ -756,12 +797,13 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_CSL = group this; Grp_CSL setGroupId [""Charlie Squad Lead""];";
+					text="Unit_B_SQ3_Radio";
+					init="Grp_B_CSL = group this; Grp_B_CSL setGroupId [""Charlie Squad Lead""];";
 					description="Charlie Squad Radioman";
 				};
 				class Item3
 				{
-					position[]={14305.944,17.794271,16082.86};
+					position[]={14350.752,17.891768,16122.079};
 					azimut=136.47813;
 					special="NONE";
 					id=45;
@@ -770,7 +812,8 @@ class Mission
 					player="PLAY CDG";
 					rank="CAPTAIN";
 					skill=0.60000002;
-					init="Grp_CSL = group this; Grp_CSL setGroupId [""Charlie Squad Lead""];";
+					text="Unit_B_SQ3_SQS";
+					init="Grp_B_CSL = group this; Grp_B_CSL setGroupId [""Charlie Squad Lead""];";
 					description="Charlie Squad Leader Sgt.";
 				};
 			};
@@ -783,7 +826,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14317.8,17.759125,16072.787};
+					position[]={14362.607,17.799866,16112.006};
 					azimut=-57.536015;
 					special="NONE";
 					id=46;
@@ -793,12 +836,13 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_C1 = group this; Grp_C1 setGroupId [""Charlie 1""];";
+					text="Unit_B_SQ3_FT1_L";
+					init="Grp_B_C1 = group this; Grp_B_C1 setGroupId [""Charlie 1""];";
 					description="Charlie 1 Fireteam Leader";
 				};
 				class Item1
 				{
-					position[]={14321.529,17.845976,16069.134};
+					position[]={14366.337,17.800714,16108.353};
 					azimut=-57.536015;
 					special="NONE";
 					id=47;
@@ -806,12 +850,13 @@ class Mission
 					vehicle="T1_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_C1 = group this; Grp_C1 setGroupId [""Charlie 1""];";
+					text="Unit_B_SQ3_FT1_AR";
+					init="Grp_B_C1 = group this; Grp_B_C1 setGroupId [""Charlie 1""];";
 					description="Charlie 1 Automatic Rifleman";
 				};
 				class Item2
 				{
-					position[]={14325.361,17.92,16065.933};
+					position[]={14370.169,17.845255,16105.151};
 					azimut=-57.536015;
 					special="NONE";
 					id=48;
@@ -819,12 +864,13 @@ class Mission
 					vehicle="T1_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_C1 = group this; Grp_C1 setGroupId [""Charlie 1""];";
+					text="Unit_B_SQ3_FT1_AAR";
+					init="Grp_B_C1 = group this; Grp_B_C1 setGroupId [""Charlie 1""];";
 					description="Charlie 1 Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
-					position[]={14328.567,17.92,16062.914};
+					position[]={14373.375,17.870001,16102.133};
 					azimut=-57.536015;
 					special="NONE";
 					id=49;
@@ -832,7 +878,8 @@ class Mission
 					vehicle="T1_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_C1 = group this; Grp_C1 setGroupId [""Charlie 1""];";
+					text="Unit_B_SQ3_FT1_AT";
+					init="Grp_B_C1 = group this; Grp_B_C1 setGroupId [""Charlie 1""];";
 					description="Charlie 1 Rifleman (AT)";
 				};
 			};
@@ -845,7 +892,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14314.109,17.780115,16068.407};
+					position[]={14358.917,17.722294,16107.626};
 					azimut=-57.536015;
 					special="NONE";
 					id=50;
@@ -855,12 +902,13 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_C2 = group this; Grp_C2 setGroupId [""Charlie 2""];";
+					text="Unit_B_SQ3_FT2_L";
+					init="Grp_B_C2 = group this; Grp_B_C2 setGroupId [""Charlie 2""];";
 					description="Charlie 2 Fireteam Leader";
 				};
 				class Item1
 				{
-					position[]={14317.833,17.834103,16064.93};
+					position[]={14362.641,17.749043,16104.148};
 					azimut=-57.535999;
 					special="NONE";
 					id=51;
@@ -868,12 +916,13 @@ class Mission
 					vehicle="T1_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_C2 = group this; Grp_C2 setGroupId [""Charlie 2""];";
+					text="Unit_B_SQ3_FT2_AR";
+					init="Grp_B_C2 = group this; Grp_B_C2 setGroupId [""Charlie 2""];";
 					description="Charlie 2 Automatic Rifleman";
 				};
 				class Item2
 				{
-					position[]={14321.201,17.878857,16061.67};
+					position[]={14366.009,17.800827,16100.889};
 					azimut=-57.536015;
 					special="NONE";
 					id=52;
@@ -881,12 +930,13 @@ class Mission
 					vehicle="T1_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_C2 = group this; Grp_C2 setGroupId [""Charlie 2""];";
+					text="Unit_B_SQ3_FT2_AAR";
+					init="Grp_B_C2 = group this; Grp_B_C2 setGroupId [""Charlie 2""];";
 					description="Charlie 2 Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
-					position[]={14324.762,17.925867,16058.464};
+					position[]={14369.569,17.862543,16097.683};
 					azimut=-57.536015;
 					special="NONE";
 					id=53;
@@ -894,7 +944,8 @@ class Mission
 					vehicle="T1_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_C2 = group this; Grp_C2 setGroupId [""Charlie 2""];";
+					text="Unit_B_SQ3_FT2_AT";
+					init="Grp_B_C2 = group this; Grp_B_C2 setGroupId [""Charlie 2""];";
 					description="Charlie 2 Rifleman (AT)";
 				};
 			};
@@ -907,7 +958,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14310.187,17.764359,16064.808};
+					position[]={14354.994,17.594448,16104.026};
 					azimut=-57.536015;
 					special="NONE";
 					id=54;
@@ -917,12 +968,13 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_C3 = group this; Grp_C3 setGroupId [""Charlie 3""];";
+					text="Unit_B_SQ3_FT3_L";
+					init="Grp_B_C3 = group this; Grp_B_C3 setGroupId [""Charlie 3""];";
 					description="Charlie 3 Fireteam Leader";
 				};
 				class Item1
 				{
-					position[]={14313.773,17.841755,16061.509};
+					position[]={14358.581,17.660635,16100.728};
 					azimut=-57.536015;
 					special="NONE";
 					id=55;
@@ -930,12 +982,13 @@ class Mission
 					vehicle="T1_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_C3 = group this; Grp_C3 setGroupId [""Charlie 3""];";
+					text="Unit_B_SQ3_FT3_AR";
+					init="Grp_B_C3 = group this; Grp_B_C3 setGroupId [""Charlie 3""];";
 					description="Charlie 3 Automatic Rifleman";
 				};
 				class Item2
 				{
-					position[]={14317.477,17.922194,16058.069};
+					position[]={14362.284,17.762917,16097.288};
 					azimut=-57.536015;
 					special="NONE";
 					id=56;
@@ -943,12 +996,13 @@ class Mission
 					vehicle="T1_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_C3 = group this; Grp_C3 setGroupId [""Charlie 3""];";
+					text="Unit_B_SQ3_FT3_AAR";
+					init="Grp_B_C3 = group this; Grp_B_C3 setGroupId [""Charlie 3""];";
 					description="Charlie 3 Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
-					position[]={14320.959,17.93,16054.962};
+					position[]={14365.767,17.820301,16094.181};
 					azimut=-57.536015;
 					special="NONE";
 					id=57;
@@ -956,7 +1010,8 @@ class Mission
 					vehicle="T1_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_C3 = group this; Grp_C3 setGroupId [""Charlie 3""];";
+					text="Unit_B_SQ3_FT3_AT";
+					init="Grp_B_C3 = group this; Grp_B_C3 setGroupId [""Charlie 3""];";
 					description="Charlie 3 Rifleman (AT)";
 				};
 			};
@@ -969,7 +1024,7 @@ class Mission
 				items=3;
 				class Item0
 				{
-					position[]={14312.763,17.933113,16047.664};
+					position[]={14357.57,17.814278,16086.883};
 					azimut=147.77713;
 					special="NONE";
 					id=58;
@@ -979,12 +1034,13 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_CF = group this; Grp_CF setGroupId [""Charlie Fox""];";
+					text="Unit_B_SQ3_F_C";
+					init="Grp_B_CF = group this; Grp_B_CF setGroupId [""Charlie Fox""];";
 					description="Charlie Fox Commander";
 				};
 				class Item1
 				{
-					position[]={14315.926,17.93,16050.477};
+					position[]={14360.733,17.801277,16089.695};
 					azimut=147.77713;
 					special="NONE";
 					id=59;
@@ -993,12 +1049,13 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_CF = group this; Grp_CF setGroupId [""Charlie Fox""];";
+					text="Unit_B_SQ3_F_G";
+					init="Grp_B_CF = group this; Grp_B_CF setGroupId [""Charlie Fox""];";
 					description="Charlie Fox Gunner";
 				};
 				class Item2
 				{
-					position[]={14312.315,17.93,16053.771};
+					position[]={14357.123,17.656254,16092.99};
 					azimut=147.77713;
 					special="NONE";
 					id=60;
@@ -1006,7 +1063,8 @@ class Mission
 					vehicle="T1_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_CF = group this; Grp_CF setGroupId [""Charlie Fox""];";
+					text="Unit_B_SQ3_F_D";
+					init="Grp_B_CF = group this; Grp_B_CF setGroupId [""Charlie Fox""];";
 					description="Charlie Fox Driver";
 				};
 			};
@@ -1019,7 +1077,7 @@ class Mission
 				items=6;
 				class Item0
 				{
-					position[]={14287.465,18.013302,16014.661};
+					position[]={14332.272,17.925131,16053.88};
 					azimut=128.85612;
 					special="NONE";
 					id=61;
@@ -1029,12 +1087,13 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_Shadow1 = group this; Grp_Shadow1 setGroupId [""Shadow 1""];";
+					text="Unit_B_SF1_L";
+					init="Grp_B_Shadow1 = group this; Grp_B_Shadow1 setGroupId [""Shadow 1""];";
 					description="Shadow 1 Leader";
 				};
 				class Item1
 				{
-					position[]={14283.627,18.064022,16018.161};
+					position[]={14328.435,17.925579,16057.38};
 					azimut=128.85612;
 					special="NONE";
 					id=62;
@@ -1042,12 +1101,13 @@ class Mission
 					vehicle="T1_SF_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Shadow1 = group this; Grp_Shadow1 setGroupId [""Shadow 1""];";
+					text="Unit_B_SF1_AR";
+					init="Grp_B_Shadow1 = group this; Grp_B_Shadow1 setGroupId [""Shadow 1""];";
 					description="Shadow 1 Heavy gunner";
 				};
 				class Item2
 				{
-					position[]={14280.332,18.113844,16021.468};
+					position[]={14325.14,17.925562,16060.687};
 					azimut=128.85612;
 					special="NONE";
 					id=63;
@@ -1055,12 +1115,13 @@ class Mission
 					vehicle="T1_SF_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Shadow1 = group this; Grp_Shadow1 setGroupId [""Shadow 1""];";
+					text="Unit_B_SF1_Radio";
+					init="Grp_B_Shadow1 = group this; Grp_B_Shadow1 setGroupId [""Shadow 1""];";
 					description="Shadow 1 Radioman (AT)";
 				};
 				class Item3
 				{
-					position[]={14276.632,18.253355,16024.991};
+					position[]={14321.439,17.878338,16064.21};
 					azimut=128.85612;
 					special="NONE";
 					id=64;
@@ -1068,12 +1129,13 @@ class Mission
 					vehicle="T1_SF_Marksman_SOS_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Shadow1 = group this; Grp_Shadow1 setGroupId [""Shadow 1""];";
+					text="Unit_B_SF1_Mark";
+					init="Grp_B_Shadow1 = group this; Grp_B_Shadow1 setGroupId [""Shadow 1""];";
 					description="Shadow 1 Marksman";
 				};
 				class Item4
 				{
-					position[]={14272.803,18.414284,16028.352};
+					position[]={14317.61,17.807335,16067.57};
 					azimut=128.85612;
 					special="NONE";
 					id=65;
@@ -1081,12 +1143,13 @@ class Mission
 					vehicle="T1_SF_Explosive_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Shadow1 = group this; Grp_Shadow1 setGroupId [""Shadow 1""];";
+					text="Unit_B_SF1_Sab";
+					init="Grp_B_Shadow1 = group this; Grp_B_Shadow1 setGroupId [""Shadow 1""];";
 					description="Shadow 1 Saboteur";
 				};
 				class Item5
 				{
-					position[]={14269.035,18.548203,16032.274};
+					position[]={14313.843,17.74988,16071.493};
 					azimut=128.85612;
 					special="NONE";
 					id=66;
@@ -1094,7 +1157,8 @@ class Mission
 					vehicle="T1_SF_Medic_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Shadow1 = group this; Grp_Shadow1 setGroupId [""Shadow 1""];";
+					text="Unit_B_SF1_Medic";
+					init="Grp_B_Shadow1 = group this; Grp_B_Shadow1 setGroupId [""Shadow 1""];";
 					description="Shadow 1 Medic";
 				};
 			};
@@ -1107,7 +1171,7 @@ class Mission
 				items=6;
 				class Item0
 				{
-					position[]={14291.216,18.005136,16019.123};
+					position[]={14336.023,17.915302,16058.342};
 					azimut=127.65703;
 					special="NONE";
 					id=67;
@@ -1117,12 +1181,13 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_Shadow2 = group this; Grp_Shadow2 setGroupId [""Shadow 2""];";
+					text="Unit_B_SF2_L";
+					init="Grp_B_Shadow2 = group this; Grp_B_Shadow2 setGroupId [""Shadow 2""];";
 					description="Shadow 2 Leader";
 				};
 				class Item1
 				{
-					position[]={14287.904,18.005428,16021.942};
+					position[]={14332.712,17.919718,16061.161};
 					azimut=127.65703;
 					special="NONE";
 					id=68;
@@ -1130,12 +1195,13 @@ class Mission
 					vehicle="T1_SF_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Shadow2 = group this; Grp_Shadow2 setGroupId [""Shadow 2""];";
+					text="Unit_B_SF2_AR";
+					init="Grp_B_Shadow2 = group this; Grp_B_Shadow2 setGroupId [""Shadow 2""];";
 					description="Shadow 2 Heavy gunner";
 				};
 				class Item2
 				{
-					position[]={14284.372,18.059719,16025.3};
+					position[]={14329.18,17.92,16064.519};
 					azimut=127.65703;
 					special="NONE";
 					id=69;
@@ -1143,12 +1209,13 @@ class Mission
 					vehicle="T1_SF_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Shadow2 = group this; Grp_Shadow2 setGroupId [""Shadow 2""];";
+					text="Unit_B_SF2_Radio";
+					init="Grp_B_Shadow2 = group this; Grp_B_Shadow2 setGroupId [""Shadow 2""];";
 					description="Shadow 2 Radioman (AT)";
 				};
 				class Item3
 				{
-					position[]={14280.533,18.150568,16028.753};
+					position[]={14325.341,17.92,16067.972};
 					azimut=127.65703;
 					special="NONE";
 					id=70;
@@ -1156,12 +1223,13 @@ class Mission
 					vehicle="T1_SF_Marksman_SOS_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Shadow2 = group this; Grp_Shadow2 setGroupId [""Shadow 2""];";
+					text="Unit_B_SF2_Mark";
+					init="Grp_B_Shadow2 = group this; Grp_B_Shadow2 setGroupId [""Shadow 2""];";
 					description="Shadow 2 Marksman";
 				};
 				class Item4
 				{
-					position[]={14276.896,18.3293,16032.281};
+					position[]={14321.704,17.849707,16071.5};
 					azimut=127.65703;
 					special="NONE";
 					id=71;
@@ -1169,12 +1237,13 @@ class Mission
 					vehicle="T1_SF_Explosive_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Shadow2 = group this; Grp_Shadow2 setGroupId [""Shadow 2""];";
+					text="Unit_B_SF2_Sab";
+					init="Grp_B_Shadow2 = group this; Grp_B_Shadow2 setGroupId [""Shadow 2""];";
 					description="Shadow 2 Saboteur";
 				};
 				class Item5
 				{
-					position[]={14272.952,18.504574,16035.963};
+					position[]={14317.76,17.697609,16075.182};
 					azimut=127.657;
 					special="NONE";
 					id=72;
@@ -1182,7 +1251,8 @@ class Mission
 					vehicle="T1_SF_Medic_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Shadow2 = group this; Grp_Shadow2 setGroupId [""Shadow 2""];";
+					text="Unit_B_SF2_Medic";
+					init="Grp_B_Shadow2 = group this; Grp_B_Shadow2 setGroupId [""Shadow 2""];";
 					description="Shadow 2 Medic";
 				};
 			};
@@ -1195,7 +1265,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14317.565,17.414341,16095.848};
+					position[]={14362.373,17.905544,16135.066};
 					azimut=319.10916;
 					special="NONE";
 					id=73;
@@ -1205,12 +1275,13 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_Reaper1 = group this; Grp_Reaper1 setGroupId [""Reaper 1""];";
+					text="Unit_B_AIR1_P";
+					init="Grp_B_Reaper1 = group this; Grp_B_Reaper1 setGroupId [""Reaper 1""];";
 					description="Reaper 1-1";
 				};
 				class Item1
 				{
-					position[]={14313.227,17.488134,16091.498};
+					position[]={14358.034,17.893578,16130.717};
 					azimut=319.10916;
 					special="NONE";
 					id=74;
@@ -1218,7 +1289,8 @@ class Mission
 					vehicle="T1_Pilot_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Reaper1 = group this; Grp_Reaper1 setGroupId [""Reaper 1""];";
+					text="Unit_B_AIR1_CP";
+					init="Grp_B_Reaper1 = group this; Grp_B_Reaper1 setGroupId [""Reaper 1""];";
 					description="Reaper 1-2";
 				};
 			};
@@ -1231,7 +1303,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14327.021,17.553917,16104.538};
+					position[]={14371.829,17.901054,16143.757};
 					azimut=319.10916;
 					special="NONE";
 					id=75;
@@ -1241,12 +1313,13 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_Reaper2 = group this; Grp_Reaper2 setGroupId [""Reaper 2""];";
+					text="Unit_B_AIR2_P";
+					init="Grp_B_Reaper2 = group this; Grp_B_Reaper2 setGroupId [""Reaper 2""];";
 					description="Reaper 2-1";
 				};
 				class Item1
 				{
-					position[]={14322.584,17.471231,16100.149};
+					position[]={14367.392,17.903063,16139.368};
 					azimut=319.10916;
 					special="NONE";
 					id=76;
@@ -1254,7 +1327,8 @@ class Mission
 					vehicle="T1_Pilot_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Reaper2 = group this; Grp_Reaper2 setGroupId [""Reaper 2""];";
+					text="Unit_B_AIR2_CP";
+					init="Grp_B_Reaper2 = group this; Grp_B_Reaper2 setGroupId [""Reaper 2""];";
 					description="Reaper 2-2";
 				};
 			};
@@ -1267,7 +1341,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14284.696,18.355749,16048.201};
+					position[]={14329.504,17.591091,16087.42};
 					azimut=137.39014;
 					special="NONE";
 					id=77;
@@ -1277,12 +1351,13 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_Sierra1 = group this; Grp_Sierra1 setGroupId [""Sierra 1""];";
+					text="Unit_B_S1_Spotter";
+					init="Grp_B_Sierra1 = group this; Grp_B_Sierra1 setGroupId [""Sierra 1""];";
 					description="Sierra 1 Spotter";
 				};
 				class Item1
 				{
-					position[]={14288.286,18.199842,16051.674};
+					position[]={14333.094,17.707533,16090.893};
 					azimut=137.39014;
 					special="NONE";
 					id=78;
@@ -1290,7 +1365,8 @@ class Mission
 					vehicle="T1_Sniper_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Sierra1 = group this; Grp_Sierra1 setGroupId [""Sierra 1""];";
+					text="Unit_B_S1_Sniper";
+					init="Grp_B_Sierra1 = group this; Grp_B_Sierra1 setGroupId [""Sierra 1""];";
 					description="Sierra 1 Sniper";
 				};
 			};
@@ -1303,7 +1379,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14280.354,18.476614,16051.604};
+					position[]={14325.161,17.39666,16090.822};
 					azimut=137.39014;
 					special="NONE";
 					id=79;
@@ -1313,12 +1389,13 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_Sierra2 = group this; Grp_Sierra2 setGroupId [""Sierra 2""];";
+					text="Unit_B_S2_Spotter";
+					init="Grp_B_Sierra2 = group this; Grp_B_Sierra2 setGroupId [""Sierra 2""];";
 					description="Sierra 2 Spotter";
 				};
 				class Item1
 				{
-					position[]={14284.185,18.173075,16055.536};
+					position[]={14328.992,17.53664,16094.755};
 					azimut=137.39014;
 					special="NONE";
 					id=80;
@@ -1326,7 +1403,8 @@ class Mission
 					vehicle="T1_Sniper_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Sierra2 = group this; Grp_Sierra2 setGroupId [""Sierra 2""];";
+					text="Unit_B_S2_Sniper";
+					init="Grp_B_Sierra2 = group this; Grp_B_Sierra2 setGroupId [""Sierra 2""];";
 					description="Sierra 2 Sniper";
 				};
 			};
@@ -1339,7 +1417,7 @@ class Mission
 				items=6;
 				class Item0
 				{
-					position[]={14294.881,17.97245,16022.271};
+					position[]={14339.688,17.910414,16061.49};
 					azimut=137.39014;
 					special="NONE";
 					id=81;
@@ -1349,12 +1427,13 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_Neptune1 = group this; Grp_Neptune1 setGroupId [""Neptune 1""];";
+					text="Unit_B_D1_L";
+					init="Grp_B_Neptune1 = group this; Grp_B_Neptune1 setGroupId [""Neptune 1""];";
 					description="Neptune 1 Leader";
 				};
 				class Item1
 				{
-					position[]={14291.63,17.962721,16025.655};
+					position[]={14336.438,17.914749,16064.874};
 					azimut=137.39014;
 					special="NONE";
 					id=82;
@@ -1362,12 +1441,13 @@ class Mission
 					vehicle="T1_Diver_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Neptune1 = group this; Grp_Neptune1 setGroupId [""Neptune 1""];";
+					text="Unit_B_D1_AR";
+					init="Grp_B_Neptune1 = group this; Grp_B_Neptune1 setGroupId [""Neptune 1""];";
 					description="Neptune 1 Heavy Gunner";
 				};
 				class Item2
 				{
-					position[]={14288.398,17.974287,16028.634};
+					position[]={14333.206,17.915255,16067.853};
 					azimut=137.39014;
 					special="NONE";
 					id=83;
@@ -1375,12 +1455,13 @@ class Mission
 					vehicle="T1_Diver_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Neptune1 = group this; Grp_Neptune1 setGroupId [""Neptune 1""];";
+					text="Unit_B_D1_Radio";
+					init="Grp_B_Neptune1 = group this; Grp_B_Neptune1 setGroupId [""Neptune 1""];";
 					description="Neptune 1 Radioman (AT)";
 				};
 				class Item3
 				{
-					position[]={14284.529,18.087753,16032.319};
+					position[]={14329.337,17.915499,16071.538};
 					azimut=137.39014;
 					special="NONE";
 					id=84;
@@ -1388,12 +1469,13 @@ class Mission
 					vehicle="T1_Diver_Marksman_SOS_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Neptune1 = group this; Grp_Neptune1 setGroupId [""Neptune 1""];";
+					text="Unit_B_D1_Mark";
+					init="Grp_B_Neptune1 = group this; Grp_B_Neptune1 setGroupId [""Neptune 1""];";
 					description="Neptune 1 Marksman";
 				};
 				class Item4
 				{
-					position[]={14280.58,18.232071,16036.097};
+					position[]={14325.388,17.83312,16075.315};
 					azimut=137.39014;
 					special="NONE";
 					id=85;
@@ -1401,12 +1483,13 @@ class Mission
 					vehicle="T1_Diver_Explosive_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Neptune1 = group this; Grp_Neptune1 setGroupId [""Neptune 1""];";
+					text="Unit_B_D1_Sab";
+					init="Grp_B_Neptune1 = group this; Grp_B_Neptune1 setGroupId [""Neptune 1""];";
 					description="Neptune 1 Saboteur";
 				};
 				class Item5
 				{
-					position[]={14277.077,18.321142,16039.234};
+					position[]={14321.885,17.687557,16078.453};
 					azimut=137.39014;
 					special="NONE";
 					id=86;
@@ -1414,7 +1497,8 @@ class Mission
 					vehicle="T1_Diver_Medic_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Neptune1 = group this; Grp_Neptune1 setGroupId [""Neptune 1""];";
+					text="Unit_B_D1_Medic";
+					init="Grp_B_Neptune1 = group this; Grp_B_Neptune1 setGroupId [""Neptune 1""];";
 					description="Neptune 1 Medic";
 				};
 			};
@@ -1427,7 +1511,7 @@ class Mission
 				items=6;
 				class Item0
 				{
-					position[]={14299.075,17.94776,16026.406};
+					position[]={14343.883,17.903986,16065.625};
 					azimut=137.39014;
 					special="NONE";
 					id=87;
@@ -1437,12 +1521,13 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_Neptune2 = group this; Grp_Neptune2 setGroupId [""Neptune 2""];";
+					text="Unit_B_D2_L";
+					init="Grp_B_Neptune2 = group this; Grp_B_Neptune2 setGroupId [""Neptune 2""];";
 					description="Neptune 2 Leader";
 				};
 				class Item1
 				{
-					position[]={14295.817,17.924118,16029.788};
+					position[]={14340.625,17.903822,16069.007};
 					azimut=137.39014;
 					special="NONE";
 					id=88;
@@ -1450,12 +1535,13 @@ class Mission
 					vehicle="T1_Diver_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Neptune2 = group this; Grp_Neptune2 setGroupId [""Neptune 2""];";
+					text="Unit_B_D2_AR";
+					init="Grp_B_Neptune2 = group this; Grp_B_Neptune2 setGroupId [""Neptune 2""];";
 					description="Neptune 2 Heavy Gunner";
 				};
 				class Item2
 				{
-					position[]={14292.588,17.95072,16032.769};
+					position[]={14337.396,17.904154,16071.987};
 					azimut=137.39014;
 					special="NONE";
 					id=89;
@@ -1463,12 +1549,13 @@ class Mission
 					vehicle="T1_Diver_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Neptune2 = group this; Grp_Neptune2 setGroupId [""Neptune 2""];";
+					text="Unit_B_D2_Radio";
+					init="Grp_B_Neptune2 = group this; Grp_B_Neptune2 setGroupId [""Neptune 2""];";
 					description="Neptune 2 Radioman (AT)";
 				};
 				class Item3
 				{
-					position[]={14288.71,18.024569,16036.457};
+					position[]={14333.518,17.853577,16075.676};
 					azimut=137.39014;
 					special="NONE";
 					id=90;
@@ -1476,12 +1563,13 @@ class Mission
 					vehicle="T1_Diver_Marksman_SOS_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Neptune2 = group this; Grp_Neptune2 setGroupId [""Neptune 2""];";
+					text="Unit_B_D2_Mark";
+					init="Grp_B_Neptune2 = group this; Grp_B_Neptune2 setGroupId [""Neptune 2""];";
 					description="Neptune 2 Marksman";
 				};
 				class Item4
 				{
-					position[]={14284.773,18.173058,16040.234};
+					position[]={14329.581,17.754446,16079.453};
 					azimut=137.39014;
 					special="NONE";
 					id=91;
@@ -1489,12 +1577,13 @@ class Mission
 					vehicle="T1_Diver_Explosive_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Neptune2 = group this; Grp_Neptune2 setGroupId [""Neptune 2""];";
+					text="Unit_B_D2_Sab";
+					init="Grp_B_Neptune2 = group this; Grp_B_Neptune2 setGroupId [""Neptune 2""];";
 					description="Neptune 2 Saboteur";
 				};
 				class Item5
 				{
-					position[]={14281.263,18.331604,16043.369};
+					position[]={14326.07,17.61655,16082.588};
 					azimut=137.39014;
 					special="NONE";
 					id=92;
@@ -1502,7 +1591,8 @@ class Mission
 					vehicle="T1_Diver_Medic_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Neptune2 = group this; Grp_Neptune2 setGroupId [""Neptune 2""];";
+					text="Unit_B_D2_Medic";
+					init="Grp_B_Neptune2 = group this; Grp_B_Neptune2 setGroupId [""Neptune 2""];";
 					description="Neptune 2 Medic";
 				};
 			};
@@ -1515,7 +1605,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14276.266,18.389782,16047.41};
+					position[]={14321.073,17.406179,16086.629};
 					azimut=137.39014;
 					special="NONE";
 					id=93;
@@ -1525,12 +1615,13 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_ReconTeam1 = group this; ReconTeam1 setGroupId [""Recon Team 1""];";
+					text="Unit_B_R1_L";
+					init="Grp_B_ReconTeam1 = group this; Grp_B_ReconTeam1 setGroupId [""Recon Team 1""];";
 					description="Recon Team 1 Leader";
 				};
 				class Item1
 				{
-					position[]={14272.954,18.397768,16044.11};
+					position[]={14317.762,17.463181,16083.329};
 					azimut=137.39014;
 					special="NONE";
 					id=94;
@@ -1539,7 +1630,8 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_ReconTeam1 = group this; ReconTeam1 setGroupId [""Recon Team 1""];";
+					text="Unit_B_R1_S";
+					init="Grp_B_ReconTeam1 = group this; Grp_B_ReconTeam1 setGroupId [""Recon Team 1""];";
 					description="Recon Team 1 Scout";
 				};
 			};
@@ -1552,7 +1644,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14272.718,18.384995,16051.254};
+					position[]={14317.525,17.348179,16090.473};
 					azimut=137.39014;
 					special="NONE";
 					id=95;
@@ -1562,12 +1654,13 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_ReconTeam2 = group this; ReconTeam2 setGroupId [""Recon Team 2""];";
+					text="Unit_B_R2_L";
+					init="Grp_B_ReconTeam2 = group this; Grp_B_ReconTeam2 setGroupId [""Recon Team 2""];";
 					description="Recon Team 2 Leader";
 				};
 				class Item1
 				{
-					position[]={14269.402,18.418123,16047.944};
+					position[]={14314.21,17.493511,16087.163};
 					azimut=137.39014;
 					special="NONE";
 					id=96;
@@ -1576,7 +1669,8 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_ReconTeam2 = group this; ReconTeam2 setGroupId [""Recon Team 2""];";
+					text="Unit_B_R2_S";
+					init="Grp_B_ReconTeam2 = group this; Grp_B_ReconTeam2 setGroupId [""Recon Team 2""];";
 					description="Recon Team 2 Scout";
 				};
 			};
@@ -1589,7 +1683,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14268.174,18.464701,16040.009};
+					position[]={14312.981,17.673866,16079.228};
 					azimut=137.39014;
 					special="NONE";
 					id=97;
@@ -1599,12 +1693,13 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_ReconTeam3 = group this; ReconTeam3 setGroupId [""Recon Team 3""];";
+					text="Unit_B_R3_L";
+					init="Grp_B_ReconTeam3 = group this; Grp_B_ReconTeam3 setGroupId [""Recon Team 3""];";
 					description="Recon Team 3 Leader";
 				};
 				class Item1
 				{
-					position[]={14264.86,18.611803,16036.704};
+					position[]={14309.668,17.717642,16075.923};
 					azimut=137.39014;
 					special="NONE";
 					id=98;
@@ -1613,7 +1708,8 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_ReconTeam3 = group this; ReconTeam3 setGroupId [""Recon Team 3""];";
+					text="Unit_B_R3_S";
+					init="Grp_B_ReconTeam3 = group this; Grp_B_ReconTeam3 setGroupId [""Recon Team 3""];";
 					description="Recon Team 3 Scout";
 				};
 			};
@@ -1626,7 +1722,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14264.62,18.440943,16043.846};
+					position[]={14309.428,17.718584,16083.064};
 					azimut=137.39014;
 					special="NONE";
 					id=99;
@@ -1636,12 +1732,13 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_ReconTeam4 = group this; ReconTeam4 setGroupId [""Recon Team 4""];";
+					text="Unit_B_R4_L";
+					init="Grp_B_ReconTeam4 = group this; Grp_B_ReconTeam4 setGroupId [""Recon Team 4""];";
 					description="Recon Team 4 Leader";
 				};
 				class Item1
 				{
-					position[]={14261.308,18.598194,16040.546};
+					position[]={14306.115,17.736204,16079.765};
 					azimut=137.39014;
 					special="NONE";
 					id=100;
@@ -1650,7 +1747,8 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_ReconTeam4 = group this; ReconTeam4 setGroupId [""Recon Team 4""];";
+					text="Unit_B_R4_S";
+					init="Grp_B_ReconTeam4 = group this; Grp_B_ReconTeam4 setGroupId [""Recon Team 4""];";
 					description="Recon Team 4 Scout";
 				};
 			};
@@ -1663,7 +1761,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14309.167,17.94194,16043.541};
+					position[]={14353.975,17.836353,16082.76};
 					azimut=137.39014;
 					special="NONE";
 					id=101;
@@ -1673,12 +1771,13 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_MediumMG1 = group this; Grp_MediumMG1 setGroupId [""Medium MG 1""];";
+					text="Unit_B_MG1_G";
+					init="Grp_B_MediumMG1 = group this; Grp_B_MediumMG1 setGroupId [""Medium MG 1""];";
 					description="Medium MG 1 Gunner";
 				};
 				class Item1
 				{
-					position[]={14305.674,17.948666,16040.326};
+					position[]={14350.481,17.886627,16079.545};
 					azimut=137.39014;
 					special="NONE";
 					id=102;
@@ -1686,7 +1785,8 @@ class Mission
 					vehicle="T1_Specialist_AMG_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_MediumMG1 = group this; Grp_MediumMG1 setGroupId [""Medium MG 1""];";
+					text="Unit_B_MG1_A";
+					init="Grp_B_MediumMG1 = group this; Grp_B_MediumMG1 setGroupId [""Medium MG 1""];";
 					description="Medium MG 1 Assistant";
 				};
 			};
@@ -1699,7 +1799,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14305.816,17.951056,16046.756};
+					position[]={14350.624,17.771168,16085.975};
 					azimut=137.39014;
 					special="NONE";
 					id=103;
@@ -1709,12 +1809,13 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_MediumMG2 = group this; Grp_MediumMG2 setGroupId [""Medium MG 2""];";
+					text="Unit_B_MG2_G";
+					init="Grp_B_MediumMG2 = group this; Grp_B_MediumMG2 setGroupId [""Medium MG 2""];";
 					description="Medium MG 2 Gunner";
 				};
 				class Item1
 				{
-					position[]={14302.325,17.954393,16043.531};
+					position[]={14347.133,17.831816,16082.75};
 					azimut=137.39014;
 					special="NONE";
 					id=104;
@@ -1722,7 +1823,8 @@ class Mission
 					vehicle="T1_Specialist_AMG_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_MediumMG2 = group this; Grp_MediumMG2 setGroupId [""Medium MG 2""];";
+					text="Unit_B_MG2_A";
+					init="Grp_B_MediumMG2 = group this; Grp_B_MediumMG2 setGroupId [""Medium MG 2""];";
 					description="Medium MG 2 Assistant";
 				};
 			};
@@ -1735,7 +1837,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14295.256,17.971214,16044.042};
+					position[]={14340.063,17.830343,16083.261};
 					azimut=137.39014;
 					special="NONE";
 					id=105;
@@ -1745,12 +1847,13 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_HeavyAA1 = group this; Grp_HeavyAA1 setGroupId [""Heavy AA 1""];";
+					text="Unit_B_AA1_G";
+					init="Grp_B_HeavyAA1 = group this; Grp_B_HeavyAA1 setGroupId [""Heavy AA 1""];";
 					description="Heavy Anti Air 1 Gunner";
 				};
 				class Item1
 				{
-					position[]={14291.765,18.004431,16040.833};
+					position[]={14336.572,17.844534,16080.052};
 					azimut=137.39014;
 					special="NONE";
 					id=106;
@@ -1758,7 +1861,8 @@ class Mission
 					vehicle="T1_Specialist_AAA_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_HeavyAA1 = group this; Grp_HeavyAA1 setGroupId [""Heavy AA 1""];";
+					text="Unit_B_AA1_A";
+					init="Grp_B_HeavyAA1 = group this; Grp_B_HeavyAA1 setGroupId [""Heavy AA 1""];";
 					description="Heavy Anti Air 1 Assistant";
 				};
 			};
@@ -1771,7 +1875,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14291.896,18.134457,16047.257};
+					position[]={14336.704,17.739868,16086.476};
 					azimut=137.39014;
 					special="NONE";
 					id=107;
@@ -1781,12 +1885,13 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_HeavyAA2 = group this; Grp_HeavyAA2 setGroupId [""Heavy AA 2""];";
+					text="Unit_B_AA2_G";
+					init="Grp_B_HeavyAA2 = group this; Grp_B_HeavyAA2 setGroupId [""Heavy AA 2""];";
 					description="Heavy Anti Air 2 Gunner";
 				};
 				class Item1
 				{
-					position[]={14288.404,18.134594,16044.038};
+					position[]={14333.212,17.752308,16083.257};
 					azimut=137.39014;
 					special="NONE";
 					id=108;
@@ -1794,7 +1899,8 @@ class Mission
 					vehicle="T1_Specialist_AAA_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_HeavyAA2 = group this; Grp_HeavyAA2 setGroupId [""Heavy AA 2""];";
+					text="Unit_B_AA2_A";
+					init="Grp_B_HeavyAA2 = group this; Grp_B_HeavyAA2 setGroupId [""Heavy AA 2""];";
 					description="Heavy Anti Air 2 Assistant";
 				};
 			};
@@ -1807,7 +1913,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14302.135,17.949514,16036.899};
+					position[]={14346.942,17.895918,16076.118};
 					azimut=137.39014;
 					special="NONE";
 					id=109;
@@ -1817,12 +1923,13 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_HeavyAT1 = group this; Grp_HeavyAT1 setGroupId [""Heavy AT 1""];";
+					text="Unit_B_AT1_G";
+					init="Grp_B_HeavyAT1 = group this; Grp_B_HeavyAT1 setGroupId [""Heavy AT 1""];";
 					description="Heavy Anti Tank 1 Gunner";
 				};
 				class Item1
 				{
-					position[]={14298.636,17.926004,16033.68};
+					position[]={14343.443,17.9,16072.898};
 					azimut=137.39014;
 					special="NONE";
 					id=110;
@@ -1830,7 +1937,8 @@ class Mission
 					vehicle="T1_Specialist_AAT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_HeavyAT1 = group this; Grp_HeavyAT1 setGroupId [""Heavy AT 1""];";
+					text="Unit_B_AT1_A";
+					init="Grp_B_HeavyAT1 = group this; Grp_B_HeavyAT1 setGroupId [""Heavy AT 1""];";
 					description="Heavy Anti Tank 1 Assistant";
 				};
 			};
@@ -1843,7 +1951,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14298.773,17.945032,16040.109};
+					position[]={14343.581,17.896116,16079.328};
 					azimut=137.39014;
 					special="NONE";
 					id=111;
@@ -1853,12 +1961,13 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_HeavyAT2 = group this; Grp_HeavyAT2 setGroupId [""Heavy AT 2""];";
+					text="Unit_B_AT2_G";
+					init="Grp_B_HeavyAT2 = group this; Grp_B_HeavyAT2 setGroupId [""Heavy AT 2""];";
 					description="Heavy Anti Tank 2 Gunner";
 				};
 				class Item1
 				{
-					position[]={14294.957,17.909069,16036.521};
+					position[]={14339.765,17.89625,16075.74};
 					azimut=137.39014;
 					special="NONE";
 					id=112;
@@ -1866,7 +1975,8 @@ class Mission
 					vehicle="T1_Specialist_AAT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_HeavyAT2 = group this; Grp_HeavyAT2 setGroupId [""Heavy AT 2""];";
+					text="Unit_B_AT2_A";
+					init="Grp_B_HeavyAT2 = group this; Grp_B_HeavyAT2 setGroupId [""Heavy AT 2""];";
 					description="Heavy Anti Tank 2 Assistant";
 				};
 			};
@@ -1879,8 +1989,8 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14209.665,18.197166,15970.263};
-					azimut=142.23514;
+					position[]={15186.08,17.914959,17196.961};
+					azimut=231.95416;
 					special="NONE";
 					id=113;
 					side="GUER";
@@ -1889,26 +1999,28 @@ class Mission
 					leader=1;
 					rank="MAJOR";
 					skill=0.60000002;
-					init="Grp_PL = group this; Grp_PL setGroupId [""Platoon Lead""];";
-					description="Platoon Leader";
+					text="Unit_I_HITPL_lead";
+					init="Grp_I_HITPL = group this; Grp_I_HITPL setGroupId [""Hitman Platoon Lead""];";
+					description="Hitman Platoon Leader";
 				};
 				class Item1
 				{
-					position[]={14205.615,18.288036,15966.305};
-					azimut=142.23514;
+					position[]={15182.091,17.92697,17200.996};
+					azimut=231.95416;
 					special="NONE";
 					id=114;
 					side="GUER";
 					vehicle="T1_Indep_Squad_Medic_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_PL = group this; Grp_PL setGroupId [""Platoon Lead""];";
-					description="Platoon Medic";
+					text="Unit_I_HITPL_Medic";
+					init="Grp_I_HITPL = group this; Grp_I_HITPL setGroupId [""Hitman Platoon Lead""];";
+					description="Hitman Platoon Medic";
 				};
 				class Item2
 				{
-					position[]={14204.902,18.307821,15975.37};
-					azimut=24.771015;
+					position[]={15191.164,17.953291,17201.762};
+					azimut=114.49004;
 					special="NONE";
 					id=115;
 					side="GUER";
@@ -1916,13 +2028,14 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_PL = group this; Grp_PL setGroupId [""Platoon Lead""];";
-					description="Platoon Lead Radioman";
+					text="Unit_I_HITPL_Radio";
+					init="Grp_I_HITPL = group this; Grp_I_HITPL setGroupId [""Hitman Platoon Lead""];";
+					description="Hitman Platoon Lead Radioman";
 				};
 				class Item3
 				{
-					position[]={14200.878,18.282581,15970.863};
-					azimut=24.771015;
+					position[]={15186.641,17.927979,17205.758};
+					azimut=114.49004;
 					special="NONE";
 					id=116;
 					side="GUER";
@@ -1930,8 +2043,9 @@ class Mission
 					player="PLAY CDG";
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_PL = group this; Grp_PL setGroupId [""Platoon Lead""];";
-					description="Platoon Lead Sgt.";
+					text="Unit_I_HITPL_PS";
+					init="Grp_I_HITPL = group this; Grp_I_HITPL setGroupId [""Hitman Platoon Lead""];";
+					description="Hitman Platoon Lead Sgt.";
 				};
 			};
 		};
@@ -1943,8 +2057,8 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14239.02,18.563736,15999.114};
-					azimut=142.23514;
+					position[]={15215.074,17.786722,17167.758};
+					azimut=231.95416;
 					special="NONE";
 					id=117;
 					side="GUER";
@@ -1953,26 +2067,28 @@ class Mission
 					leader=1;
 					rank="MAJOR";
 					skill=0.60000002;
-					init="Grp_ASL = group this; Grp_ASL setGroupId [""Alpha Squad Lead""];";
+					text="Unit_I_SQ1_SQL";
+					init="Grp_I_ASL = group this; Grp_I_ASL setGroupId [""Alpha Squad Lead""];";
 					description="Alpha Squad Leader";
 				};
 				class Item1
 				{
-					position[]={14234.898,18.668606,15995.531};
-					azimut=142.23514;
+					position[]={15211.48,17.762074,17171.869};
+					azimut=231.95416;
 					special="NONE";
 					id=118;
 					side="GUER";
 					vehicle="T1_Indep_Squad_Medic_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_ASL = group this; Grp_ASL setGroupId [""Alpha Squad Lead""];";
+					text="Unit_I_SQ1_Medic";
+					init="Grp_I_ASL = group this; Grp_I_ASL setGroupId [""Alpha Squad Lead""];";
 					description="Alpha Squad Medic";
 				};
 				class Item2
 				{
-					position[]={14233.176,18.719448,16005.173};
-					azimut=24.771015;
+					position[]={15221.103,17.745508,17173.629};
+					azimut=114.49004;
 					special="NONE";
 					id=119;
 					side="GUER";
@@ -1980,13 +2096,14 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_ASL = group this; Grp_ASL setGroupId [""Alpha Squad Lead""];";
+					text="Unit_I_SQ1_Radio";
+					init="Grp_I_ASL = group this; Grp_I_ASL setGroupId [""Alpha Squad Lead""];";
 					description="Alpha Squad Radioman";
 				};
 				class Item3
 				{
-					position[]={14229.21,18.864048,15995.968};
-					azimut=127.30772;
+					position[]={15211.894,17.809046,17177.547};
+					azimut=217.02673;
 					special="NONE";
 					id=120;
 					side="GUER";
@@ -1994,7 +2111,8 @@ class Mission
 					player="PLAY CDG";
 					rank="CAPTAIN";
 					skill=0.60000002;
-					init="Grp_ASL = group this; Grp_ASL setGroupId [""Alpha Squad Lead""];";
+					text="Unit_I_SQ1_SQS";
+					init="Grp_I_ASL = group this; Grp_I_ASL setGroupId [""Alpha Squad Lead""];";
 					description="Alpha Squad Leader Sgt.";
 				};
 			};
@@ -2007,8 +2125,8 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14244.027,18.308567,15994.589};
-					azimut=-57.536015;
+					position[]={15210.568,17.827263,17162.717};
+					azimut=32.182949;
 					special="NONE";
 					id=121;
 					side="GUER";
@@ -2017,46 +2135,50 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_A1 = group this; Grp_A1 setGroupId [""Alpha 1""];";
+					text="Unit_I_SQ1_FT1_L";
+					init="Grp_I_A1 = group this; Grp_I_A1 setGroupId [""Alpha 1""];";
 					description="Alpha 1 Fireteam Leader";
 				};
 				class Item1
 				{
-					position[]={14247.501,18.14679,15991.403};
-					azimut=-57.536015;
+					position[]={15207.4,17.929565,17159.23};
+					azimut=32.182949;
 					special="NONE";
 					id=122;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_A1 = group this; Grp_A1 setGroupId [""Alpha 1""];";
+					text="Unit_I_SQ1_FT1_AR";
+					init="Grp_I_A1 = group this; Grp_I_A1 setGroupId [""Alpha 1""];";
 					description="Alpha 1 Automatic Rifleman";
 				};
 				class Item2
 				{
-					position[]={14250.708,18.044657,15988.199};
-					azimut=-57.536015;
+					position[]={15204.218,18.111477,17156.02};
+					azimut=32.182949;
 					special="NONE";
 					id=123;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_A1 = group this; Grp_A1 setGroupId [""Alpha 1""];";
+					text="Unit_I_SQ1_FT1_AAR";
+					init="Grp_I_A1 = group this; Grp_I_A1 setGroupId [""Alpha 1""];";
 					description="Alpha 1 Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
-					position[]={14254.575,18.00783,15984.24};
-					azimut=-57.536015;
+					position[]={15200.279,18.339003,17152.133};
+					azimut=32.182949;
 					special="NONE";
 					id=124;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_A1 = group this; Grp_A1 setGroupId [""Alpha 1""];";
+					text="Unit_I_SQ1_FT1_AT";
+					init="Grp_I_A1 = group this; Grp_I_A1 setGroupId [""Alpha 1""];";
 					description="Alpha 1 Rifleman (AT)";
 				};
 			};
@@ -2069,8 +2191,8 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14239.867,18.268284,15990.229};
-					azimut=-57.536015;
+					position[]={15206.19,17.798092,17166.863};
+					azimut=32.182949;
 					special="NONE";
 					id=125;
 					side="GUER";
@@ -2079,46 +2201,50 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_A2 = group this; Grp_A2 setGroupId [""Alpha 2""];";
+					text="Unit_I_SQ1_FT2_L";
+					init="Grp_I_A2 = group this; Grp_I_A2 setGroupId [""Alpha 2""];";
 					description="Alpha 2 Fireteam Leader";
 				};
 				class Item1
 				{
-					position[]={14243.394,18.127474,15986.986};
-					azimut=-57.536015;
+					position[]={15202.98,17.934904,17163.334};
+					azimut=32.182949;
 					special="NONE";
 					id=126;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_A2 = group this; Grp_A2 setGroupId [""Alpha 2""];";
+					text="Unit_I_SQ1_FT2_AR";
+					init="Grp_I_A2 = group this; Grp_I_A2 setGroupId [""Alpha 2""];";
 					description="Alpha 2 Automatic Rifleman";
 				};
 				class Item2
 				{
-					position[]={14246.677,18.049326,15983.748};
-					azimut=-57.536015;
+					position[]={15199.755,18.104485,17160.012};
+					azimut=32.182949;
 					special="NONE";
 					id=127;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_A2 = group this; Grp_A2 setGroupId [""Alpha 2""];";
+					text="Unit_I_SQ1_FT2_AAR";
+					init="Grp_I_A2 = group this; Grp_I_A2 setGroupId [""Alpha 2""];";
 					description="Alpha 2 Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
-					position[]={14250.456,17.994421,15980.179};
-					azimut=-57.536015;
+					position[]={15196.19,18.289909,17156.211};
+					azimut=32.182949;
 					special="NONE";
 					id=128;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_A2 = group this; Grp_A2 setGroupId [""Alpha 2""];";
+					text="Unit_I_SQ1_FT2_AT";
+					init="Grp_I_A2 = group this; Grp_I_A2 setGroupId [""Alpha 2""];";
 					description="Alpha 2 Rifleman (AT)";
 				};
 			};
@@ -2131,8 +2257,8 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14235.467,18.270578,15986.13};
-					azimut=-57.536015;
+					position[]={15202.086,17.810627,17171.219};
+					azimut=32.182949;
 					special="NONE";
 					id=129;
 					side="GUER";
@@ -2141,46 +2267,50 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_A3 = group this; Grp_A3 setGroupId [""Alpha 3""];";
+					text="Unit_I_SQ1_FT3_L";
+					init="Grp_I_A3 = group this; Grp_I_A3 setGroupId [""Alpha 3""];";
 					description="Alpha 3 Fireteam Leader";
 				};
 				class Item1
 				{
-					position[]={14239.353,18.115728,15982.748};
-					azimut=-57.536015;
+					position[]={15198.717,17.895596,17167.336};
+					azimut=32.182949;
 					special="NONE";
 					id=130;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_A3 = group this; Grp_A3 setGroupId [""Alpha 3""];";
+					text="Unit_I_SQ1_FT3_AR";
+					init="Grp_I_A3 = group this; Grp_I_A3 setGroupId [""Alpha 3""];";
 					description="Alpha 3 Automatic Rifleman";
 				};
 				class Item2
 				{
-					position[]={14243.153,18.040178,15979.49};
-					azimut=-57.536015;
+					position[]={15195.468,18.077656,17163.529};
+					azimut=32.182949;
 					special="NONE";
 					id=131;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_A3 = group this; Grp_A3 setGroupId [""Alpha 3""];";
+					text="Unit_I_SQ1_FT3_AAR";
+					init="Grp_I_A3 = group this; Grp_I_A3 setGroupId [""Alpha 3""];";
 					description="Alpha 3 Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
-					position[]={14246.647,17.999498,15976.131};
-					azimut=-57.536015;
+					position[]={15192.143,18.071182,17160.021};
+					azimut=32.182949;
 					special="NONE";
 					id=132;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_A3 = group this; Grp_A3 setGroupId [""Alpha 3""];";
+					text="Unit_I_SQ1_FT3_AT";
+					init="Grp_I_A3 = group this; Grp_I_A3 setGroupId [""Alpha 3""];";
 					description="Alpha 3 Rifleman (AT)";
 				};
 			};
@@ -2193,8 +2323,8 @@ class Mission
 				items=3;
 				class Item0
 				{
-					position[]={14198.393,18.089218,15960.805};
-					azimut=147.77713;
+					position[]={15176.567,17.920849,17208.193};
+					azimut=237.49615;
 					special="NONE";
 					id=133;
 					side="GUER";
@@ -2203,13 +2333,14 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_AF = group this; Grp_AF setGroupId [""Alpha Fox""];";
+					text="Unit_I_SQ1_F_L";
+					init="Grp_I_AF = group this; Grp_I_AF setGroupId [""Alpha Fox""];";
 					description="Alpha Fox Commander";
 				};
 				class Item1
 				{
-					position[]={14201.557,18.15836,15963.617};
-					azimut=147.77713;
+					position[]={15179.411,17.928432,17205.047};
+					azimut=237.49615;
 					special="NONE";
 					id=134;
 					side="GUER";
@@ -2217,20 +2348,22 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_AF = group this; Grp_AF setGroupId [""Alpha Fox""];";
+					text="Unit_I_SQ1_F_G";
+					init="Grp_I_AF = group this; Grp_I_AF setGroupId [""Alpha Fox""];";
 					description="Alpha Fox Gunner";
 				};
 				class Item2
 				{
-					position[]={14197.948,18.244511,15966.912};
-					azimut=147.77713;
+					position[]={15182.668,17.920216,17208.668};
+					azimut=237.49615;
 					special="NONE";
 					id=135;
 					side="GUER";
 					vehicle="T1_Indep_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_AF = group this; Grp_AF setGroupId [""Alpha Fox""];";
+					text="Unit_I_SQ1_F_D";
+					init="Grp_I_AF = group this; Grp_I_AF setGroupId [""Alpha Fox""];";
 					description="Alpha Fox Driver";
 				};
 			};
@@ -2243,8 +2376,8 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14225.755,18.574083,15986.123};
-					azimut=142.23514;
+					position[]={15202.014,17.813507,17180.949};
+					azimut=231.95416;
 					special="NONE";
 					id=136;
 					side="GUER";
@@ -2253,26 +2386,28 @@ class Mission
 					leader=1;
 					rank="MAJOR";
 					skill=0.60000002;
-					init="Grp_BSL = group this; Grp_BSL setGroupId [""Bravo Squad Lead""];";
+					text="Unit_I_SQ2_SQL";
+					init="Grp_I_BSL = group this; Grp_I_BSL setGroupId [""Bravo Squad Lead""];";
 					description="Bravo Squad Leader";
 				};
 				class Item1
 				{
-					position[]={14221.819,18.550131,15982.316};
-					azimut=142.23514;
+					position[]={15198.195,17.908762,17184.877};
+					azimut=231.95416;
 					special="NONE";
 					id=137;
 					side="GUER";
 					vehicle="T1_Indep_Squad_Medic_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_BSL = group this; Grp_BSL setGroupId [""Bravo Squad Lead""];";
+					text="Unit_I_SQ2_Medic";
+					init="Grp_I_BSL = group this; Grp_I_BSL setGroupId [""Bravo Squad Lead""];";
 					description="Bravo Squad Medic";
 				};
 				class Item2
 				{
-					position[]={14230.159,18.640549,15990.633};
-					azimut=24.771015;
+					position[]={15206.544,17.770075,17176.563};
+					azimut=114.49004;
 					special="NONE";
 					id=138;
 					side="GUER";
@@ -2280,13 +2415,14 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_BSL = group this; Grp_BSL setGroupId [""Bravo Squad Lead""];";
+					text="Unit_I_SQ2_Radio";
+					init="Grp_I_BSL = group this; Grp_I_BSL setGroupId [""Bravo Squad Lead""];";
 					description="Bravo Squad Radioman";
 				};
 				class Item3
 				{
-					position[]={14220.307,18.834169,15987.429};
-					azimut=134.89713;
+					position[]={15203.304,17.818314,17186.422};
+					azimut=224.61613;
 					special="NONE";
 					id=139;
 					side="GUER";
@@ -2294,7 +2430,8 @@ class Mission
 					player="PLAY CDG";
 					rank="CAPTAIN";
 					skill=0.60000002;
-					init="Grp_BSL = group this; Grp_BSL setGroupId [""Bravo Squad Lead""];";
+					text="Unit_I_SQ2_SQS";
+					init="Grp_I_BSL = group this; Grp_I_BSL setGroupId [""Bravo Squad Lead""];";
 					description="Bravo Squad Leader Sgt.";
 				};
 			};
@@ -2307,8 +2444,8 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14231.071,18.230631,15981.602};
-					azimut=-57.536015;
+					position[]={15197.522,17.905252,17175.617};
+					azimut=32.182949;
 					special="NONE";
 					id=140;
 					side="GUER";
@@ -2317,46 +2454,50 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_B1 = group this; Grp_B1 setGroupId [""Bravo 1""];";
+					text="Unit_I_SQ2_FT1_L";
+					init="Grp_I_B1 = group this; Grp_I_B1 setGroupId [""Bravo 1""];";
 					description="Bravo 1 Fireteam Leader";
 				};
 				class Item1
 				{
-					position[]={14234.735,18.104153,15978.309};
-					azimut=-57.536015;
+					position[]={15194.244,17.961884,17171.934};
+					azimut=32.182949;
 					special="NONE";
 					id=141;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_B1 = group this; Grp_B1 setGroupId [""Bravo 1""];";
+					text="Unit_I_SQ2_FT1_AR";
+					init="Grp_I_B1 = group this; Grp_I_B1 setGroupId [""Bravo 1""];";
 					description="Bravo 1 Automatic Rifleman";
 				};
 				class Item2
 				{
-					position[]={14238.438,18.031378,15975.292};
-					azimut=-57.536015;
+					position[]={15191.264,18.009394,17168.219};
+					azimut=32.182949;
 					special="NONE";
 					id=142;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_B1 = group this; Grp_B1 setGroupId [""Bravo 1""];";
+					text="Unit_I_SQ2_FT1_AAR";
+					init="Grp_I_B1 = group this; Grp_I_B1 setGroupId [""Bravo 1""];";
 					description="Bravo 1 Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
-					position[]={14242.009,17.995552,15972.104};
-					azimut=-57.536015;
+					position[]={15188.077,18.028255,17164.631};
+					azimut=32.182949;
 					special="NONE";
 					id=143;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_B1 = group this; Grp_B1 setGroupId [""Bravo 1""];";
+					text="Unit_I_SQ2_FT1_AT";
+					init="Grp_I_B1 = group this; Grp_I_B1 setGroupId [""Bravo 1""];";
 					description="Bravo 1 Rifleman (AT)";
 				};
 			};
@@ -2369,8 +2510,8 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14227.413,18.203833,15977.773};
-					azimut=-57.536015;
+					position[]={15193.68,17.957285,17179.258};
+					azimut=32.182949;
 					special="NONE";
 					id=144;
 					side="GUER";
@@ -2379,46 +2520,50 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_B2 = group this; Grp_B2 setGroupId [""Bravo 2""];";
+					text="Unit_I_SQ2_FT2_L";
+					init="Grp_I_B2 = group this; Grp_I_B2 setGroupId [""Bravo 2""];";
 					description="Bravo 2 Fireteam Leader";
 				};
 				class Item1
 				{
-					position[]={14231.26,18.083807,15974.347};
-					azimut=-57.536015;
+					position[]={15190.276,17.944279,17175.396};
+					azimut=32.182949;
 					special="NONE";
 					id=145;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_B2 = group this; Grp_B2 setGroupId [""Bravo 2""];";
+					text="Unit_I_SQ2_FT2_AR";
+					init="Grp_I_B2 = group this; Grp_I_B2 setGroupId [""Bravo 2""];";
 					description="Bravo 2 Automatic Rifleman";
 				};
 				class Item2
 				{
-					position[]={14234.718,18.020424,15971.509};
-					azimut=-57.536015;
+					position[]={15187.443,17.996672,17171.92};
+					azimut=32.182949;
 					special="NONE";
 					id=146;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_B2 = group this; Grp_B2 setGroupId [""Bravo 2""];";
+					text="Unit_I_SQ2_FT2_AAR";
+					init="Grp_I_B2 = group this; Grp_I_B2 setGroupId [""Bravo 2""];";
 					description="Bravo 2 Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
-					position[]={14238.489,17.986084,15968.151};
-					azimut=-57.536015;
+					position[]={15184.116,18.21183,17168.139};
+					azimut=32.182949;
 					special="NONE";
 					id=147;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_B2 = group this; Grp_B2 setGroupId [""Bravo 2""];";
+					text="Unit_I_SQ2_FT2_AT";
+					init="Grp_I_B2 = group this; Grp_I_B2 setGroupId [""Bravo 2""];";
 					description="Bravo 2 Rifleman (AT)";
 				};
 			};
@@ -2431,8 +2576,8 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14222.969,18.167952,15973.355};
-					azimut=-57.536015;
+					position[]={15189.238,17.926157,17183.67};
+					azimut=32.182949;
 					special="NONE";
 					id=148;
 					side="GUER";
@@ -2441,46 +2586,50 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_B3 = group this; Grp_B3 setGroupId [""Bravo 3""];";
+					text="Unit_I_SQ2_FT3_L";
+					init="Grp_I_B3 = group this; Grp_I_B3 setGroupId [""Bravo 3""];";
 					description="Bravo 3 Fireteam Leader";
 				};
 				class Item1
 				{
-					position[]={14226.94,18.052687,15970.066};
-					azimut=-57.536015;
+					position[]={15185.965,17.927834,17179.691};
+					azimut=32.182949;
 					special="NONE";
 					id=149;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_B3 = group this; Grp_B3 setGroupId [""Bravo 3""];";
+					text="Unit_I_SQ2_FT3_AR";
+					init="Grp_I_B3 = group this; Grp_I_B3 setGroupId [""Bravo 3""];";
 					description="Bravo 3 Automatic Rifleman";
 				};
 				class Item2
 				{
-					position[]={14230.205,17.992239,15967.09};
-					azimut=-57.536015;
+					position[]={15183.014,17.985008,17176.42};
+					azimut=32.182949;
 					special="NONE";
 					id=150;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_B3 = group this; Grp_B3 setGroupId [""Bravo 3""];";
+					text="Unit_I_SQ2_FT3_AAR";
+					init="Grp_I_B3 = group this; Grp_I_B3 setGroupId [""Bravo 3""];";
 					description="Bravo 3 Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
-					position[]={14233.776,17.978552,15963.967};
-					azimut=-57.536015;
+					position[]={15179.908,18.166075,17172.822};
+					azimut=32.182949;
 					special="NONE";
 					id=151;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_B3 = group this; Grp_B3 setGroupId [""Bravo 3""];";
+					text="Unit_I_SQ2_FT3_AT";
+					init="Grp_I_B3 = group this; Grp_I_B3 setGroupId [""Bravo 3""];";
 					description="Bravo 3 Rifleman (AT)";
 				};
 			};
@@ -2493,8 +2642,8 @@ class Mission
 				items=3;
 				class Item0
 				{
-					position[]={14207.101,17.777813,15952.348};
-					azimut=147.77713;
+					position[]={15168.144,17.91,17199.438};
+					azimut=237.49615;
 					special="NONE";
 					id=152;
 					side="GUER";
@@ -2503,13 +2652,14 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_BF = group this; Grp_BF setGroupId [""Bravo Fox""];";
+					text="Unit_I_SQ2_F_L";
+					init="Grp_I_BF = group this; Grp_I_BF setGroupId [""Bravo Fox""];";
 					description="Bravo Fox Commander";
 				};
 				class Item1
 				{
-					position[]={14210.271,17.919222,15955.153};
-					azimut=147.77713;
+					position[]={15170.961,17.91,17196.271};
+					azimut=237.49615;
 					special="NONE";
 					id=153;
 					side="GUER";
@@ -2517,20 +2667,22 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_BF = group this; Grp_BF setGroupId [""Bravo Fox""];";
+					text="Unit_I_SQ2_F_G";
+					init="Grp_I_BF = group this; Grp_I_BF setGroupId [""Bravo Fox""];";
 					description="Bravo Fox Gunner";
 				};
 				class Item2
 				{
-					position[]={14206.656,18.015417,15958.456};
-					azimut=147.77713;
+					position[]={15174.257,17.91703,17199.912};
+					azimut=237.49615;
 					special="NONE";
 					id=154;
 					side="GUER";
 					vehicle="T1_Indep_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_BF = group this; Grp_BF setGroupId [""Bravo Fox""];";
+					text="Unit_I_SQ2_F_D";
+					init="Grp_I_BF = group this; Grp_I_BF setGroupId [""Bravo Fox""];";
 					description="Bravo Fox Driver";
 				};
 			};
@@ -2543,8 +2695,8 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14217.449,18.391838,15977.854};
-					azimut=142.23514;
+					position[]={15193.715,17.978714,17189.219};
+					azimut=231.95416;
 					special="NONE";
 					id=155;
 					side="GUER";
@@ -2553,26 +2705,28 @@ class Mission
 					leader=1;
 					rank="MAJOR";
 					skill=0.60000002;
-					init="Grp_CSL = group this; Grp_CSL setGroupId [""Charlie Squad Lead""];";
+					text="Unit_I_SQ3_SQL";
+					init="Grp_I_CSL = group this; Grp_I_CSL setGroupId [""Charlie Squad Lead""];";
 					description="Charlie Squad Leader";
 				};
 				class Item1
 				{
-					position[]={14213.821,18.24917,15974.751};
-					azimut=142.23514;
+					position[]={15190.595,17.945047,17192.832};
+					azimut=231.95416;
 					special="NONE";
 					id=156;
 					side="GUER";
 					vehicle="T1_Indep_Squad_Medic_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_CSL = group this; Grp_CSL setGroupId [""Charlie Squad Lead""];";
+					text="Unit_I_SQ3_Medic";
+					init="Grp_I_CSL = group this; Grp_I_CSL setGroupId [""Charlie Squad Lead""];";
 					description="Charlie Squad Medic";
 				};
 				class Item2
 				{
-					position[]={14211.138,18.658241,15983.229};
-					azimut=142.23514;
+					position[]={15199.053,17.938501,17195.566};
+					azimut=231.95416;
 					special="NONE";
 					id=157;
 					side="GUER";
@@ -2580,13 +2734,14 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_CSL = group this; Grp_CSL setGroupId [""Charlie Squad Lead""];";
+					text="Unit_I_SQ3_Radio";
+					init="Grp_I_CSL = group this; Grp_I_CSL setGroupId [""Charlie Squad Lead""];";
 					description="Charlie Squad Radioman";
 				};
 				class Item3
 				{
-					position[]={14207.642,18.512939,15979.732};
-					azimut=136.47813;
+					position[]={15195.548,17.975138,17199.049};
+					azimut=226.19714;
 					special="NONE";
 					id=158;
 					side="GUER";
@@ -2594,7 +2749,8 @@ class Mission
 					player="PLAY CDG";
 					rank="CAPTAIN";
 					skill=0.60000002;
-					init="Grp_CSL = group this; Grp_CSL setGroupId [""Charlie Squad Lead""];";
+					text="Unit_I_SQ3_SQS";
+					init="Grp_I_CSL = group this; Grp_I_CSL setGroupId [""Charlie Squad Lead""];";
 					description="Charlie Squad Leader Sgt.";
 				};
 			};
@@ -2607,8 +2763,8 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14219.497,18.084721,15969.659};
-					azimut=-57.536015;
+					position[]={15185.535,17.91024,17187.141};
+					azimut=32.182949;
 					special="NONE";
 					id=159;
 					side="GUER";
@@ -2617,46 +2773,50 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_C1 = group this; Grp_C1 setGroupId [""Charlie 1""];";
+					text="Unit_I_SQ3_FT1_L";
+					init="Grp_I_C1 = group this; Grp_I_C1 setGroupId [""Charlie 1""];";
 					description="Charlie 1 Fireteam Leader";
 				};
 				class Item1
 				{
-					position[]={14223.227,18.003426,15966.006};
-					azimut=-57.536015;
+					position[]={15181.907,17.931353,17183.389};
+					azimut=32.182949;
 					special="NONE";
 					id=160;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_C1 = group this; Grp_C1 setGroupId [""Charlie 1""];";
+					text="Unit_I_SQ3_FT1_AR";
+					init="Grp_I_C1 = group this; Grp_I_C1 setGroupId [""Charlie 1""];";
 					description="Charlie 1 Automatic Rifleman";
 				};
 				class Item2
 				{
-					position[]={14227.059,17.976135,15962.805};
-					azimut=-57.536015;
+					position[]={15178.711,17.982073,17179.547};
+					azimut=32.182949;
 					special="NONE";
 					id=161;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_C1 = group this; Grp_C1 setGroupId [""Charlie 1""];";
+					text="Unit_I_SQ3_FT1_AAR";
+					init="Grp_I_C1 = group this; Grp_I_C1 setGroupId [""Charlie 1""];";
 					description="Charlie 1 Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
-					position[]={14230.265,17.963686,15959.786};
-					azimut=-57.536015;
+					position[]={15175.708,17.990013,17176.32};
+					azimut=32.182949;
 					special="NONE";
 					id=162;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_C1 = group this; Grp_C1 setGroupId [""Charlie 1""];";
+					text="Unit_I_SQ3_FT1_AT";
+					init="Grp_I_C1 = group this; Grp_I_C1 setGroupId [""Charlie 1""];";
 					description="Charlie 1 Rifleman (AT)";
 				};
 			};
@@ -2669,8 +2829,8 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14215.807,18.069321,15965.279};
-					azimut=-57.536015;
+					position[]={15181.134,17.911703,17190.803};
+					azimut=32.182949;
 					special="NONE";
 					id=163;
 					side="GUER";
@@ -2679,46 +2839,50 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_C2 = group this; Grp_C2 setGroupId [""Charlie 2""];";
+					text="Unit_I_SQ3_FT2_L";
+					init="Grp_I_C2 = group this; Grp_I_C2 setGroupId [""Charlie 2""];";
 					description="Charlie 2 Fireteam Leader";
 				};
 				class Item1
 				{
-					position[]={14219.53,17.981913,15961.802};
-					azimut=-57.536015;
+					position[]={15177.669,17.921703,17187.072};
+					azimut=32.182949;
 					special="NONE";
 					id=164;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_C2 = group this; Grp_C2 setGroupId [""Charlie 2""];";
+					text="Unit_I_SQ3_FT2_AR";
+					init="Grp_I_C2 = group this; Grp_I_C2 setGroupId [""Charlie 2""];";
 					description="Charlie 2 Automatic Rifleman";
 				};
 				class Item2
 				{
-					position[]={14222.898,17.959999,15958.542};
-					azimut=-57.536015;
+					position[]={15174.432,17.91773,17183.682};
+					azimut=32.182949;
 					special="NONE";
 					id=165;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_C2 = group this; Grp_C2 setGroupId [""Charlie 2""];";
+					text="Unit_I_SQ3_FT2_AAR";
+					init="Grp_I_C2 = group this; Grp_I_C2 setGroupId [""Charlie 2""];";
 					description="Charlie 2 Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
-					position[]={14226.459,17.959999,15955.336};
-					azimut=-57.536015;
+					position[]={15171.246,17.922745,17180.109};
+					azimut=32.182949;
 					special="NONE";
 					id=166;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_C2 = group this; Grp_C2 setGroupId [""Charlie 2""];";
+					text="Unit_I_SQ3_FT2_AT";
+					init="Grp_I_C2 = group this; Grp_I_C2 setGroupId [""Charlie 2""];";
 					description="Charlie 2 Rifleman (AT)";
 				};
 			};
@@ -2731,8 +2895,8 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14211.884,18.024508,15961.68};
-					azimut=-57.536015;
+					position[]={15177.516,17.918852,17194.695};
+					azimut=32.182949;
 					special="NONE";
 					id=167;
 					side="GUER";
@@ -2741,46 +2905,50 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_C3 = group this; Grp_C3 setGroupId [""Charlie 3""];";
+					text="Unit_I_SQ3_FT3_L";
+					init="Grp_I_C3 = group this; Grp_I_C3 setGroupId [""Charlie 3""];";
 					description="Charlie 3 Fireteam Leader";
 				};
 				class Item1
 				{
-					position[]={14215.471,17.963881,15958.381};
-					azimut=-57.536015;
+					position[]={15174.24,17.91,17191.105};
+					azimut=32.182949;
 					special="NONE";
 					id=168;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_C3 = group this; Grp_C3 setGroupId [""Charlie 3""];";
+					text="Unit_I_SQ3_FT3_AR";
+					init="Grp_I_C3 = group this; Grp_I_C3 setGroupId [""Charlie 3""];";
 					description="Charlie 3 Automatic Rifleman";
 				};
 				class Item2
 				{
-					position[]={14219.174,17.954357,15954.941};
-					azimut=-57.536015;
+					position[]={15170.799,17.91,17187.393};
+					azimut=32.182949;
 					special="NONE";
 					id=169;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AAR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_C3 = group this; Grp_C3 setGroupId [""Charlie 3""];";
+					text="Unit_I_SQ3_FT3_AAR";
+					init="Grp_I_C3 = group this; Grp_I_C3 setGroupId [""Charlie 3""];";
 					description="Charlie 3 Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
-					position[]={14222.656,17.952656,15951.834};
-					azimut=-57.536015;
+					position[]={15167.713,17.91,17183.891};
+					azimut=32.182949;
 					special="NONE";
 					id=170;
 					side="GUER";
 					vehicle="T1_Indep_Squad_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_C3 = group this; Grp_C3 setGroupId [""Charlie 3""];";
+					text="Unit_I_SQ3_FT3_AT";
+					init="Grp_I_C3 = group this; Grp_I_C3 setGroupId [""Charlie 3""];";
 					description="Charlie 3 Rifleman (AT)";
 				};
 			};
@@ -2793,8 +2961,8 @@ class Mission
 				items=3;
 				class Item0
 				{
-					position[]={14214.46,17.866148,15944.536};
-					azimut=147.77713;
+					position[]={15160.368,17.91,17192.033};
+					azimut=237.49615;
 					special="NONE";
 					id=171;
 					side="GUER";
@@ -2803,13 +2971,14 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_CF = group this; Grp_CF setGroupId [""Charlie Fox""];";
+					text="Unit_I_SQ3_F_C";
+					init="Grp_I_CF = group this; Grp_I_CF setGroupId [""Charlie Fox""];";
 					description="Charlie Fox Commander";
 				};
 				class Item1
 				{
-					position[]={14217.623,17.911455,15947.349};
-					azimut=147.77713;
+					position[]={15163.204,17.91,17188.9};
+					azimut=237.49615;
 					special="NONE";
 					id=172;
 					side="GUER";
@@ -2817,20 +2986,22 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_CF = group this; Grp_CF setGroupId [""Charlie Fox""];";
+					text="Unit_I_SQ3_F_G";
+					init="Grp_I_CF = group this; Grp_I_CF setGroupId [""Charlie Fox""];";
 					description="Charlie Fox Gunner";
 				};
 				class Item2
 				{
-					position[]={14214.013,17.867702,15950.643};
-					azimut=147.77713;
+					position[]={15166.478,17.91,17192.527};
+					azimut=237.49615;
 					special="NONE";
 					id=173;
 					side="GUER";
 					vehicle="T1_Indep_Crewman_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_CF = group this; Grp_CF setGroupId [""Charlie Fox""];";
+					text="Unit_I_SQ3_F_D";
+					init="Grp_I_CF = group this; Grp_I_CF setGroupId [""Charlie Fox""];";
 					description="Charlie Fox Driver";
 				};
 			};
@@ -2843,8 +3014,8 @@ class Mission
 				items=6;
 				class Item0
 				{
-					position[]={14189.162,17.92,15911.533};
-					azimut=128.85612;
+					position[]={15127.255,17.91,17217.174};
+					azimut=218.57513;
 					special="NONE";
 					id=174;
 					side="GUER";
@@ -2853,72 +3024,78 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_Shadow1 = group this; Grp_Shadow1 setGroupId [""Shadow 1""];";
+					text="Unit_I_SF1_L";
+					init="Grp_I_Shadow1 = group this; Grp_I_Shadow1 setGroupId [""Shadow 1""];";
 					description="Shadow 1 Leader";
 				};
 				class Item1
 				{
-					position[]={14185.324,17.919537,15915.033};
-					azimut=128.85612;
+					position[]={15130.739,17.91,17221.039};
+					azimut=218.57513;
 					special="NONE";
 					id=175;
 					side="GUER";
 					vehicle="T1_Indep_SF_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Shadow1 = group this; Grp_Shadow1 setGroupId [""Shadow 1""];";
+					text="Unit_I_SF1_AR";
+					init="Grp_I_Shadow1 = group this; Grp_I_Shadow1 setGroupId [""Shadow 1""];";
 					description="Shadow 1 Heavy gunner";
 				};
 				class Item2
 				{
-					position[]={14182.029,17.877348,15918.34};
-					azimut=128.85612;
+					position[]={15134.047,17.91,17224.346};
+					azimut=218.57513;
 					special="NONE";
 					id=176;
 					side="GUER";
 					vehicle="T1_Indep_SF_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Shadow1 = group this; Grp_Shadow1 setGroupId [""Shadow 1""];";
+					text="Unit_I_SF1_Radio";
+					init="Grp_I_Shadow1 = group this; Grp_I_Shadow1 setGroupId [""Shadow 1""];";
 					description="Shadow 1 Radioman (AT)";
 				};
 				class Item3
 				{
-					position[]={14178.329,17.845154,15921.863};
-					azimut=128.85612;
+					position[]={15137.539,17.91,17228.074};
+					azimut=218.57513;
 					special="NONE";
 					id=177;
 					side="GUER";
 					vehicle="T1_Indep_SF_Marksman_DMS_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Shadow1 = group this; Grp_Shadow1 setGroupId [""Shadow 1""];";
+					text="Unit_I_SF1_Mark";
+					init="Grp_I_Shadow1 = group this; Grp_I_Shadow1 setGroupId [""Shadow 1""];";
 					description="Shadow 1 Marksman";
 				};
 				class Item4
 				{
-					position[]={14174.5,17.832966,15925.224};
-					azimut=128.85612;
+					position[]={15140.865,17.91,17231.904};
+					azimut=218.57513;
 					special="NONE";
 					id=178;
 					side="GUER";
 					vehicle="T1_Indep_SF_Explosive_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Shadow1 = group this; Grp_Shadow1 setGroupId [""Shadow 1""];";
+					text="Unit_I_SF1_Sab";
+					init="Grp_I_Shadow1 = group this; Grp_I_Shadow1 setGroupId [""Shadow 1""];";
 					description="Shadow 1 Saboteur";
 				};
 				class Item5
 				{
-					position[]={14170.732,17.926378,15929.146};
-					azimut=128.85612;
+					position[]={15144.771,17.91,17235.699};
+					azimut=218.57513;
 					special="NONE";
 					id=179;
 					side="GUER";
 					vehicle="T1_Indep_SF_Medic_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Shadow1 = group this; Grp_Shadow1 setGroupId [""Shadow 1""];";
+					text="Unit_I_SF1_Medic";
+					init="Grp_I_Shadow1 = group this; Grp_I_Shadow1 setGroupId [""Shadow 1""];";
 					description="Shadow 1 Medic";
 				};
 			};
@@ -2931,8 +3108,8 @@ class Mission
 				items=6;
 				class Item0
 				{
-					position[]={14192.913,17.912031,15915.995};
-					azimut=127.65703;
+					position[]={15131.736,17.91,17213.441};
+					azimut=217.37604;
 					special="NONE";
 					id=180;
 					side="GUER";
@@ -2941,72 +3118,78 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_Shadow2 = group this; Grp_Shadow2 setGroupId [""Shadow 2""];";
+					text="Unit_I_SF2_L";
+					init="Grp_I_Shadow2 = group this; Grp_I_Shadow2 setGroupId [""Shadow 2""];";
 					description="Shadow 2 Leader";
 				};
 				class Item1
 				{
-					position[]={14189.602,17.887354,15918.814};
-					azimut=127.65703;
+					position[]={15134.531,17.91,17216.771};
+					azimut=217.37604;
 					special="NONE";
 					id=181;
 					side="GUER";
 					vehicle="T1_Indep_SF_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Shadow2 = group this; Grp_Shadow2 setGroupId [""Shadow 2""];";
+					text="xxxxxxxxxxxxxxx";
+					init="Grp_I_Shadow2 = group this; Grp_I_Shadow2 setGroupId [""Shadow 2""];";
 					description="Shadow 2 Heavy gunner";
 				};
 				class Item2
 				{
-					position[]={14186.069,17.841661,15922.172};
-					azimut=127.65703;
+					position[]={15137.876,17.91,17220.324};
+					azimut=217.37604;
 					special="NONE";
 					id=182;
 					side="GUER";
 					vehicle="T1_Indep_SF_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Shadow2 = group this; Grp_Shadow2 setGroupId [""Shadow 2""];";
+					text="Unit_I_SF2_Radio";
+					init="Grp_I_Shadow2 = group this; Grp_I_Shadow2 setGroupId [""Shadow 2""];";
 					description="Shadow 2 Radioman (AT)";
 				};
 				class Item3
 				{
-					position[]={14182.23,17.802254,15925.625};
-					azimut=127.65703;
+					position[]={15141.305,17.91,17224.178};
+					azimut=217.37604;
 					special="NONE";
 					id=183;
 					side="GUER";
 					vehicle="T1_Indep_SF_Marksman_DMS_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Shadow2 = group this; Grp_Shadow2 setGroupId [""Shadow 2""];";
+					text="Unit_I_SF2_Mark";
+					init="Grp_I_Shadow2 = group this; Grp_I_Shadow2 setGroupId [""Shadow 2""];";
 					description="Shadow 2 Marksman";
 				};
 				class Item4
 				{
-					position[]={14178.593,17.768885,15929.153};
-					azimut=127.65703;
+					position[]={15144.828,17.91,17227.828};
+					azimut=217.37604;
 					special="NONE";
 					id=184;
 					side="GUER";
 					vehicle="T1_Indep_SF_Explosive_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Shadow2 = group this; Grp_Shadow2 setGroupId [""Shadow 2""];";
+					text="Unit_I_SF2_Sab";
+					init="Grp_I_Shadow2 = group this; Grp_I_Shadow2 setGroupId [""Shadow 2""];";
 					description="Shadow 2 Saboteur";
 				};
 				class Item5
 				{
-					position[]={14174.649,17.773886,15932.835};
-					azimut=127.657;
+					position[]={15148.48,17.91,17231.787};
+					azimut=217.37601;
 					special="NONE";
 					id=185;
 					side="GUER";
 					vehicle="T1_Indep_SF_Medic_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Shadow2 = group this; Grp_Shadow2 setGroupId [""Shadow 2""];";
+					text="Unit_I_SF2_Medic";
+					init="Grp_I_Shadow2 = group this; Grp_I_Shadow2 setGroupId [""Shadow 2""];";
 					description="Shadow 2 Medic";
 				};
 			};
@@ -3019,8 +3202,8 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14219.263,18.993937,15992.72};
-					azimut=319.10916;
+					position[]={15208.583,17.849907,17187.484};
+					azimut=408.82779;
 					special="NONE";
 					id=186;
 					side="GUER";
@@ -3029,20 +3212,22 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_Reaper1 = group this; Grp_Reaper1 setGroupId [""Reaper 1""];";
+					text="Unit_I_AIR1_P";
+					init="Grp_I_Reaper1 = group this; Grp_I_Reaper1 setGroupId [""Reaper 1""];";
 					description="Reaper 1-1";
 				};
 				class Item1
 				{
-					position[]={14214.924,18.813852,15988.37};
-					azimut=319.10916;
+					position[]={15204.22,17.879585,17191.795};
+					azimut=408.82779;
 					special="NONE";
 					id=187;
 					side="GUER";
 					vehicle="T1_Indep_Pilot_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Reaper1 = group this; Grp_Reaper1 setGroupId [""Reaper 1""];";
+					text="Unit_I_AIR1_CP";
+					init="Grp_I_Reaper1 = group this; Grp_I_Reaper1 setGroupId [""Reaper 1""];";
 					description="Reaper 1-2";
 				};
 			};
@@ -3055,8 +3240,8 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14228.719,18.884809,16001.41};
-					azimut=319.10916;
+					position[]={15217.316,17.749365,17178.072};
+					azimut=408.82779;
 					special="NONE";
 					id=188;
 					side="GUER";
@@ -3065,20 +3250,22 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_Reaper2 = group this; Grp_Reaper2 setGroupId [""Reaper 2""];";
+					text="Unit_I_AIR2_P";
+					init="Grp_I_Reaper2 = group this; Grp_I_Reaper2 setGroupId [""Reaper 2""];";
 					description="Reaper 2-1";
 				};
 				class Item1
 				{
-					position[]={14224.281,18.995523,15997.021};
-					azimut=319.10916;
+					position[]={15212.92,17.666626,17182.479};
+					azimut=408.82779;
 					special="NONE";
 					id=189;
 					side="GUER";
 					vehicle="T1_Indep_Pilot_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Reaper2 = group this; Grp_Reaper2 setGroupId [""Reaper 2""];";
+					text="Unit_I_AIR2_CP";
+					init="Grp_I_Reaper2 = group this; Grp_I_Reaper2 setGroupId [""Reaper 2""];";
 					description="Reaper 2-2";
 				};
 			};
@@ -3091,8 +3278,8 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14186.394,17.911562,15945.073};
-					azimut=137.39014;
+					position[]={15160.758,17.91,17220.105};
+					azimut=227.10915;
 					special="NONE";
 					id=190;
 					side="GUER";
@@ -3101,20 +3288,22 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_Sierra1 = group this; Grp_Sierra1 setGroupId [""Sierra 1""];";
+					text="Unit_I_S1_Spotter";
+					init="Grp_I_Sierra1 = group this; Grp_I_Sierra1 setGroupId [""Sierra 1""];";
 					description="Sierra 1 Spotter";
 				};
 				class Item1
 				{
-					position[]={14189.983,17.957415,15948.546};
-					azimut=137.39014;
+					position[]={15164.279,17.91,17216.543};
+					azimut=227.10915;
 					special="NONE";
 					id=191;
 					side="GUER";
 					vehicle="T1_Indep_Sniper_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Sierra1 = group this; Grp_Sierra1 setGroupId [""Sierra 1""];";
+					text="Unit_I_S1_Sniper";
+					init="Grp_I_Sierra1 = group this; Grp_I_Sierra1 setGroupId [""Sierra 1""];";
 					description="Sierra 1 Sniper";
 				};
 			};
@@ -3127,8 +3316,8 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14182.051,17.985973,15948.476};
-					azimut=137.39;
+					position[]={15164.168,17.91,17224.48};
+					azimut=227.10901;
 					special="NONE";
 					id=192;
 					side="GUER";
@@ -3137,20 +3326,22 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_Sierra2 = group this; Grp_Sierra2 setGroupId [""Sierra 2""];";
+					text="Unit_I_S2_Spotter";
+					init="Grp_I_Sierra2 = group this; Grp_I_Sierra2 setGroupId [""Sierra 2""];";
 					description="Sierra 2 Spotter";
 				};
 				class Item1
 				{
-					position[]={14185.882,18.041716,15952.408};
-					azimut=137.39;
+					position[]={15168.096,17.91,17220.662};
+					azimut=227.10901;
 					special="NONE";
 					id=193;
 					side="GUER";
 					vehicle="T1_Indep_Sniper_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Sierra2 = group this; Grp_Sierra2 setGroupId [""Sierra 2""];";
+					text="Unit_I_S2_Sniper";
+					init="Grp_I_Sierra2 = group this; Grp_I_Sierra2 setGroupId [""Sierra 2""];";
 					description="Sierra 2 Sniper";
 				};
 			};
@@ -3163,8 +3354,8 @@ class Mission
 				items=6;
 				class Item0
 				{
-					position[]={14196.578,17.912632,15919.144};
-					azimut=137.39014;
+					position[]={15134.888,17.91,17209.811};
+					azimut=227.10915;
 					special="NONE";
 					id=194;
 					side="GUER";
@@ -3173,72 +3364,78 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_Neptune1 = group this; Grp_Neptune1 setGroupId [""Neptune 1""];";
+					text="Unit_I_D1_L";
+					init="Grp_I_Neptune1 = group this; Grp_I_Neptune1 setGroupId [""Neptune 1""];";
 					description="Neptune 1 Leader";
 				};
 				class Item1
 				{
-					position[]={14193.327,17.886477,15922.527};
-					azimut=137.39014;
+					position[]={15138.265,17.91,17213.068};
+					azimut=227.10915;
 					special="NONE";
 					id=195;
 					side="GUER";
 					vehicle="T1_Indep_Diver_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Neptune1 = group this; Grp_Neptune1 setGroupId [""Neptune 1""];";
+					text="Unit_I_D1_AR";
+					init="Grp_I_Neptune1 = group this; Grp_I_Neptune1 setGroupId [""Neptune 1""];";
 					description="Neptune 1 Heavy Gunner";
 				};
 				class Item2
 				{
-					position[]={14190.096,17.844734,15925.506};
-					azimut=137.39014;
+					position[]={15141.228,17.91,17216.318};
+					azimut=227.10915;
 					special="NONE";
 					id=196;
 					side="GUER";
 					vehicle="T1_Indep_Diver_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Neptune1 = group this; Grp_Neptune1 setGroupId [""Neptune 1""];";
+					text="Unit_I_D1_Radio";
+					init="Grp_I_Neptune1 = group this; Grp_I_Neptune1 setGroupId [""Neptune 1""];";
 					description="Neptune 1 Radioman (AT)";
 				};
 				class Item3
 				{
-					position[]={14186.227,17.804186,15929.191};
-					azimut=137.39014;
+					position[]={15144.889,17.91,17220.209};
+					azimut=227.10915;
 					special="NONE";
 					id=197;
 					side="GUER";
 					vehicle="T1_Indep_Diver_Marksman_DMS_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Neptune1 = group this; Grp_Neptune1 setGroupId [""Neptune 1""];";
+					text="Unit_I_D1_Mark";
+					init="Grp_I_Neptune1 = group this; Grp_I_Neptune1 setGroupId [""Neptune 1""];";
 					description="Neptune 1 Marksman";
 				};
 				class Item4
 				{
-					position[]={14182.277,17.768711,15932.969};
-					azimut=137.39014;
+					position[]={15148.656,17.91,17224.172};
+					azimut=227.10915;
 					special="NONE";
 					id=198;
 					side="GUER";
 					vehicle="T1_Indep_Diver_Explosive_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Neptune1 = group this; Grp_Neptune1 setGroupId [""Neptune 1""];";
+					text="Unit_I_D1_Sab";
+					init="Grp_I_Neptune1 = group this; Grp_I_Neptune1 setGroupId [""Neptune 1""];";
 					description="Neptune 1 Saboteur";
 				};
 				class Item5
 				{
-					position[]={14178.774,17.765507,15936.106};
-					azimut=137.39014;
+					position[]={15151.792,17.91,17227.697};
+					azimut=227.10915;
 					special="NONE";
 					id=199;
 					side="GUER";
 					vehicle="T1_Indep_Diver_Medic_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Neptune1 = group this; Grp_Neptune1 setGroupId [""Neptune 1""];";
+					text="Unit_I_D1_Medic";
+					init="Grp_I_Neptune1 = group this; Grp_I_Neptune1 setGroupId [""Neptune 1""];";
 					description="Neptune 1 Medic";
 				};
 			};
@@ -3251,8 +3448,8 @@ class Mission
 				items=6;
 				class Item0
 				{
-					position[]={14200.772,17.924364,15923.278};
-					azimut=137.39014;
+					position[]={15139.061,17.91,17205.629};
+					azimut=227.10915;
 					special="NONE";
 					id=200;
 					side="GUER";
@@ -3261,72 +3458,78 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_Neptune2 = group this; Grp_Neptune2 setGroupId [""Neptune 2""];";
+					text="Unit_I_D2_L";
+					init="Grp_I_Neptune2 = group this; Grp_I_Neptune2 setGroupId [""Neptune 2""];";
 					description="Neptune 2 Leader";
 				};
 				class Item1
 				{
-					position[]={14197.515,17.920021,15926.66};
-					azimut=137.39014;
+					position[]={15142.396,17.91,17208.898};
+					azimut=227.10915;
 					special="NONE";
 					id=201;
 					side="GUER";
 					vehicle="T1_Indep_Diver_AR_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Neptune2 = group this; Grp_Neptune2 setGroupId [""Neptune 2""];";
+					text="Unit_I_D2_AR";
+					init="Grp_I_Neptune2 = group this; Grp_I_Neptune2 setGroupId [""Neptune 2""];";
 					description="Neptune 2 Heavy Gunner";
 				};
 				class Item2
 				{
-					position[]={14194.284,17.877129,15929.641};
-					azimut=137.39014;
+					position[]={15145.385,17.91,17212.141};
+					azimut=227.10915;
 					special="NONE";
 					id=202;
 					side="GUER";
 					vehicle="T1_Indep_Diver_AT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Neptune2 = group this; Grp_Neptune2 setGroupId [""Neptune 2""];";
+					text="Unit_I_D2_Radio";
+					init="Grp_I_Neptune2 = group this; Grp_I_Neptune2 setGroupId [""Neptune 2""];";
 					description="Neptune 2 Radioman (AT)";
 				};
 				class Item3
 				{
-					position[]={14190.407,17.825443,15933.329};
-					azimut=137.39014;
+					position[]={15149.043,17.91,17216.021};
+					azimut=227.10915;
 					special="NONE";
 					id=203;
 					side="GUER";
 					vehicle="T1_Indep_Diver_Marksman_DMS_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Neptune2 = group this; Grp_Neptune2 setGroupId [""Neptune 2""];";
+					text="Unit_I_D2_Mark";
+					init="Grp_I_Neptune2 = group this; Grp_I_Neptune2 setGroupId [""Neptune 2""];";
 					description="Neptune 2 Marksman";
 				};
 				class Item4
 				{
-					position[]={14186.471,17.787067,15937.106};
-					azimut=137.39014;
+					position[]={15152.807,17.91,17219.992};
+					azimut=227.10915;
 					special="NONE";
 					id=204;
 					side="GUER";
 					vehicle="T1_Indep_Diver_Explosive_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Neptune2 = group this; Grp_Neptune2 setGroupId [""Neptune 2""];";
+					text="Unit_I_D2_Sab";
+					init="Grp_I_Neptune2 = group this; Grp_I_Neptune2 setGroupId [""Neptune 2""];";
 					description="Neptune 2 Saboteur";
 				};
 				class Item5
 				{
-					position[]={14182.96,17.812813,15940.241};
-					azimut=137.39014;
+					position[]={15155.906,17.91,17223.512};
+					azimut=227.10915;
 					special="NONE";
 					id=205;
 					side="GUER";
 					vehicle="T1_Indep_Diver_Medic_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_Neptune2 = group this; Grp_Neptune2 setGroupId [""Neptune 2""];";
+					text="Unit_I_D2_Medic";
+					init="Grp_I_Neptune2 = group this; Grp_I_Neptune2 setGroupId [""Neptune 2""];";
 					description="Neptune 2 Medic";
 				};
 			};
@@ -3339,8 +3542,8 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14177.963,17.894688,15944.282};
-					azimut=137.39;
+					position[]={15159.93,17.91,17228.539};
+					azimut=227.10901;
 					special="NONE";
 					id=206;
 					side="GUER";
@@ -3349,13 +3552,14 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_ReconTeam1 = group this; ReconTeam1 setGroupId [""Recon Team 1""];";
+					text="Unit_I_R1_L";
+					init="Grp_I_ReconTeam1 = group this; Grp_I_ReconTeam1 setGroupId [""Recon Team 1""];";
 					description="Recon Team 1 Leader";
 				};
 				class Item1
 				{
-					position[]={14174.651,17.849854,15940.982};
-					azimut=137.39;
+					position[]={15156.628,17.91,17231.828};
+					azimut=227.10901;
 					special="NONE";
 					id=207;
 					side="GUER";
@@ -3363,7 +3567,8 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_ReconTeam1 = group this; ReconTeam1 setGroupId [""Recon Team 1""];";
+					text="Unit_I_R1_S";
+					init="Grp_I_ReconTeam1 = group this; Grp_I_ReconTeam1 setGroupId [""Recon Team 1""];";
 					description="Recon Team 1 Scout";
 				};
 			};
@@ -3376,8 +3581,8 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14174.415,18.005585,15948.126};
-					azimut=137.39;
+					position[]={15163.767,17.91,17232.107};
+					azimut=227.10901;
 					special="NONE";
 					id=208;
 					side="GUER";
@@ -3386,13 +3591,14 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_ReconTeam2 = group this; ReconTeam2 setGroupId [""Recon Team 2""];";
+					text="Unit_I_R2_L";
+					init="Grp_I_ReconTeam2 = group this; Grp_I_ReconTeam2 setGroupId [""Recon Team 2""];";
 					description="Recon Team 2 Leader";
 				};
 				class Item1
 				{
-					position[]={14171.1,18.072948,15944.816};
-					azimut=137.39;
+					position[]={15160.451,17.91,17235.404};
+					azimut=227.10901;
 					special="NONE";
 					id=209;
 					side="GUER";
@@ -3400,7 +3606,8 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_ReconTeam2 = group this; ReconTeam2 setGroupId [""Recon Team 2""];";
+					text="Unit_I_R2_S";
+					init="Grp_I_ReconTeam2 = group this; Grp_I_ReconTeam2 setGroupId [""Recon Team 2""];";
 					description="Recon Team 2 Scout";
 				};
 			};
@@ -3413,8 +3620,8 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14169.871,18.007652,15936.881};
-					azimut=137.39;
+					position[]={15152.514,17.91,17236.607};
+					azimut=227.10901;
 					special="NONE";
 					id=210;
 					side="GUER";
@@ -3423,13 +3630,14 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_ReconTeam3 = group this; ReconTeam3 setGroupId [""Recon Team 3""];";
+					text="Unit_I_R3_L";
+					init="Grp_I_ReconTeam3 = group this; Grp_I_ReconTeam3 setGroupId [""Recon Team 3""];";
 					description="Recon Team 3 Leader";
 				};
 				class Item1
 				{
-					position[]={14166.558,18.095751,15933.576};
-					azimut=137.39;
+					position[]={15149.177,17.91,17239.898};
+					azimut=227.10901;
 					special="NONE";
 					id=211;
 					side="GUER";
@@ -3437,7 +3645,8 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_ReconTeam3 = group this; ReconTeam3 setGroupId [""Recon Team 3""];";
+					text="Unit_I_R3_S";
+					init="Grp_I_ReconTeam3 = group this; Grp_I_ReconTeam3 setGroupId [""Recon Team 3""];";
 					description="Recon Team 3 Scout";
 				};
 			};
@@ -3450,8 +3659,8 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14166.317,18.217642,15940.718};
-					azimut=137.39;
+					position[]={15156.314,17.91,17240.168};
+					azimut=227.10901;
 					special="NONE";
 					id=212;
 					side="GUER";
@@ -3460,13 +3669,14 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="Grp_ReconTeam4 = group this; ReconTeam4 setGroupId [""Recon Team 4""];";
+					text="Unit_I_R4_L";
+					init="Grp_I_ReconTeam4 = group this; Grp_I_ReconTeam4 setGroupId [""Recon Team 4""];";
 					description="Recon Team 4 Leader";
 				};
 				class Item1
 				{
-					position[]={14163.005,18.203033,15937.418};
-					azimut=137.39;
+					position[]={15153.005,17.91,17243.453};
+					azimut=227.10901;
 					special="NONE";
 					id=213;
 					side="GUER";
@@ -3474,7 +3684,8 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_ReconTeam4 = group this; ReconTeam4 setGroupId [""Recon Team 4""];";
+					text="Unit_I_R4_S";
+					init="Grp_I_ReconTeam4 = group this; Grp_I_ReconTeam4 setGroupId [""Recon Team 4""];";
 					description="Recon Team 4 Scout";
 				};
 			};
@@ -3487,8 +3698,8 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14210.864,17.853561,15940.413};
-					azimut=137.39014;
+					position[]={15156.222,17.91,17195.621};
+					azimut=227.10915;
 					special="NONE";
 					id=214;
 					side="GUER";
@@ -3497,20 +3708,22 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_MediumMG1 = group this; Grp_MediumMG1 setGroupId [""Medium MG 1""];";
+					text="Unit_I_MG1_G";
+					init="Grp_I_MediumMG1 = group this; Grp_I_MediumMG1 setGroupId [""Medium MG 1""];";
 					description="Medium MG 1 Gunner";
 				};
 				class Item1
 				{
-					position[]={14207.371,17.840979,15937.198};
-					azimut=137.39014;
+					position[]={15153.01,17.91,17199.094};
+					azimut=227.10915;
 					special="NONE";
 					id=215;
 					side="GUER";
 					vehicle="T1_Indep_Specialist_AMG_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_MediumMG1 = group this; Grp_MediumMG1 setGroupId [""Medium MG 1""];";
+					text="Unit_I_MG1_A";
+					init="Grp_I_MediumMG1 = group this; Grp_I_MediumMG1 setGroupId [""Medium MG 1""];";
 					description="Medium MG 1 Assistant";
 				};
 			};
@@ -3523,8 +3736,8 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14207.514,17.814075,15943.628};
-					azimut=137.39014;
+					position[]={15159.441,17.91,17198.992};
+					azimut=227.10915;
 					special="NONE";
 					id=216;
 					side="GUER";
@@ -3533,20 +3746,22 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_MediumMG2 = group this; Grp_MediumMG2 setGroupId [""Medium MG 2""];";
+					text="Unit_I_MG2_G";
+					init="Grp_I_MediumMG2 = group this; Grp_I_MediumMG2 setGroupId [""Medium MG 2""];";
 					description="Medium MG 2 Gunner";
 				};
 				class Item1
 				{
-					position[]={14204.022,17.80057,15940.403};
-					azimut=137.39014;
+					position[]={15156.193,17.91,17202.467};
+					azimut=227.10915;
 					special="NONE";
 					id=217;
 					side="GUER";
 					vehicle="T1_Indep_Specialist_AMG_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_MediumMG2 = group this; Grp_MediumMG2 setGroupId [""Medium MG 2""];";
+					text="Unit_I_MG2_A";
+					init="Grp_I_MediumMG2 = group this; Grp_I_MediumMG2 setGroupId [""Medium MG 2""];";
 					description="Medium MG 2 Assistant";
 				};
 			};
@@ -3559,8 +3774,8 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14196.953,17.792137,15940.914};
-					azimut=137.39014;
+					position[]={15156.67,17.91,17209.529};
+					azimut=227.10915;
 					special="NONE";
 					id=218;
 					side="GUER";
@@ -3569,20 +3784,22 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_HeavyAA1 = group this; Grp_HeavyAA1 setGroupId [""Heavy AA 1""];";
+					text="Unit_I_AA1_G";
+					init="Grp_I_HeavyAA1 = group this; Grp_I_HeavyAA1 setGroupId [""Heavy AA 1""];";
 					description="Heavy Anti Air 1 Gunner";
 				};
 				class Item1
 				{
-					position[]={14193.462,17.82246,15937.705};
-					azimut=137.39014;
+					position[]={15153.438,17.91,17213.01};
+					azimut=227.10915;
 					special="NONE";
 					id=219;
 					side="GUER";
 					vehicle="T1_Indep_Specialist_AAA_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_HeavyAA1 = group this; Grp_HeavyAA1 setGroupId [""Heavy AA 1""];";
+					text="Unit_I_AA1_A";
+					init="Grp_I_HeavyAA1 = group this; Grp_I_HeavyAA1 setGroupId [""Heavy AA 1""];";
 					description="Heavy Anti Air 1 Assistant";
 				};
 			};
@@ -3595,8 +3812,8 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14193.593,17.834194,15944.129};
-					azimut=137.39014;
+					position[]={15159.874,17.91,17212.912};
+					azimut=227.10915;
 					special="NONE";
 					id=220;
 					side="GUER";
@@ -3605,20 +3822,22 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_HeavyAA2 = group this; Grp_HeavyAA2 setGroupId [""Heavy AA 2""];";
+					text="Unit_I_AA2_G";
+					init="Grp_I_HeavyAA2 = group this; Grp_I_HeavyAA2 setGroupId [""Heavy AA 2""];";
 					description="Heavy Anti Air 2 Gunner";
 				};
 				class Item1
 				{
-					position[]={14190.102,17.860935,15940.91};
-					azimut=137.39014;
+					position[]={15156.633,17.91,17216.381};
+					azimut=227.10915;
 					special="NONE";
 					id=221;
 					side="GUER";
 					vehicle="T1_Indep_Specialist_AAA_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_HeavyAA2 = group this; Grp_HeavyAA2 setGroupId [""Heavy AA 2""];";
+					text="Unit_I_AA2_A";
+					init="Grp_I_HeavyAA2 = group this; Grp_I_HeavyAA2 setGroupId [""Heavy AA 2""];";
 					description="Heavy Anti Air 2 Assistant";
 				};
 			};
@@ -3631,8 +3850,8 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14203.832,17.874678,15933.771};
-					azimut=137.39014;
+					position[]={15149.564,17.91,17202.617};
+					azimut=227.10915;
 					special="NONE";
 					id=222;
 					side="GUER";
@@ -3641,20 +3860,22 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_HeavyAT1 = group this; Grp_HeavyAT1 setGroupId [""Heavy AT 1""];";
+					text="Unit_I_AT1_G";
+					init="Grp_I_HeavyAT1 = group this; Grp_I_HeavyAT1 setGroupId [""Heavy AT 1""];";
 					description="Heavy Anti Tank 1 Gunner";
 				};
 				class Item1
 				{
-					position[]={14200.333,17.916405,15930.552};
-					azimut=137.39014;
+					position[]={15146.325,17.91,17206.09};
+					azimut=227.10915;
 					special="NONE";
 					id=223;
 					side="GUER";
 					vehicle="T1_Indep_Specialist_AAT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_HeavyAT1 = group this; Grp_HeavyAT1 setGroupId [""Heavy AT 1""];";
+					text="Unit_I_AT1_A";
+					init="Grp_I_HeavyAT1 = group this; Grp_I_HeavyAT1 setGroupId [""Heavy AT 1""];";
 					description="Heavy Anti Tank 1 Assistant";
 				};
 			};
@@ -3667,8 +3888,8 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14200.471,17.8276,15936.981};
-					azimut=137.39014;
+					position[]={15152.747,17.91,17205.992};
+					azimut=227.10915;
 					special="NONE";
 					id=224;
 					side="GUER";
@@ -3677,20 +3898,22 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="Grp_HeavyAT2 = group this; Grp_HeavyAT2 setGroupId [""Heavy AT 2""];";
+					text="Unit_I_AT2_G";
+					init="Grp_I_HeavyAT2 = group this; Grp_I_HeavyAT2 setGroupId [""Heavy AT 2""];";
 					description="Heavy Anti Tank 2 Gunner";
 				};
 				class Item1
 				{
-					position[]={14196.654,17.874762,15933.393};
-					azimut=137.39014;
+					position[]={15149.153,17.91,17209.793};
+					azimut=227.10915;
 					special="NONE";
 					id=225;
 					side="GUER";
 					vehicle="T1_Indep_Specialist_AAT_Standard_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="Grp_HeavyAT2 = group this; Grp_HeavyAT2 setGroupId [""Heavy AT 2""];";
+					text="Unit_I_AT2_A";
+					init="Grp_I_HeavyAT2 = group this; Grp_I_HeavyAT2 setGroupId [""Heavy AT 2""];";
 					description="Heavy Anti Tank 2 Assistant";
 				};
 			};
@@ -3718,21 +3941,949 @@ class Mission
 				};
 			};
 		};
+		class Item69
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={14412.537,17.860001,16142.152};
+					azimut=311.74557;
+					id=227;
+					side="WEST";
+					vehicle="T1_Squad_Repair_Standard_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="COLONEL";
+					skill=0.60000002;
+					text="Unit_B_SEN_CL";
+					init="Grp_B_SENCL = group this; Grp_B_SENCL setGroupId [""Sentinel Company Lead""];";
+					description="Sentinel Company Leader";
+				};
+				class Item1
+				{
+					position[]={14408.638,17.860001,16137.878};
+					azimut=311.74557;
+					id=228;
+					side="WEST";
+					vehicle="T1_Crewman_Standard_F";
+					player="PLAY CDG";
+					rank="MAJOR";
+					skill=0.60000002;
+					text="Unit_B_SEN_G";
+					init="Grp_B_SENCL = group this; Grp_B_SENCL setGroupId [""Sentinel Company Lead""];";
+					description="Sentinel Gunner";
+				};
+				class Item2
+				{
+					position[]={14416.52,17.860001,16146.669};
+					azimut=311.74557;
+					id=229;
+					side="WEST";
+					vehicle="T1_Squad_Medic_Standard_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Unit_B_SEN_D";
+					init="Grp_B_SENCL = group this; Grp_B_SENCL setGroupId [""Sentinel Company Lead""];";
+					description="Sentinel Driver/Medic";
+				};
+			};
+		};
+		class Item70
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={14408.761,17.860001,16145.411};
+					azimut=311.74557;
+					id=230;
+					side="WEST";
+					vehicle="T1_Crewman_Standard_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="COLONEL";
+					skill=0.60000002;
+					text="Unit_B_H1_L";
+					init="Grp_B_H1 = group this; Grp_B_H1 setGroupId [""Hammer 1""]; this addItem ""ACRE_PRC152"";";
+					description="Hammer 1 Platoon Leader";
+				};
+				class Item1
+				{
+					position[]={14404.863,17.863516,16141.135};
+					azimut=311.74557;
+					id=231;
+					side="WEST";
+					vehicle="T1_Crewman_Standard_F";
+					player="PLAY CDG";
+					rank="MAJOR";
+					skill=0.60000002;
+					text="Unit_B_H1_G";
+					init="Grp_B_H1 = group this; Grp_B_H1 setGroupId [""Hammer 1""];";
+					description="Hammer 1 Gunner";
+				};
+				class Item2
+				{
+					position[]={14412.744,17.828522,16149.932};
+					azimut=311.74557;
+					id=232;
+					side="WEST";
+					vehicle="T1_Crewman_Standard_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Unit_B_H1_D";
+					init="Grp_B_H1 = group this; Grp_B_H1 setGroupId [""Hammer 1""];";
+					description="Hammer 1 Driver";
+				};
+			};
+		};
+		class Item71
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={14404.66,17.84779,16148.832};
+					azimut=311.74557;
+					id=233;
+					side="WEST";
+					vehicle="T1_Crewman_Standard_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="COLONEL";
+					skill=0.60000002;
+					text="Unit_B_H2_L";
+					init="Grp_B_H2 = group this; Grp_B_H2 setGroupId [""Hammer 2""]; this addItem ""ACRE_PRC152"";";
+					description="Hammer 2 Commander";
+				};
+				class Item1
+				{
+					position[]={14400.764,17.868982,16144.562};
+					azimut=311.74557;
+					id=234;
+					side="WEST";
+					vehicle="T1_Crewman_Standard_F";
+					player="PLAY CDG";
+					rank="MAJOR";
+					skill=0.60000002;
+					text="Unit_B_H2_G";
+					init="Grp_B_H2 = group this; Grp_B_H2 setGroupId [""Hammer 2""];";
+					description="Hammer 2 Gunner";
+				};
+				class Item2
+				{
+					position[]={14408.643,17.782045,16153.346};
+					azimut=311.74557;
+					id=235;
+					side="WEST";
+					vehicle="T1_Crewman_Standard_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Unit_B_H2_D";
+					init="Grp_B_H2 = group this; Grp_B_H2 setGroupId [""Hammer 2""];";
+					description="Hammer 2 Driver";
+				};
+			};
+		};
+		class Item72
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={14400.471,17.805672,16152.808};
+					azimut=311.74557;
+					id=236;
+					side="WEST";
+					vehicle="T1_Crewman_Standard_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="COLONEL";
+					skill=0.60000002;
+					text="Unit_B_H3_L";
+					init="Grp_B_H3 = group this; Grp_B_H3 setGroupId [""Hammer 3""]; this addItem ""ACRE_PRC152"";";
+					description="Hammer 3 Commander";
+				};
+				class Item1
+				{
+					position[]={14396.566,17.789801,16148.543};
+					azimut=311.74557;
+					id=237;
+					side="WEST";
+					vehicle="T1_Crewman_Standard_F";
+					player="PLAY CDG";
+					rank="MAJOR";
+					skill=0.60000002;
+					text="Unit_B_H3_G";
+					init="Grp_B_H3 = group this; Grp_B_H3 setGroupId [""Hammer 3""];";
+					description="Hammer 3 Gunner";
+				};
+				class Item2
+				{
+					position[]={14404.458,17.743364,16157.318};
+					azimut=311.74557;
+					id=238;
+					side="WEST";
+					vehicle="T1_Crewman_Standard_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Unit_B_H3_D";
+					init="Grp_B_H3 = group this; Grp_B_H3 setGroupId [""Hammer 3""];";
+					description="Hammer 3 Driver";
+				};
+			};
+		};
+		class Item73
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={14396.494,17.723911,16156.232};
+					azimut=311.74557;
+					id=239;
+					side="WEST";
+					vehicle="T1_Crewman_Standard_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="COLONEL";
+					skill=0.60000002;
+					text="Unit_B_H4_L";
+					init="Grp_B_H4 = group this; Grp_B_H4 setGroupId [""Hammer 4""]; this addItem ""ACRE_PRC152"";";
+					description="Hammer 4 Commander";
+				};
+				class Item1
+				{
+					position[]={14392.59,17.682184,16151.961};
+					azimut=311.74557;
+					id=240;
+					side="WEST";
+					vehicle="T1_Crewman_Standard_F";
+					player="PLAY CDG";
+					rank="MAJOR";
+					skill=0.60000002;
+					text="Unit_B_H4_G";
+					init="Grp_B_H4 = group this; Grp_B_H4 setGroupId [""Hammer 4""];";
+					description="Hammer 4 Gunner";
+				};
+				class Item2
+				{
+					position[]={14400.478,17.71734,16160.754};
+					azimut=311.74557;
+					id=241;
+					side="WEST";
+					vehicle="T1_Crewman_Standard_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Unit_B_H4_D";
+					init="Grp_B_H4 = group this; Grp_B_H4 setGroupId [""Hammer 4""];";
+					description="Hammer 4 Driver";
+				};
+			};
+		};
+		class Item74
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={14392.724,17.663589,16159.512};
+					azimut=311.74557;
+					id=242;
+					side="WEST";
+					vehicle="T1_Crewman_Standard_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="COLONEL";
+					skill=0.60000002;
+					text="Unit_B_I1_L";
+					init="Grp_B_I1 = group this; Grp_B_I1 setGroupId [""Impact 1""]; this addItem ""ACRE_PRC152"";";
+					description="Impact 1 Platoon Leader";
+				};
+				class Item1
+				{
+					position[]={14388.82,17.663956,16155.246};
+					azimut=311.74557;
+					id=243;
+					side="WEST";
+					vehicle="T1_Crewman_Standard_F";
+					player="PLAY CDG";
+					rank="MAJOR";
+					skill=0.60000002;
+					text="Unit_B_I1_G";
+					init="Grp_B_I1 = group this; Grp_B_I1 setGroupId [""Impact 1""];";
+					description="Impact 1 Gunner";
+				};
+				class Item2
+				{
+					position[]={14396.708,17.696768,16164.033};
+					azimut=311.74557;
+					id=244;
+					side="WEST";
+					vehicle="T1_Crewman_Standard_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Unit_B_I1_D";
+					init="Grp_B_I1 = group this; Grp_B_I1 setGroupId [""Impact 1""];";
+					description="Impact 1 Driver";
+				};
+			};
+		};
+		class Item75
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={14389.189,17.714888,16162.564};
+					azimut=311.74557;
+					id=245;
+					side="WEST";
+					vehicle="T1_Crewman_Standard_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="COLONEL";
+					skill=0.60000002;
+					text="Unit_B_I2_L";
+					init="Grp_B_I2 = group this; Grp_B_I2 setGroupId [""Impact 2""]; this addItem ""ACRE_PRC152"";";
+					description="Impact 2 Commander";
+				};
+				class Item1
+				{
+					position[]={14385.291,17.712822,16158.301};
+					azimut=311.74557;
+					id=246;
+					side="WEST";
+					vehicle="T1_Crewman_Standard_F";
+					player="PLAY CDG";
+					rank="MAJOR";
+					skill=0.60000002;
+					text="Unit_B_I2_G";
+					init="Grp_B_I2 = group this; Grp_B_I2 setGroupId [""Impact 2""];";
+					description="Impact 2 Gunner";
+				};
+				class Item2
+				{
+					position[]={14393.171,17.706377,16167.085};
+					azimut=311.74557;
+					id=247;
+					side="WEST";
+					vehicle="T1_Crewman_Standard_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Unit_B_I2_D";
+					init="Grp_B_I2 = group this; Grp_B_I2 setGroupId [""Impact 2""];";
+					description="Impact 2 Driver";
+				};
+			};
+		};
+		class Item76
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={14385.107,17.887144,16166.211};
+					azimut=311.74557;
+					id=248;
+					side="WEST";
+					vehicle="T1_Crewman_Standard_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="COLONEL";
+					skill=0.60000002;
+					text="Unit_B_I3_L";
+					init="Grp_B_I3 = group this; Grp_B_I3 setGroupId [""Impact 3""]; this addItem ""ACRE_PRC152"";";
+					description="Impact 3 Commander";
+				};
+				class Item1
+				{
+					position[]={14381.201,18.039524,16161.942};
+					azimut=311.74557;
+					id=249;
+					side="WEST";
+					vehicle="T1_Crewman_Standard_F";
+					player="PLAY CDG";
+					rank="MAJOR";
+					skill=0.60000002;
+					text="Unit_B_I3_G";
+					init="Grp_B_I3 = group this; Grp_B_I3 setGroupId [""Impact 3""];";
+					description="Impact 3 Gunner";
+				};
+				class Item2
+				{
+					position[]={14389.093,17.88975,16170.731};
+					azimut=311.74557;
+					id=250;
+					side="WEST";
+					vehicle="T1_Crewman_Standard_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Unit_B_I3_D";
+					init="Grp_B_I3 = group this; Grp_B_I3 setGroupId [""Impact 3""];";
+					description="Impact 3 Driver";
+				};
+			};
+		};
+		class Item77
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={14381.419,18.298607,16169.437};
+					azimut=311.74557;
+					id=251;
+					side="WEST";
+					vehicle="T1_Crewman_Standard_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="COLONEL";
+					skill=0.60000002;
+					text="Unit_B_I4_L";
+					init="Grp_B_I4 = group this; Grp_B_I4 setGroupId [""Impact 4""]; this addItem ""ACRE_PRC152"";";
+					description="Impact 4 Commander";
+				};
+				class Item1
+				{
+					position[]={14377.513,18.433613,16165.169};
+					azimut=311.74557;
+					id=252;
+					side="WEST";
+					vehicle="T1_Crewman_Standard_F";
+					player="PLAY CDG";
+					rank="MAJOR";
+					skill=0.60000002;
+					text="Unit_B_I4_G";
+					init="Grp_B_I4 = group this; Grp_B_I4 setGroupId [""Impact 4""];";
+					description="Impact 4 Gunner";
+				};
+				class Item2
+				{
+					position[]={14385.4,18.185953,16173.954};
+					azimut=311.74557;
+					id=253;
+					side="WEST";
+					vehicle="T1_Crewman_Standard_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Unit_B_I4_D";
+					init="Grp_B_I4 = group this; Grp_B_I4 setGroupId [""Impact 4""];";
+					description="Impact 4 Driver";
+				};
+			};
+		};
+		class Item78
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={15142.571,17.91,17174.27};
+					azimut=-45.237949;
+					special="NONE";
+					id=254;
+					side="GUER";
+					vehicle="T1_Indep_Squad_Repair_Standard_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="COLONEL";
+					skill=0.60000002;
+					text="Unit_I_SEN_CL";
+					init="Grp_I_SENCL = group this; Grp_I_SENCL setGroupId [""Sentinel Company Lead""];";
+					description="Sentinel Company Leader";
+				};
+				class Item1
+				{
+					position[]={15138.532,17.91,17170.215};
+					azimut=-45.237949;
+					special="NONE";
+					id=255;
+					side="GUER";
+					vehicle="T1_Indep_Crewman_Standard_F";
+					player="PLAY CDG";
+					rank="MAJOR";
+					skill=0.60000002;
+					text="Unit_I_SEN_G";
+					init="Grp_I_SENCL = group this; Grp_I_SENCL setGroupId [""Sentinel Company Lead""];";
+					description="Sentinel Gunner";
+				};
+				class Item2
+				{
+					position[]={15146.604,17.91,17178.424};
+					azimut=-45.237949;
+					special="NONE";
+					id=256;
+					side="GUER";
+					vehicle="T1_Indep_Squad_Medic_Standard_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Unit_I_SEN_D";
+					init="Grp_I_SENCL = group this; Grp_I_SENCL setGroupId [""Sentinel Company Lead""];";
+					description="Sentinel Driver/Medic";
+				};
+			};
+		};
+		class Item79
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={15138.836,17.91,17177.994};
+					azimut=-45.237949;
+					special="NONE";
+					id=257;
+					side="GUER";
+					vehicle="T1_Indep_Crewman_Standard_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="COLONEL";
+					skill=0.60000002;
+					text="Unit_I_H1_L";
+					init="Grp_I_H1 = group this; Grp_I_H1 setGroupId [""Hammer 1""]; this addItem ""ACRE_PRC152"";";
+					description="Hammer 1 Platoon Leader";
+				};
+				class Item1
+				{
+					position[]={15142.835,17.91,17182.141};
+					azimut=-45.237949;
+					special="NONE";
+					id=258;
+					side="GUER";
+					vehicle="T1_Indep_Crewman_Standard_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Unit_I_H1_G";
+					init="Grp_I_H1 = group this; Grp_I_H1 setGroupId [""Hammer 1""];";
+					description="Hammer 1 Driver";
+				};
+				class Item2
+				{
+					position[]={15134.697,17.91,17173.865};
+					azimut=-45.237949;
+					special="NONE";
+					id=259;
+					side="GUER";
+					vehicle="T1_Indep_Crewman_Standard_F";
+					player="PLAY CDG";
+					rank="MAJOR";
+					skill=0.60000002;
+					text="Unit_I_H1_D";
+					init="Grp_I_H1 = group this; Grp_I_H1 setGroupId [""Hammer 1""];";
+					description="Hammer 1 Gunner";
+				};
+			};
+		};
+		class Item80
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={15134.37,17.91,17182.189};
+					azimut=-45.237949;
+					special="NONE";
+					id=260;
+					side="GUER";
+					vehicle="T1_Indep_Crewman_Standard_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="COLONEL";
+					skill=0.60000002;
+					text="Unit_I_H2_G";
+					init="Grp_I_H2 = group this; Grp_I_H2 setGroupId [""Hammer 2""]; this addItem ""ACRE_PRC152"";";
+					description="Hammer 2 Commander";
+				};
+				class Item1
+				{
+					position[]={15138.349,17.91,17186.363};
+					azimut=-45.237949;
+					special="NONE";
+					id=261;
+					side="GUER";
+					vehicle="T1_Indep_Crewman_Standard_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Unit_I_H2_G";
+					init="Grp_I_H2 = group this; Grp_I_H2 setGroupId [""Hammer 2""];";
+					description="Hammer 2 Driver";
+				};
+				class Item2
+				{
+					position[]={15130.258,17.91,17178.121};
+					azimut=-45.237949;
+					special="NONE";
+					id=262;
+					side="GUER";
+					vehicle="T1_Indep_Crewman_Standard_F";
+					player="PLAY CDG";
+					rank="MAJOR";
+					skill=0.60000002;
+					text="Unit_I_H2_D";
+					init="Grp_I_H2 = group this; Grp_I_H2 setGroupId [""Hammer 2""];";
+					description="Hammer 2 Gunner";
+				};
+			};
+		};
+		class Item81
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={15130.408,17.91,17186.188};
+					azimut=-45.237949;
+					special="NONE";
+					id=263;
+					side="GUER";
+					vehicle="T1_Indep_Crewman_Standard_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="COLONEL";
+					skill=0.60000002;
+					text="Unit_I_H3_L";
+					init="Grp_I_H3 = group this; Grp_I_H3 setGroupId [""Hammer 3""]; this addItem ""ACRE_PRC152"";";
+					description="Hammer 3 Commander";
+				};
+				class Item1
+				{
+					position[]={15134.413,17.91,17190.383};
+					azimut=-45.237949;
+					special="NONE";
+					id=264;
+					side="GUER";
+					vehicle="T1_Indep_Crewman_Standard_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Unit_I_H3_G";
+					init="Grp_I_H3 = group this; Grp_I_H3 setGroupId [""Hammer 3""];";
+					description="Hammer 3 Driver";
+				};
+				class Item2
+				{
+					position[]={15126.29,17.91,17182.135};
+					azimut=-45.237949;
+					special="NONE";
+					id=265;
+					side="GUER";
+					vehicle="T1_Indep_Crewman_Standard_F";
+					player="PLAY CDG";
+					rank="MAJOR";
+					skill=0.60000002;
+					text="Unit_I_H3_D";
+					init="Grp_I_H3 = group this; Grp_I_H3 setGroupId [""Hammer 3""];";
+					description="Hammer 3 Gunner";
+				};
+			};
+		};
+		class Item82
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={15126.969,17.91,17189.619};
+					azimut=-45.237949;
+					special="NONE";
+					id=266;
+					side="GUER";
+					vehicle="T1_Indep_Crewman_Standard_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="COLONEL";
+					skill=0.60000002;
+					text="Unit_I_H4_L";
+					init="Grp_I_H4 = group this; Grp_I_H4 setGroupId [""Hammer 4""]; this addItem ""ACRE_PRC152"";";
+					description="Hammer 4 Commander";
+				};
+				class Item1
+				{
+					position[]={15130.95,17.91,17193.734};
+					azimut=-45.237949;
+					special="NONE";
+					id=267;
+					side="GUER";
+					vehicle="T1_Indep_Crewman_Standard_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Unit_I_H4_G";
+					init="Grp_I_H4 = group this; Grp_I_H4 setGroupId [""Hammer 4""];";
+					description="Hammer 4 Driver";
+				};
+				class Item2
+				{
+					position[]={15122.843,17.91,17185.502};
+					azimut=-45.237949;
+					special="NONE";
+					id=268;
+					side="GUER";
+					vehicle="T1_Indep_Crewman_Standard_F";
+					player="PLAY CDG";
+					rank="MAJOR";
+					skill=0.60000002;
+					text="Unit_I_H4_D";
+					init="Grp_I_H4 = group this; Grp_I_H4 setGroupId [""Hammer 4""];";
+					description="Hammer 4 Gunner";
+				};
+			};
+		};
+		class Item83
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={15123.237,17.91,17193.133};
+					azimut=-45.237949;
+					special="NONE";
+					id=269;
+					side="GUER";
+					vehicle="T1_Indep_Crewman_Standard_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="COLONEL";
+					skill=0.60000002;
+					text="Unit_I_I1_L";
+					init="Grp_I_I1 = group this; Grp_I_I1 setGroupId [""Impact 1""]; this addItem ""ACRE_PRC152"";";
+					description="Impact 1 Platoon Leader";
+				};
+				class Item1
+				{
+					position[]={15127.224,17.91,17197.254};
+					azimut=-45.237949;
+					special="NONE";
+					id=270;
+					side="GUER";
+					vehicle="T1_Indep_Crewman_Standard_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Unit_I_I1_G";
+					init="Grp_I_I1 = group this; Grp_I_I1 setGroupId [""Impact 1""];";
+					description="Impact 1 Driver";
+				};
+				class Item2
+				{
+					position[]={15119.116,17.91,17188.994};
+					azimut=-45.237949;
+					special="NONE";
+					id=271;
+					side="GUER";
+					vehicle="T1_Indep_Crewman_Standard_F";
+					player="PLAY CDG";
+					rank="MAJOR";
+					skill=0.60000002;
+					text="Unit_I_I1_D";
+					init="Grp_I_I1 = group this; Grp_I_I1 setGroupId [""Impact 1""];";
+					description="Impact 1 Gunner";
+				};
+			};
+		};
+		class Item84
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={15119.797,17.91,17196.434};
+					azimut=-45.237949;
+					special="NONE";
+					id=272;
+					side="GUER";
+					vehicle="T1_Indep_Crewman_Standard_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="COLONEL";
+					skill=0.60000002;
+					text="Unit_I_I2_L";
+					init="Grp_I_I2 = group this; Grp_I_I2 setGroupId [""Impact 2""]; this addItem ""ACRE_PRC152"";";
+					description="Impact 2 Commander";
+				};
+				class Item1
+				{
+					position[]={15123.773,17.91,17200.594};
+					azimut=-45.237949;
+					special="NONE";
+					id=273;
+					side="GUER";
+					vehicle="T1_Indep_Crewman_Standard_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Unit_I_I2_G";
+					init="Grp_I_I2 = group this; Grp_I_I2 setGroupId [""Impact 2""];";
+					description="Impact 2 Driver";
+				};
+				class Item2
+				{
+					position[]={15115.667,17.91,17192.348};
+					azimut=-45.237949;
+					special="NONE";
+					id=274;
+					side="GUER";
+					vehicle="T1_Indep_Crewman_Standard_F";
+					player="PLAY CDG";
+					rank="MAJOR";
+					skill=0.60000002;
+					text="Unit_I_I2_D";
+					init="Grp_I_I2 = group this; Grp_I_I2 setGroupId [""Impact 2""];";
+					description="Impact 2 Gunner";
+				};
+			};
+		};
+		class Item85
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={15116.117,17.91,17199.963};
+					azimut=-45.237949;
+					special="NONE";
+					id=275;
+					side="GUER";
+					vehicle="T1_Indep_Crewman_Standard_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="COLONEL";
+					skill=0.60000002;
+					text="Unit_I_I3_L";
+					init="Grp_I_I3 = group this; Grp_I_I3 setGroupId [""Impact 3""]; this addItem ""ACRE_PRC152"";";
+					description="Impact 3 Commander";
+				};
+				class Item1
+				{
+					position[]={15120.093,17.91,17204.133};
+					azimut=-45.237949;
+					special="NONE";
+					id=276;
+					side="GUER";
+					vehicle="T1_Indep_Crewman_Standard_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Unit_I_I3_G";
+					init="Grp_I_I3 = group this; Grp_I_I3 setGroupId [""Impact 3""];";
+					description="Impact 3 Driver";
+				};
+				class Item2
+				{
+					position[]={15111.983,17.91,17195.906};
+					azimut=-45.237949;
+					special="NONE";
+					id=277;
+					side="GUER";
+					vehicle="T1_Indep_Crewman_Standard_F";
+					player="PLAY CDG";
+					rank="MAJOR";
+					skill=0.60000002;
+					text="Unit_I_I3_D";
+					init="Grp_I_I3 = group this; Grp_I_I3 setGroupId [""Impact 3""];";
+					description="Impact 3 Gunner";
+				};
+			};
+		};
+		class Item86
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={15112.755,17.91,17203.193};
+					azimut=-45.237949;
+					special="NONE";
+					id=278;
+					side="GUER";
+					vehicle="T1_Indep_Crewman_Standard_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="COLONEL";
+					skill=0.60000002;
+					text="Unit_I_I4_L";
+					init="Grp_I_I4 = group this; Grp_I_I4 setGroupId [""Impact 4""]; this addItem ""ACRE_PRC152"";";
+					description="Impact 4 Commander";
+				};
+				class Item1
+				{
+					position[]={15116.768,17.91,17207.348};
+					azimut=-45.237949;
+					special="NONE";
+					id=279;
+					side="GUER";
+					vehicle="T1_Indep_Crewman_Standard_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Unit_I_I4_G";
+					init="Grp_I_I4 = group this; Grp_I_I4 setGroupId [""Impact 4""];";
+					description="Impact 4 Driver";
+				};
+				class Item2
+				{
+					position[]={15108.628,17.91,17199.104};
+					azimut=-45.237949;
+					special="NONE";
+					id=280;
+					side="GUER";
+					vehicle="T1_Indep_Crewman_Standard_F";
+					player="PLAY CDG";
+					rank="MAJOR";
+					skill=0.60000002;
+					text="Unit_I_I4_D";
+					init="Grp_I_I4 = group this; Grp_I_I4 setGroupId [""Impact 4""];";
+					description="Impact 4 Gunner";
+				};
+			};
+		};
 	};
 	class Markers
 	{
 		items=2;
 		class Item0
 		{
-			position[]={14265.076,18.354166,16018.041};
+			position[]={14341.205,17.608505,16096.163};
 			name="respawn_west";
 			type="Empty";
 		};
 		class Item1
 		{
-			position[]={14253.974,18.35672,16006.234};
+			position[]={15165.357,17.91,17207.658};
 			name="respawn_guerrila";
 			type="Empty";
+			angle=89.719055;
 		};
 	};
 };
@@ -3750,20 +4901,19 @@ class Intro
 	class Intel
 	{
 		timeOfChanges=1800.0002;
-		startWeather=0.30000001;
+		startWeather=0;
 		startWind=0.1;
 		startWaves=0.1;
-		forecastWeather=0.30000001;
+		forecastWeather=0;
 		forecastWind=0.1;
 		forecastWaves=0.1;
-		forecastLightnings=0.1;
-		year=2035;
-		month=7;
-		day=6;
+		wavesForced=1;
+		windForced=1;
+		year=2015;
 		hour=14;
-		minute=15;
-		startFogDecay=0.0049333;
-		forecastFogDecay=0.0049333;
+		minute=0;
+		startFogDecay=0;
+		forecastFogDecay=0;
 	};
 };
 class OutroWin
@@ -3780,20 +4930,19 @@ class OutroWin
 	class Intel
 	{
 		timeOfChanges=1800.0002;
-		startWeather=0.30000001;
+		startWeather=0;
 		startWind=0.1;
 		startWaves=0.1;
-		forecastWeather=0.30000001;
+		forecastWeather=0;
 		forecastWind=0.1;
 		forecastWaves=0.1;
-		forecastLightnings=0.1;
-		year=2035;
-		month=7;
-		day=6;
-		hour=14;
-		minute=15;
-		startFogDecay=0.0049333;
-		forecastFogDecay=0.0049333;
+		wavesForced=1;
+		windForced=1;
+		year=2015;
+		hour=17;
+		minute=0;
+		startFogDecay=0;
+		forecastFogDecay=0;
 	};
 };
 class OutroLoose
@@ -3810,19 +4959,18 @@ class OutroLoose
 	class Intel
 	{
 		timeOfChanges=1800.0002;
-		startWeather=0.30000001;
+		startWeather=0;
 		startWind=0.1;
 		startWaves=0.1;
-		forecastWeather=0.30000001;
+		forecastWeather=0;
 		forecastWind=0.1;
 		forecastWaves=0.1;
-		forecastLightnings=0.1;
-		year=2035;
-		month=7;
-		day=6;
-		hour=14;
-		minute=15;
-		startFogDecay=0.0049333;
-		forecastFogDecay=0.0049333;
+		wavesForced=1;
+		windForced=1;
+		year=2015;
+		hour=17;
+		minute=0;
+		startFogDecay=0;
+		forecastFogDecay=0;
 	};
 };

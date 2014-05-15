@@ -17,29 +17,35 @@ for [ { _i = 0 }, { _i < count(paramsArray) }, { _i = _i + 1 } ] do
 
 //	Initialize T1 Revive system.
 //diag_log format ["T1_Revive: '%1'", T1_Revive];
-if ( T1_Revive == 1 ) then
+if ( T1_Revive == 0 ) then
 {
 	call compile preprocessFile "=BTC=_revive\=BTC=_revive_init.sqf";
-} else {
+};
+if ( T1_Revive == 1 ) then
+{
 	call compile preprocessFile "FAR_Revive\FAR_revive_init.sqf";
 };
 
 startLoadingScreen ["Loading Tier1 Mission, please wait..."];
 
 // Check if ASR_AI3 is available
-if (isClass (configFile >> "cfgPatches">>"asr_ai3_danger")) then    
+//if !(isClass (configFile >> "cfgPatches">>"asr_ai3_danger")) then
+if !( isNil "asr_ai3_sysaiskill_fnc_setUnitSkill" ) then 
 {   
-	_asr_ai_va = getArray (configFile>>"cfgPatches">>"asr_ai3_main">>"versionAr");  
-	if !(_asr_ai_va select 0 >= 0 && _asr_ai_va select 1 >= 0) then   
-	{  
-		// Run setskill script.
-		execVM "Tier1\SetSkill\init_setSkill.sqf";
-		diag_log format ["ASR_AI3 mod not found"];    
-	};      
+	// Run setskill script.
+	execVM "Tier1\SetSkill\init_setSkill.sqf";
+	diag_log format ["ASR_AI3 mod not found"];    
+}
+else
+{
+	// disable potential conflict between ASR and GAIA
+	ASR_AI3_sysdanger_reactions = [0,0,0];
 };	
 
 endLoadingScreen;
+
 //player sideChat "End Starting MCC sync...."; 
+execVM "mcc_init.sqf";
 
 //	Finish world initialization before mission is launched. 
 finishMissionInit;
@@ -88,3 +94,4 @@ if !(isNil "tpwcas_enable") then
 		[] spawn tpwcas_fnc_log_benchmark;
 	};
 };
+

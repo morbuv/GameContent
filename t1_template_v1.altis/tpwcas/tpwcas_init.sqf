@@ -4,12 +4,11 @@ SP / MP / DEDI COMPATIBLE
 
 Authors: TPW && -Coulum- && fabrizio_T && Ollem
 
-Version: 5.3
+Version: 5.5
 
-Last modified: 20131114
+Last modified: 20140428
 
-Requires: 		//CBA // no longer required
-				tpwcas_bdetect.sqf
+Requires: 		tpwcas_bdetect.sqf
 				tpwcas_client_debug.sqf
 				tpwcas_debug.sqf
 				tpwcas_decskill.sqf
@@ -29,14 +28,15 @@ Disclaimer: Feel free to use and modify this code, on the proviso that you post 
 
 private ["_version"];
 
-_version = "TPWCAS_A3 v5.3";
+_version = "TPWCAS_A3 v5.5";
 
 if (isNil "tpwcas_running") then { 	tpwcas_running = false;};
 if ( tpwcas_running ) exitWith { diag_log "EXIT: tpwcas already running" };
 tpwcas_running = true;
 
-	if (isServer || isNil "tpwcas_mode") then {
-		tpwcas_mode = 3;
+	// if server and for some reason tpwcas is still not set, set it to 3
+	if ( (isServer) && (isNil "tpwcas_mode") ) then {
+		tpwcas_mode = [_this, 0, 3] call BIS_fnc_param;
 		};
 
 	//////////////////////////////////////////////////////////////////	
@@ -263,10 +263,13 @@ tpwcas_running = true;
 		};	
 
 		// Broadcast variables to all clients to be in sync with server settings
-		publicVariable "tpwcas_mode";
+		//publicVariable "tpwcas_mode";
 
 		if ( (isMultiPlayer) && (isServer) ) then 
 		{	
+			publicVariable "tpwcas_mode";
+			sleep 0.1;
+			
 			publicVariable "tpwcas_mindist";
 			sleep 0.1;
 			publicVariable "tpwcas_maxdist";
@@ -309,8 +312,7 @@ tpwcas_running = true;
 			//tpwcas_client_mode = 1;
 			//publicVariable "tpwcas_client_mode";
 			//sleep 0.1;
-			publicVariable "tpwcas_mode";
-			sleep 0.1;
+			
 		};
 	};
 	

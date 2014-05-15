@@ -7,7 +7,7 @@ Every 1 sec:
 
 tpwcas_fnc_main_loop = 
 {
-	private ["_unitCheck","_stanceregain","_skillregain","_unit","_x", "_anim", "_upos", "_umov", "_dthstr", "_posstr", "_acePosstr", "_movstr", "_chatString", "_shooter", "_lineIntersect","_coverregain","_cover","_stance","_GetNeckPos","_inBuilding"];	
+	private ["_unitCheck","_stanceregain","_skillregain","_unit","_x", "_anim", "_upos", "_umov", "_dthstr", "_posstr", "_acePosstr", "_movstr", "_chatString", "_shooter", "_lineIntersect","_coverregain","_cover","_stance","_GetNeckPos","_inBuilding","_isBuilding"];	
 	
 	if( bdetect_debug_enable ) then {
         _msg = format["%1 Started 'tpwcas_fnc_main_loop' - mode: [%2]", time, tpwcas_mode];
@@ -34,8 +34,6 @@ tpwcas_fnc_main_loop =
 			
 				if ( (_unitCheck) && { (vehicle _unit == _unit) } && { !(lifeState _unit == "DEAD") } && { !(side _unit == civilian) } ) then
 				{
-					//_inBuilding  = [];
-					
 					_stanceregain = _unit getVariable ["tpwcas_stanceregain", -1];
 				
 					if (tpwcas_canflee == 0) then 
@@ -146,10 +144,6 @@ tpwcas_fnc_main_loop =
 										if ( !( isNil "_inBuilding" ) && { _inBuilding isKindOf "Building" } ) then 
 										{
 											_unit setVariable ["tpwcas_inbuilding", true];
-										}
-										else
-										{
-											_inBuilding = false;
 										};
 										_unit setUnitPos "Middle"; 
 										_unit setVariable ["tpwcas_stance", "Middle"];	
@@ -171,7 +165,7 @@ tpwcas_fnc_main_loop =
 									{ 
 										//_cover = _unit getVariable ["tpwcas_cover", 0];
 										_coverregain = _unit getVariable ["tpwcas_coverregain", time];
-										_inBuilding = false;
+										_isBuilding = false;
 										
 										if ( stance _unit == "STAND" ) then
 										{
@@ -180,10 +174,19 @@ tpwcas_fnc_main_loop =
 											if ( !( isNil "_inBuilding" ) && { _inBuilding isKindOf "Building" } ) then 
 											{
 												_unit setVariable ["tpwcas_inbuilding", true];
-											}
-											else
-											{
-												_inBuilding = false;
+												_isBuilding = true;
+												
+												if (tpwcas_debug > 0) then 
+												{	
+													if (tpwcas_debug == 2) then 
+													{
+														diag_log format ["unit %1 (%2) is in building", name _unit, _unit];
+													};
+													[['orange', _unitPos],"tpwcas_fnc_debug_smoke",true,false] spawn BIS_fnc_MP;
+													if (hasInterface) then {
+														['orange', _unitPos] spawn tpwcas_fnc_debug_smoke;
+													};
+												};
 											};
 										};
 										
@@ -193,7 +196,7 @@ tpwcas_fnc_main_loop =
 												{ ( (_unit getVariable ["tpwcas_cover", 0]) == 0 ) } && 
 												{ ( diag_fps > tpwcas_getcover_minfps ) } &&
 												{ !(isPlayer (leader _unit)) } &&
-												{ !(_inBuilding) }
+												{ !(_isBuilding) }
 											) then 
 										{
 											[_unit, 2] spawn tpwcas_fnc_find_cover;
@@ -226,7 +229,7 @@ tpwcas_fnc_main_loop =
 									if !( stance _unit == "PRONE" ) then
 									{ 
 										_coverregain = _unit getVariable ["tpwcas_coverregain", time];
-										_inBuilding = false;
+										_isBuilding = false;
 										
 										if ( stance _unit == "STAND" ) then
 										{
@@ -235,10 +238,19 @@ tpwcas_fnc_main_loop =
 											if ( !( isNil "_inBuilding" ) && { _inBuilding isKindOf "Building" } ) then 
 											{
 												_unit setVariable ["tpwcas_inbuilding", true];
-											}
-											else
-											{
-												_inBuilding = false;
+												_isBuilding = true;
+												
+												if (tpwcas_debug > 0) then 
+												{	
+													if (tpwcas_debug == 2) then 
+													{
+														diag_log format ["unit %1 (%2) is in building", name _unit, _unit];
+													};
+													[['orange', _unitPos],"tpwcas_fnc_debug_smoke",true,false] spawn BIS_fnc_MP;
+													if (hasInterface) then {
+														['orange', _unitPos] spawn tpwcas_fnc_debug_smoke;
+													};
+												};
 											};
 										};										
 
@@ -248,7 +260,7 @@ tpwcas_fnc_main_loop =
 												{ ( (_unit getVariable ["tpwcas_cover", 0]) == 0 ) } && 
 												{ ( diag_fps > tpwcas_getcover_minfps ) } &&
 												{ !(isPlayer (leader _unit)) } &&
-												{ !(_inBuilding) }
+												{ !(_isBuilding) }
 											) then 
 										{
 											[_unit, 2] spawn tpwcas_fnc_find_cover;
