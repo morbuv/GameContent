@@ -1,0 +1,74 @@
+
+onLoadName = "T1 Mission";
+onLoadMission = "Tier1Ops Mission template";
+loadScreen = "\mcc_sandbox_mod\data\tier1_logo.paa";
+//loadScreen = "data\tier1_logo.paa";
+
+author="Tier1Ops";
+overviewPicture = "\mcc_sandbox_mod\data\tier1_logo.paa";
+//overviewPicture = "data\tier1_logo.paa";
+overviewText = "Tier1Ops Mission Template to be used with T1-MCC mod";
+
+respawn = "BASE";
+respawndelay = 1;
+RespawnDialog = 0;
+disabledAI = 1;
+saving = 0;
+
+// Allow Headless client to connect automatically
+joinUnassigned = 0;
+
+// Vehicle Hud
+#include "VehicleHud\vh_dialog.hpp"
+
+class Header
+{
+	gameType = COOP; //game type
+	minPlayers = 1; //min # of players the mission supports
+	maxPlayers = 69; //max # of players the mission supports
+	//playerCountMultipleOf = 1; //OFP:Elite option.
+};
+
+class Params
+{
+	class paramZero	
+	{
+		title = "Would you like to enable TPWCAS_A3 AI Suppression?";
+		values[] = {0,1};
+		texts[] = {"Off","On (Default)"};
+		default = 1;
+		code = "tpwcas_enable = %1";
+	};
+	
+	class paramOne
+	{
+		title = "Which TPWCAS_A3 AI Suppression Mode would you like to enable?";
+		values[] = {2,3};
+		texts[] = {"AI and Players (Default)","AI only"};
+		default = 2;
+		code = "tpwcas_mode = %1";
+	};
+
+	class paramTwo
+	{
+		title = "Would you like to enable auto garbage collection process?";
+		values[] = {1, 0};
+		texts[] = {"Yes (Default)", "No"};
+		default = 1;
+		code = "T1_garbageCollection = %1";
+	};
+	
+	class GuerFriendly
+	{
+		title = $STR_DISP_INTEL_EDIT_GUERILLA;
+		values[] = {-1,1,0,2};
+		texts[] = {
+			$STR_DISP_INTEL_NONE_FRIENDLY,
+			$STR_DISP_INTEL_WEST_FRIENDLY,
+			$STR_DISP_INTEL_EAST_FRIENDLY,
+			$STR_DISP_INTEL_BOTH_FRIENDLY
+		};
+		default = -1;
+		function = "BIS_fnc_paramGuerFriendly";
+	};
+};
